@@ -1,6 +1,5 @@
 @import 'globals.scss';
 
-$font-family_1: $font-mono;
 $background-color_1: rgba($callout-rgb, 0.5);
 
 .main {
@@ -19,7 +18,7 @@ $background-color_1: rgba($callout-rgb, 0.5);
 	max-width: $max-width;
 	width: 100%;
 	z-index: 2;
-	font-family: $font-family_1;
+	font-family: $font-mono;
 	article {
 		display: flex;
 		justify-content: center;
