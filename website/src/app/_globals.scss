@@ -12,8 +12,7 @@ $primary-glow: conic-gradient(
     #16abff33 0deg,
     #0885ff33 55deg,
     #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
+    #0071ff33 160deg
   );
 $secondary-glow: radial-gradient(
     rgba(255, 255, 255, 1),
@@ -34,3 +33,4 @@ $callout-rgb: rgb(238, 240, 241);
 $callout-border-rgb: rgb(172, 175, 176);
 $card-rgb: rgb(180, 185, 188);
 $card-border-rgb: rgb(131, 134, 135);
+$project-card-rgb: rgb(52, 53, 54);
