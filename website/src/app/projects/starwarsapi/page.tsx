@@ -1,19 +1,29 @@
+import Image from "next/image";
+import GitHubIcon from "../../../../public/github-mark/github-mark-white.svg";
 import styles from "../projects.module.scss";
+import Link from "next/link";
 
 export default function StarWarsAPI() {
   return (
     <main className={styles.main}>
+      <Link href="/">
+        <h3 className={styles.arrow}>
+          <span>&lt;-</span> Go Back to home page
+        </h3>
+      </Link>
       <article className={styles.card}>
         <h1>Star Wars API</h1>
         <p>
           Code on GitHub:
-          https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Game-Session-API
-          <br />
-          Wiki for Project:
-          https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API/wiki
-          <br />
-          Detailed explanation on project structure and data replicated in API:
-          https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API/wiki/Architecture-Overview
+          <Link href="https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Game-Session-API">
+            <Image src={GitHubIcon} alt="GitHub Icon" width={50} height={50} />
+          </Link>
+          <Link href="https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API/wiki">
+            Wiki for Project
+          </Link>
+          <Link href="https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API/wiki/Architecture-Overview">
+            Detailed explanation on project structure and data replicated in API
+          </Link>
           <br />
           <br />
           My friend really likes board games and wanted to experiment with
@@ -48,8 +58,8 @@ export default function StarWarsAPI() {
           make sure that the newly added info would display correctly through
           their get and post methods within the entities related controller. -
           The project includes 100% code coverage testing using Junit Uses MVC
-          and REST but doesn’t follow them closely. Have MC but doesn’t follow
-          view completely. REST but isn’t completely stateless as the database
+          and REST but doesn't follow them closely. Have MC but doesn't follow
+          view completely. REST but isn't completely stateless as the database
           is attached to the application. Embeddable dictates several columns in
           a single column. Predicates customize the SQL query| used for database
           operations | found in javax package EX where (...) This is where the
