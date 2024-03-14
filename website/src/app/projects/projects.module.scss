@@ -19,26 +19,46 @@ $background-color_1: rgba($callout-rgb, 0.5);
       transition: transform 200ms;
     }
   }
-}
-
-.card {
-  padding: 1rem 1.2rem;
-  border-radius: $border-radius;
-  background: $project-card-rgb;
-  border: 5px solid $card-border-rgb;
-  transition: background 200ms, border 200ms;
-  h1 {
-    font-weight: 600;
-    margin-bottom: 0.7rem;
-    text-align: center;
-  }
-  p {
-    margin: 0;
-    opacity: 0.6;
+  .card {
+    padding: 1rem 1.2rem;
+    border-radius: $border-radius;
+    background: $project-card-rgb;
+    border: 5px solid $card-border-rgb;
     font-size: 0.9rem;
-    line-height: 1.5;
-    max-width: 90%;
-    text-wrap: balance;
+    flex: 1 0 auto;
+    h1 {
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(33%, auto));
+      max-width: 100%;
+      width: $max-width;
+      text-align: center;
+      margin: auto;
+    }
+    p {
+      opacity: 0.6;
+      margin: 0;
+      line-height: 1.5;
+      max-width: 90%;
+      text-wrap: balance;
+    }
+    .squareGrid {
+      display: grid;
+      margin: 1em auto;
+      grid-template-columns: 1fr 1fr;
+      gap: 1em;
+      max-width: 95%;
+    }
+  }
+  .footer {
+    flex-shrink: auto;
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
   }
 }
 
