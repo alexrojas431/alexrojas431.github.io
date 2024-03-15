@@ -38,27 +38,38 @@ $background-color_1: rgba($callout-rgb, 0.5);
       width: $max-width;
       text-align: center;
       margin: auto;
+      .credits {
+        font-size: 75%;
+        font-style: italic;
+      }
     }
-    p {
-      opacity: 0.6;
+    section {
       margin: 0;
       line-height: 1.5;
       max-width: 90%;
       text-wrap: balance;
+      ul {
+        opacity: 0.6;
+      margin: 1em;
+      }
+      p {
+        opacity: 0.6;
+      }
     }
-    .squareGrid {
+    .gridList {
       display: grid;
       margin: 1em auto;
       grid-template-columns: 1fr 1fr;
       gap: 1em;
       max-width: 95%;
+      list-style-type: none;
+      h3 {
+        text-align: center;
+      }
+      .finalItem{
+        grid-column: span 2;
+      }
     }
-  }
-  .footer {
-    flex-shrink: auto;
-    position: fixed;
-    bottom: 0;
-    z-index: -1;
   }
 }
 

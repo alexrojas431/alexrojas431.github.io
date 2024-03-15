@@ -14,128 +14,203 @@ export default function StarWarsAPI() {
         </h3>
       </Link>
       <article className={styles.card}>
-        <h1>Star Wars API</h1>
-        <div className={styles.grid}>
-          <span>
-            <Link href="https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API">
-              <Image
-                src={GitHubIcon}
-                alt="GitHub Icon"
-                width={50}
-                height={50}
-              />
-            </Link>
+        <header>
+          <h1>Star Wars API</h1>
+          <div className={styles.grid}>
+            <span>
+              <Link href="https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API">
+                <Image
+                  src={GitHubIcon}
+                  alt="GitHub Icon"
+                  width={50}
+                  height={50}
+                />
+              </Link>
+              <br />
+              Code on GitHub
+            </span>
+            <span>
+              <Link href="https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API/wiki">
+                <Image src={wikiIcon} alt="Wiki icon" width={50} height={50} />
+              </Link>
+              <br />
+              Project Wiki
+              <br />
+              <Link
+                className={styles.credits}
+                href="https://www.flaticon.com/free-icons/wiki"
+              >
+                Wiki icons created by Freepik - Flaticon
+              </Link>
+            </span>
+            <span>
+              <Link href="https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API/wiki/Architecture-Overview">
+                <Image
+                  src={APIArch}
+                  alt="Picture of architecture of API"
+                  width={50}
+                  height={50}
+                />
+              </Link>
+              <br />
+              Detailed explanation of architecture of API
+            </span>
+          </div>
+        </header>
+        <br />
+        <section>
+          <header>
+            <h2>Summary of my work on the project:</h2>
+          </header>
+          <ul className={styles.gridList}>
+            <li>
+              <h3>Entity Development with MVC Architecture</h3>
+              Developed distinct entities following the Model-View-Controller
+              (MVC) architecture, tailored to various card types or game items
+              such as ActionCard, Leader, or Ring. This approach ensured clear
+              separation of concerns and made maintainability easier
+            </li>
+            <li>
+              <h3>Integration with H2 Database</h3>
+              Integrated the project with an H2 Database to store and manage
+              data pertaining to specific cards/items in the game. For instance,
+              included entries like Bobba Fett as an Empire leader, alongside
+              numerous other Empire and Rebel leaders. This database integration
+              ensured efficient data storage and retrieval mechanisms
+            </li>
+            <li>
+              <h3>Postman Validation of API Endpoints</h3>
+              Utilized Postman to rigorously validate the functionality of API
+              endpoints associated with retrieving and posting information
+              related to the game's cards/items. By thoroughly testing these
+              endpoints, I ensured accurate and reliable data transmission and
+              reception. Further details regarding the endpoints'
+              functionalities were documented in the project's wiki which is
+              linked above.
+            </li>
+            <li>
+              <h3>100% Code Coverage with JUnit Testing</h3>
+              Employed JUnit testing methods to achieve comprehensive code
+              coverage, ensuring that every aspect of the codebase was
+              rigorously tested. By aiming for 100% code coverage, the
+              reliability and stability of the codebase was enhanced.
+            </li>
+            <li className={styles.finalItem}>
+              <h3>Short timeframe and teamwork</h3>
+              This was a 4 month project with 100+ commits with cross
+              collaboration with a small network of developers. Due to the
+              nature of this project being owned by someone else, I made sure
+              actions I took were approved by the group. This stretched from
+              tiny details to decisions that effected the project as a whole.
+              For a example, rules in the GitHub Repo that would only allow
+              merges when others had reviewed the request. Another example was
+              the use of MVC and DAO as guidelines, this effected the whole
+              structure of the project. Along the same vein the structure of
+              many of the classes were standardized as well as the data within
+              the database.
+            </li>
+          </ul>
+        </section>
+        <section>
+          <header>
+            <h2>Tech Stack</h2>
+          </header>
+          <p>
+            This project has no dedicated front-end, only focusing on
+            constructing the API and how those requests are handled. If needed
+            there is a bare bones page where your requests are displayed on a
+            webpage however, it's best to use Postman to make requests.
             <br />
-            Code on GitHub
-          </span>
-          <span>
-            <Link href="https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API/wiki">
-              <Image src={wikiIcon} alt="Wiki icon" width={50} height={50} />
-            </Link>
+          </p>
+          <section>
+            <b>Tech Used:</b>
+            <ul>
+              <li>Java Spring boot</li>
+              <li>JPA to dynamically create queries to the database</li>
+              <li>JUnit for unit testing</li>
+              <li>Internal H2 Database</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <header>
+            <h2>Architecture</h2>
+          </header>
+          <p>
+            This project uses <b>REST</b> principles with a variation of the{" "}
+            <b>MVC</b> structure along with the <b>DAO</b> design pattern for
+            our entities.
             <br />
-            Project Wiki
-          </span>
-          <span>
-            <Link href="https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API/wiki/Architecture-Overview">
-              <Image
-                src={APIArch}
-                alt="Picture of architecture of API"
-                width={50}
-                height={50}
-              />
-            </Link>
+            This is only a brief overview of the architecture, there is a
+            detailed description of the architecture linked above.
+          </p>
+        </section>
+        <br />
+        <section>
+          <header>
+            <h2>Overall Description</h2>
+          </header>
+          <p>
+            My friend is an avid board game player and wanted to experiment with
+            translating a Star Wars themed board game into a virtual medium. One
+            step he decided to take was to make an API to provide users with the
+            games information such as special properites for a specific
+            character. This was a big project, so he asked for my help along
+            with a couple of others. To make sure our codebase was clear and
+            efficient we made sure to organize it accordingly, we used REST,
+            MVC, and DAO as a set of guidelines.
             <br />
-            Detailed explanation of architecture of API
-          </span>
-        </div>
-        <br />
-        <h2>Tech Stack</h2>
-        <p>
-          This project is has no dedicated front-end, only focusing on
-          constructing the API and how those requests are handled. If needed
-          there is a bare bones page where your requests are displayed on a
-          webpage however, it's best to use Postman to make requests.
-          <br />
-          <b>Tech Used:</b> Java Spring boot, JPA to dynamically create queries
-          to the database, 100% test coverage with JUnit, Internal H2 Database
-        </p>
-        <br />
-        <h2>Architecture</h2>
-        <p>
-          This project uses <b>REST</b> principles with a variation of the{" "}
-          <b>MVC</b> structure along with the <b>DAO</b> design pattern for our
-          entities.
-          <br />
-          This is only a brief overview of the architecture, there is a detailed
-          description on the architecture on the following linked page:{" "}
-          <Link href="https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API/wiki/Architecture-Overview">
-            Detailed architecture explanation
-          </Link>
-        </p>
-        <br />
-        <h2>Overall Description</h2>
-        <p>
-          My friend really likes board games and wanted to experiment with
-          translating a Star Wars themed board game into a virtual medium. One
-          step he decided to take was to make an API so the game can have all
-          the information readily available to the user. This was a big project,
-          so he asked for my help.
-          <br />
-          Before I list what I did on the project I want to explain the project
-          first beforehand. To help illustrate the organization of the code,
-          I'll present an entity and go through how it's written so it's usable
-          by the database.
-          <br />
-          ActionCard is the entity class which declares what would be inside an
-          ActionCard, in the board game an action card typically has some text
-          describing its function, a designated faction (bad/good or
-          empire/rebel) etc.
-          <br />
-          ActionCardRequest - a class that declares members that would be a part
-          of an action card ActionCardSpecification - A class that houses a
-          method that uses given data to find a specific instance of a card. If
-          no data is given, then you're given every action card
-          <br />
-          ActionCardRepository - interface that uses related specification for
-          methods that help find specified cards
-          <br />
-          ActionCardController - A class houses Get and post methods. This class
-          creates and uses related repo and spec objects. Get methods assume
-          that you want all the action cards, so the repo is used with no data
-          given to the spec. Post methods take in data through the form of a
-          request object. This request is passed to the spec which is passed to
-          the repo's respective methods.
-          <br />
-          <br />
-          I'll summarize the things I worked on below:
-        </p>
-        <br />
-        <ul className={styles.squareGrid}>
-          <li>
-            Created several entities for specific card types or game items using
-            MVC as a guide. (EX: ActionCard, Leader or Ring)
-          </li>
-          <li>
-            Added to the H2 Database for specific cards/items found in the game.
-            (EX: Bobba Fett as an empire leader, among many other empire and
-            rebel leaders)
-          </li>
-          <li>
-            Used Postman to make sure that the newly added info would display
-            correctly through their get and post methods within the entities
-            related controller. (More info for the endpoints found in the wiki)
-          </li>
-          <li>
-            Utilized JUnit methods in order to complete 100% code coverage with
-            testing
-          </li>
-        </ul>
+            I'll go how over how our entities were integrated through the
+            ActionCard as an example.
+            <br />
+            <br />
+            ActionCard - is the entity class which declares what would be inside
+            an ActionCard. In the board game, an ActionCard typically comprises
+            of descriptive text outlining its function, along with designated
+            factions such as "Empire" or "Rebel." This class will reflect this
+            fact.
+            <br />
+            <br />
+            ActionCardRequest - a class that declares members that would be a
+            part of a request made to the API regarding ActionCards. For some
+            entites, like the ActionCard, the corresponding request class will
+            look similar to the entitie class. For others, the request class
+            will look very different.
+            <br />
+            <br />
+            ActionCardSpecification - This class embodies a method aimed at
+            retrieving specific cards based on user provided criteria. What
+            criteria can be provided is dictated by the corresponding request
+            class (ActionCardRequest). When a user provides no data but pings
+            the API concerning ActionCards, this method retrieves all available
+            action cards for the sake of accessibility. If the user pings the
+            API with no relation to any entity, the API gives you all the data
+            available.
+            <br />
+            <br />
+            ActionCardRepository - An interface that orchestrates the
+            integration of ActionCard instances with the database. It employs
+            the ActionCardSpecification class.
+            <br />
+            <br />
+            ActionCardController - Central to the API's functionality, this
+            class houses the crucial GET and POST methods. This class creates
+            and uses related repo and spec objects. The GET methods assume that
+            you want all the action cards, it uses the repository without any
+            specific search criteria. Conversely, POST methods take in data
+            through the form of a request object. This object is passed to the
+            specification which is passed to the repository's respective
+            methods, enabling seamless manipulation and storage of ActionCard
+            data.
+            <br />
+            <br />
+            This organization of the code not only makes the structure of the
+            API efficient, but also enhances its usability and maintainability,
+            laying a robust foundation for the digital rendition of the Star
+            Wars board game.
+          </p>
+        </section>
       </article>
-      <footer className={styles.footer}>
-        <a href="https://www.flaticon.com/free-icons/wiki" title="wiki icons">
-          Wiki icons created by Freepik - Flaticon
-        </a>
-      </footer>
     </main>
   );
 }
