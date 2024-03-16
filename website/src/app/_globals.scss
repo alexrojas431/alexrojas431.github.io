@@ -34,8 +34,8 @@ $callout-border-rgb: rgb(172, 175, 176);
 $card-rgb: rgb(180, 185, 188);
 $card-border-rgb: rgb(131, 134, 135);
 $project-card-rgb: rgb(67, 72, 78);
-$card-shadow-left: -12px 12px 5px 1px rgba(46, 4, 144, 0.4);
-$card-shadow-right: 12px 12px 5px 1px  rgba(46, 4, 144, 0.4);
+$card-shadow-left: -12px 12px 5px 1px rgba(46, 4, 144, 0.8);
+$card-shadow-right: 12px 12px 5px 1px  rgba(46, 4, 144, 0.8);
 
 @mixin beforeHover{
     background: rgba($card-rgb,0);

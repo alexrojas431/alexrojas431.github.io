@@ -1,0 +1,45 @@
+@-webkit-keyframes move-background-left {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  100% {
+    transform: translate3d(-1000px, 0px, 0px);
+  }
+}
+
+@keyframes move-background-left {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  100% {
+    transform: translate3d(-1000px, 0px, 0px);
+  }
+}
+
+$starsURL: url("../../../../public/starry\ night\ -\ Transparent.png");
+$twinkleURL: url("../../../../public/twinkling.png");
+
+#stars {
+  background: black $starsURL repeat;
+  position: fixed;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+}
+
+#twinkle {
+  background: transparent $twinkleURL repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 300%;
+  z-index: -1;
+
+  -webkit-animation: move-background-left 200s linear infinite;
+  animation: move-background-left 200s linear infinite;
+}

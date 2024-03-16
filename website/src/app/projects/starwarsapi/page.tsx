@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../projects.module.scss";
+import star from "./starwars.module.scss";
 import GitHubIcon from "../../../../public/github-mark/github-mark-white.svg";
 import APIArch from "../../../../public/StarWarsCompAPI-Architecture.png";
 import wikiIcon from "../../../../public/wiki icon.png";
@@ -14,6 +15,8 @@ export default function StarWarsAPI() {
         </h3>
       </Link>
       <article className={styles.card}>
+      <span id={star.stars}></span>
+      <span id={star.twinkle}></span>
         <header>
           <h1>Star Wars API</h1>
           <div className={styles.grid}>
@@ -60,7 +63,7 @@ export default function StarWarsAPI() {
         <br />
         <section>
           <header>
-            <h2>Summary of my work on the project:</h2>
+            <h2>Summary of my work on the project</h2>
           </header>
           <ul className={styles.gridList}>
             <li>
