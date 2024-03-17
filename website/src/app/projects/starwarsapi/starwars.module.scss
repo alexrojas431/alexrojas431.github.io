@@ -1,0 +1,98 @@
+@use "../../globals.scss";
+
+$starsURL: url("../../../../public/starry\ night\ -\ Transparent.png");
+$twinkleURL: url("../../../../public/twinkling.png");
+$star-background-rgb: rgb(80, 83, 89);
+$star-inset-shadow: 10px 10px 10px black inset;
+$star-shadow-right: 2.9px 1.5px 1.9px rgba(157, 157, 157, 0.119),
+  6.4px 3.2px 4.4px rgba(157, 157, 157, 0.165),
+  11.2px 5.7px 7.8px rgba(157, 157, 157, 0.203),
+  18.4px 9.4px 13.3px rgba(157, 157, 157, 0.246),
+  25px 16px 23.4px rgba(157, 157, 157, 0.311);
+
+#starCard {
+  background-color: rgba(globals.$project-card-rgb, 0.2);
+  #starGrid {
+    padding: 2em;
+    background-color: $star-background-rgb;
+    box-shadow: $star-inset-shadow;
+  }
+  p {
+    opacity: 0.9;
+    padding: 1em;
+    background-color: $star-background-rgb;
+    box-shadow: $star-inset-shadow;
+  }
+  ul {
+    padding: 2rem;
+    background-color: rgba($star-background-rgb, 0.8);
+    box-shadow: $star-inset-shadow;
+  }
+}
+
+#stars {
+  background: black $starsURL repeat;
+  position: fixed;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+}
+
+#twinkle {
+  background: transparent $twinkleURL repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 300%;
+  z-index: -1;
+  -webkit-animation: move-background-left 200s linear infinite;
+  animation: move-background-left 200s linear infinite;
+}
+
+@-webkit-keyframes move-background-left {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  100% {
+    transform: translate3d(-1000px, 0px, 0px);
+  }
+}
+
+@keyframes move-background-left {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  100% {
+    transform: translate3d(-1000px, 0px, 0px);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  #twinkle {
+    animation: none;
+  }
+}
+
+@mixin StarHoverLeft {
+  &:hover {
+    background: rgba(globals.$card-rgb, 0.2);
+    border: 2px solid rgba(globals.$card-border-rgb, 0.3);
+    transform: translateX(-4px);
+    box-shadow: $star-shadow-right;
+    span {
+      transform: translateX(-8px);
+    }
+  }
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  #starArrow {
+    @include StarHoverLeft;
+  }
+}

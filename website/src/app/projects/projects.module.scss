@@ -1,0 +1,96 @@
+@use "../globals.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+  .arrow {
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    padding: 0.5rem 0.8rem;
+    @include globals.beforeHover;
+    span {
+      display: inline-block;
+      transition: transform 200ms;
+    }
+  }
+  .card {
+    flex: 1 0 auto;
+    padding: 1rem 1.2rem;
+    border-radius: globals.$border-radius;
+    border: 5px solid globals.$card-border-rgb;
+    font-size: 0.9rem;
+    h1 {
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(33%, auto));
+      max-width: 100%;
+      width: globals.$max-width;
+      text-align: center;
+      margin: auto;
+      border-radius: globals.$border-radius;
+      border: 1px solid globals.$card-border-rgb;
+      .credits {
+        font-size: 75%;
+        font-style: italic;
+      }
+    }
+    section {
+      line-height: 1.5;
+      text-wrap: balance;
+      h2 {
+        text-decoration: underline;
+      }
+      ul {
+        margin: 1em;
+        border-radius: globals.$border-radius;
+        border: 1px solid globals.$card-border-rgb;
+      }
+      p {
+        margin: 1em;
+        border-radius: globals.$border-radius;
+        border: 1px solid globals.$card-border-rgb;
+      }
+    }
+    .gridList {
+      display: grid;
+      max-width: 98%;
+      margin: auto;
+      grid-template-columns: 1fr 1fr;
+      gap: 1em;
+      list-style-type: none;
+      text-align: center;
+      .finalItem {
+        grid-column: span 2;
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .arrow {
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .content {
+    padding: 4rem;
+  }
+  .card {
+    padding: 1rem 2.5rem;
+    h1 {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
