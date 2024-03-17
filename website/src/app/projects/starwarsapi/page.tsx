@@ -10,16 +10,16 @@ export default function StarWarsAPI() {
   return (
     <main className={styles.main}>
       <Link href="/">
-        <h3 className={styles.arrow}>
+        <h3 className={styles.arrow} id={star.starArrow}>
           <span>&lt;-</span> Go Back to home page
         </h3>
       </Link>
-      <article className={styles.card}>
-      <span id={star.stars}></span>
-      <span id={star.twinkle}></span>
+      <article className={styles.card} id={star.starCard}>
+        <span id={star.stars}></span>
+        <span id={star.twinkle}></span>
         <header>
           <h1>Star Wars API</h1>
-          <div className={styles.grid}>
+          <div className={styles.grid} id={star.starGrid}>
             <span>
               <Link href="https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API">
                 <Image
@@ -65,6 +65,7 @@ export default function StarWarsAPI() {
           <header>
             <h2>Summary of my work on the project</h2>
           </header>
+          <br />
           <ul className={styles.gridList}>
             <li>
               <h3>Entity Development with MVC Architecture</h3>
@@ -113,6 +114,7 @@ export default function StarWarsAPI() {
               the database.
             </li>
           </ul>
+          <br />
         </section>
         <section>
           <header>
@@ -126,7 +128,8 @@ export default function StarWarsAPI() {
             <br />
           </p>
           <section>
-            <b>Tech Used:</b>
+            <br />
+            <b>Tech Used</b>
             <ul>
               <li>Java Spring boot</li>
               <li>JPA to dynamically create queries to the database</li>

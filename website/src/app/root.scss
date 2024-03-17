@@ -1,4 +1,4 @@
-@import "_globals.scss";
+@use "_globals.scss";
 
 * {
   box-sizing: border-box;
@@ -13,16 +13,21 @@ html {
   body {
     max-width: 100vw;
     overflow-x: hidden;
-    color: $text-rgb;
-    background: linear-gradient(to bottom, transparent, $background-end-rgb)
-      $background-start-rgb;
+    color: globals.$text-rgb;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        globals.$background-end-rgb
+      )
+      globals.$background-start-rgb;
+    font-size: 1rem;
   }
   a {
     color: inherit;
     text-decoration: none;
   }
-  footer{
-    color: $text-rgb;
+  footer {
+    color: globals.$text-rgb;
     text-align: center;
   }
 }
