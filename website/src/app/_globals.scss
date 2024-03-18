@@ -4,8 +4,8 @@ $font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
   "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
   "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 $foreground-rgb: rgb(0, 0, 0);
-$background-start-rgb: rgb(146, 12, 230);
-$background-end-rgb: rgb(66, 4, 66);
+$background-start-rgb: rgb(67, 104, 234);
+$background-end-rgb: rgb(24, 35, 67);
 $text-rgb: rgb(255, 255, 255);
 $primary-glow: conic-gradient(
   from 180deg at 50% 50%,
@@ -14,10 +14,12 @@ $primary-glow: conic-gradient(
   #54d6ff33 120deg,
   #0071ff33 160deg
 );
+
 $secondary-glow: radial-gradient(
   rgba(255, 255, 255, 1),
   rgba(255, 255, 255, 0)
 );
+
 $tile-start-rgb: rgb(239, 245, 249);
 $tile-end-rgb: rgb(228, 232, 233);
 $tile-border: conic-gradient(

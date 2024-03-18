@@ -7,33 +7,41 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 0.5rem;
   min-height: 100vh;
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    span {
+      border-radius: 100px;
+      overflow: hidden;
+    }
+  }
+  article {
+    header {
+      text-align: center;
+    }
+  }
   .description {
-    display: inherit;
-    justify-content: inherit;
-    align-items: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 1rem;
+    gap: 1rem;
     font-size: 0.85rem;
     max-width: globals.$max-width;
     width: 100%;
     z-index: 2;
     font-family: globals.$font-mono;
-    article {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    p {
-      position: relative;
-      margin: 0;
-      padding: 1rem;
-      background-color: $background-color_1;
-      border: 1px solid rgba(globals.$callout-border-rgb, 0.3);
-      border-radius: globals.$border-radius;
-    }
+    background-color: $background-color_1;
+    border: 1px solid rgba(globals.$callout-border-rgb, 0.3);
+    border-radius: globals.$border-radius;
   }
-
   .grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(33%, auto));
@@ -59,6 +67,10 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
       max-width: 30ch;
       text-wrap: balance;
     }
+  }
+  .jobList{
+    background-color: brown;
+    width: 100%;
   }
 }
 
