@@ -21,50 +21,86 @@ export default function Home() {
       </header>
       <article className={styles.description}>
         <section>
+          <header>
+            <h2>Myself</h2>
+          </header>
           <p>
+            <br />
             I'm based in the US and spent most of my dev career working on full
             stack web applications from home.
             <br />
             I'm available from 8:00AM to 5:00PM CST/UTC-6
             <br />
-            Heres details on my workstyle
             <br />
-            Heres details on my peronality and related items that are outside my
-            career.
+            In the workplace and in my teams I love to keep a welcoming
+            atmosphere that when mistakes are made are able to kindly guide
+            others to the right direction. The ability to reflect on losses and
+            celebrate wins is something I highly value within a team setting. In
+            my mind, a rising tide lifts all boats so if the goal is to get
+            people on the same page and happy in general then that's helpful for
+            everybody.
             <br />
-            You can check out the overview of my personal projects below as well
-            as my personal takeaways from my previous jobs
+            Aside from that I also like to be as concise as possible. Along the
+            same vein, I like to be quick in my work and get to the next stop.
+            <br />
+            Individually, I like to understand concepts inside and out so I can
+            interact with tools as fluidly as I do with a language. This is
+            especially true when my curiosity and interest points me in a
+            certain direction. Something that extends outside of the workplace.
+            <br />
+            <br />
+            Outside of work I like to keep to myself. I'm an introvert and my
+            hobbies reflect that. I've loved video games since I was young and
+            grew an appreciation for tech because of it. Over the years that
+            appreciation for tech meant me dismantling video game hardware to
+            dismantling general tech hardware and eventually getting me curious
+            about the software in video games. From there I move on to the
+            software in unrelated technology and so on and so forth. Point being
+            my passion is often what leads me into new and interesting paths. I
+            pride myself a lot on this aspect and I plan on continuing this
+            trend.
+            <br />
+            <br />
+            Scroll through the website to find out more about my personal
+            projects and career.
             <br />
           </p>
           <footer>
-            Contact Info
             <br />
-            <Link href="https://github.com/alexrojas431">
-              <Image
-                src={GitHubIcon}
-                alt="GitHub Icon, click to go to my GitHub Page"
-                width={50}
-                height={50}
-              />
-            </Link>
+            <h3>Contact Info</h3>
             <br />
-            My GitHub Page
-            <Link href="https://github.com/alexrojas431">
-              <Image
-                src={LinkedInIcon}
-                alt="LinkedIn Icon, click to go to my LinkedIn page"
-                width={50}
-                height={50}
-              />
-            </Link>
-            <br />
-            My LinkedIn Page
+            <span className={styles.contactGrid}>
+              <span>
+                <Link href="https://github.com/alexrojas431">
+                  <Image
+                    src={GitHubIcon}
+                    alt="GitHub Icon, click to go to my GitHub Page"
+                    width={50}
+                    height={50}
+                  />
+                </Link>
+                <br />
+                My GitHub Page
+              </span>
+              <span>
+                <Link href="https://github.com/alexrojas431">
+                  <Image
+                    src={LinkedInIcon}
+                    alt="LinkedIn Icon, click to go to my LinkedIn page"
+                    width={50}
+                    height={50}
+                  />
+                </Link>
+                <br />
+                My LinkedIn Page
+              </span>
+            </span>
           </footer>
         </section>
       </article>
       <article>
         <header>
-          <h1>List of my personal projects</h1>
+          <h1>My personal projects</h1>
         </header>
         <div className={styles.grid}>
           <Link href="/projects/starwarsapi">

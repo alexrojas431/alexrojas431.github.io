@@ -41,6 +41,15 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
     background-color: $background-color_1;
     border: 1px solid rgba(globals.$callout-border-rgb, 0.3);
     border-radius: globals.$border-radius;
+    .contactGrid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(50%, auto));
+      width: 100%;
+      text-align: center;
+      margin: auto;
+      border-radius: globals.$border-radius;
+      border: 1px solid globals.$card-border-rgb;
+    }
   }
   .grid {
     display: grid;
@@ -68,8 +77,8 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
       text-wrap: balance;
     }
   }
-  .jobList{
-    background-color: brown;
+  .jobList {
+    background-color: rgb(187, 180, 174);
     width: 100%;
   }
 }
