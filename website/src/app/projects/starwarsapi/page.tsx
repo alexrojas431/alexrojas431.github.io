@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../projects.module.scss";
+import styles from "@/projects/projects.module.scss";
 import star from "./starwars.module.scss";
-import GitHubIcon from "../../../../public/github-mark/github-mark-white.svg";
-import APIArch from "../../../../public/StarWarsCompAPI-Architecture.png";
-import wikiIcon from "../../../../public/wiki icon.png";
+import GitHubIcon from "@/public/github-mark/github-mark-white.svg";
+import APIArch from "@/public/StarWarsCompAPI-Architecture.png";
+import wikiIcon from "@/public/wiki icon.png";
 
 export default function StarWarsAPI() {
   return (

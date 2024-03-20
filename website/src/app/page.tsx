@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./home.module.scss";
-import GitHubIcon from "../../public/github-mark/github-mark-white.svg";
-import LinkedInIcon from "../../public/LinkedIn-Logos/In-Blue-128.png";
-import ProfilePic from "../../public/AlexRProfilePic.jpg";
+import GitHubIcon from "@/public/github-mark/github-mark-white.svg";
+import LinkedInIcon from "@/public/LinkedIn-Logos/In-Blue-128.png";
+import ProfilePic from "@/public/AlexRProfilePic.jpg";
 
 export default function Home() {
   return (
