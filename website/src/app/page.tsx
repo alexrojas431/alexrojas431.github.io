@@ -83,7 +83,7 @@ export default function Home() {
                 My GitHub Page
               </span>
               <span>
-                <Link href="https://github.com/alexrojas431">
+                <Link href="https://www.linkedin.com/in/alexanderrojas431/">
                   <Image
                     src={LinkedInIcon}
                     alt="LinkedIn Icon, click to go to my LinkedIn page"
