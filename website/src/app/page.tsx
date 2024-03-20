@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./home.module.scss";
-import GitHubIcon from "@/public/github-mark/github-mark-white.svg";
-import LinkedInIcon from "@/public/LinkedIn-Logos/In-Blue-128.png";
 import ProfilePic from "@/public/AlexRProfilePic.jpg";
+import LogoRow from "@/lib/components/logoRow";
+import { homeLogoData } from "@/lib/data/logoData";
 
 export default function Home() {
   return (
@@ -70,30 +70,7 @@ export default function Home() {
             <h3>Contact Info</h3>
             <br />
             <span className={styles.contactGrid}>
-              <span>
-                <Link href="https://github.com/alexrojas431">
-                  <Image
-                    src={GitHubIcon}
-                    alt="GitHub Icon, click to go to my GitHub Page"
-                    width={50}
-                    height={50}
-                  />
-                </Link>
-                <br />
-                My GitHub Page
-              </span>
-              <span>
-                <Link href="https://www.linkedin.com/in/alexanderrojas431/">
-                  <Image
-                    src={LinkedInIcon}
-                    alt="LinkedIn Icon, click to go to my LinkedIn page"
-                    width={50}
-                    height={50}
-                  />
-                </Link>
-                <br />
-                My LinkedIn Page
-              </span>
+              <LogoRow logoData={homeLogoData}/>
             </span>
           </footer>
         </section>

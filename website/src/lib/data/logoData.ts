@@ -33,8 +33,8 @@ export const starLogoData: LogoInterface[] = [
     id: "starLogo-2",
     link: 'https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API/wiki',
     image: wikiIcon,
-    alt: 'Wiki icon',
-    description: 'Project Wiki, click to go to the projects wiki',
+    alt: 'Wiki icon, click to go to the projects wiki',
+    description: 'Project Wiki',
     credit: 'Wiki icons created by Freepik - Flaticon',
   },
   {

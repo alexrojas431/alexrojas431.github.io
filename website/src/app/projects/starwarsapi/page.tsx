@@ -1,10 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import styles from "@/projects/projects.module.scss";
 import star from "./starwars.module.scss";
-import GitHubIcon from "@/public/github-mark/github-mark-white.svg";
-import APIArch from "@/public/StarWarsCompAPI-Architecture.png";
-import wikiIcon from "@/public/wiki icon.png";
+import LogoRow from "@/lib/components/logoRow";
+import { starLogoData } from "@/lib/data/logoData";
 
 export default function StarWarsAPI() {
   return (
@@ -20,44 +18,7 @@ export default function StarWarsAPI() {
         <header>
           <h1>Star Wars API</h1>
           <div className={styles.grid} id={star.starGrid}>
-            <span>
-              <Link href="https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API">
-                <Image
-                  src={GitHubIcon}
-                  alt="GitHub Icon"
-                  width={50}
-                  height={50}
-                />
-              </Link>
-              <br />
-              Code on GitHub
-            </span>
-            <span>
-              <Link href="https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API/wiki">
-                <Image src={wikiIcon} alt="Wiki icon" width={50} height={50} />
-              </Link>
-              <br />
-              Project Wiki
-              <br />
-              <Link
-                className={styles.credits}
-                href="https://www.flaticon.com/free-icons/wiki"
-              >
-                Wiki icons created by Freepik - Flaticon
-              </Link>
-            </span>
-            <span>
-              <Link href="https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API/wiki/Architecture-Overview">
-                <Image
-                  src={APIArch}
-                  alt="Picture of architecture of API"
-                  width={50}
-                  height={50}
-                />
-              </Link>
-              <br />
-              Detailed explanation of architecture of API
-            </span>
+            <LogoRow logoData={starLogoData}/>
           </div>
         </header>
         <br />
