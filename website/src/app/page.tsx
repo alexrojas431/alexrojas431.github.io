@@ -141,6 +141,18 @@ export default function Home() {
               example of that ...
             </p>
           </section>
+          <section className={styles.card}>
+            <h2>
+              My Personal Website <span>-&gt;</span>
+            </h2>
+            <p>
+              I try to learn new things and challenge myself on every project I
+              contribute to. It's no different here, since I'm no stranger to
+              making full stack websites let alone the front end for those
+              websites, I decided to use some new technologies. For instance I'm
+              using Next.JS as well as Typescript ...
+            </p>
+          </section>
         </div>
       </article>
       <article className={styles.jobList}>
