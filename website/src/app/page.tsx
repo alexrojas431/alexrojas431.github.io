@@ -1,9 +1,10 @@
-import Link from "next/link";
 import Image from "next/image";
-import styles from "./home.module.scss";
-import ProfilePic from "@/public/AlexRProfilePic.jpg";
 import LogoRow from "@/lib/components/logoRow";
 import { homeLogoData } from "@/lib/data/logoData";
+import { projectCardData } from "@/lib/data/projectCardData";
+import ProjectCard from "@/lib/components/projectCard";
+import ProfilePic from "@/public/AlexRProfilePic.jpg";
+import styles from "@/app/home.module.scss";
 
 export default function Home() {
   return (
@@ -22,7 +23,7 @@ export default function Home() {
       <article className={styles.description}>
         <section>
           <header>
-            <h2>Myself</h2>
+            <h2>About Myself</h2>
           </header>
           <p>
             <br />
@@ -70,7 +71,7 @@ export default function Home() {
             <h3>Contact Info</h3>
             <br />
             <span className={styles.contactGrid}>
-              <LogoRow logoData={homeLogoData}/>
+              <LogoRow logoData={homeLogoData} />
             </span>
           </footer>
         </section>
@@ -80,56 +81,7 @@ export default function Home() {
           <h1>My personal projects</h1>
         </header>
         <div className={styles.grid}>
-          <Link href="/projects/starwarsapi">
-            <section className={styles.card}>
-              <h2>
-                Star Wars API <span>-&gt;</span>
-              </h2>
-              <p>
-                This API spits out data within a StarWars themed board game.
-                This was a 4 month project with 100+ commits with cross
-                collaboration with a small network of developers ...
-              </p>
-            </section>
-          </Link>
-          <section className={styles.card}>
-            <h2>
-              ReactJam Winter 23/24: Cyberpunk Tycoon <span>-&gt;</span>
-            </h2>
-            <p>
-              Along with a friend of mine, we used React.JS to make a game
-              within 12 days in the event called ReactJam 23/24. One thing
-              you'll notice is that it has little to it. I prefer the work we
-              did on the project rather than the result. It was our first game
-              jam and our first time making a video game. Due to this, we needed
-              to learn a lot very quickly. The biggest thing was utilizing
-              Graphic resources as best as possible ...
-            </p>
-          </section>
-          <section className={styles.card}>
-            <h2>
-              Rollback Netcode Implementation <span>-&gt;</span>
-            </h2>
-            <p>
-              One of the reasons why I decided to pursue a career in programming
-              is because of my interest in making videogames. While I'm not as
-              interested in a career within the videogame industry, I still love
-              videogames as a hobby and this personal project is just another
-              example of that ...
-            </p>
-          </section>
-          <section className={styles.card}>
-            <h2>
-              My Personal Website <span>-&gt;</span>
-            </h2>
-            <p>
-              I try to learn new things and challenge myself on every project I
-              contribute to. It's no different here, since I'm no stranger to
-              making full stack websites let alone the front end for those
-              websites, I decided to use some new technologies. For instance I'm
-              using Next.JS as well as Typescript ...
-            </p>
-          </section>
+          <ProjectCard projectCardData={projectCardData} />
         </div>
       </article>
       <article className={styles.jobList}>
