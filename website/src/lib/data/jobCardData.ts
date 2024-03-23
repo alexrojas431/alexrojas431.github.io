@@ -1,7 +1,7 @@
 import { JobCardInterface } from "@/interface/jobCardInterface";
 import CodeOrange from "@/public/DFS/code_orange entry.jpg";
 
-export const JobCardData: JobCardInterface[] = [
+export const jobCardData: JobCardInterface[] = [
   {
     id: "jobCard-1",
     company: "Discover Financial Services",
@@ -10,8 +10,8 @@ export const JobCardData: JobCardInterface[] = [
     location: "Dekalb, IL, USA",
     images: [
       {
-        id: "1-image-01",
-        image: CodeOrange,
+        id: "jobCard1-image-01",
+        src: CodeOrange,
         alt: "A picture of the code_orange space when you enter the office.",
       },
     ],

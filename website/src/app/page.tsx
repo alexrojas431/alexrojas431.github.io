@@ -1,10 +1,11 @@
 import Image from "next/image";
 import LogoRow from "@/lib/components/logoRow";
+import ProjectCard from "@/lib/components/projectCard";
+import JobCard from "@/lib/components/jobCard";
 import { homeLogoData } from "@/lib/data/logoData";
 import { projectCardData } from "@/lib/data/projectCardData";
-import ProjectCard from "@/lib/components/projectCard";
+import { jobCardData } from "@/lib/data/jobCardData";
 import ProfilePic from "@/public/AlexRProfilePic.jpg";
-import CodeOrange from "@/public/DFS/code_orange entry.jpg";
 import styles from "@/app/home.module.scss";
 
 export default function Home() {
@@ -87,50 +88,12 @@ export default function Home() {
       </article>
       <article className={styles.jobList}>
         <header>
-          <h1>List of what I took away from my jobs</h1>
-          Below is not what I did during my previous jobs but what I took away
-          from my then jobs.
+          <h1>My jobs</h1>
+          Below better describes what I took away from my jobs rather than what
+          I did. For that you can go to my LinkedIn page.
         </header>
         <br />
-        <section className={styles.jobCard}>
-          <header>
-            <h2>Discover Financial Services</h2>
-            <h3>code_orange program</h3>
-            <h4>Campus Innovator (Intern position), May 2019 - August 2020</h4>
-            <h5>Dekalb, IL, USA</h5>
-          </header>
-          <span className={styles.imgSection}>
-            <span>
-              <Image
-                src={CodeOrange}
-                alt="A picture of the code_orange space when you enter the office."
-                width={150}
-                height={100}
-              />
-            </span>
-          </span>
-          <p>
-            At this point in time, I was still in university as a sophomore. I
-            was thinking about my future past university and how I would be able
-            to test my knowledge. Luckily for me Discover Financial Services
-            (DFS) and Northern Illinois University (NIU) had just entered a
-            partnership to create an internship program for computer scientists
-            that would work within a space sectioned off within the campus. The
-            program came into existence at a time when I was interested in
-            looking to work for one and not only did this program have a pay
-            rate it was also very convenient. Upon being accepted into the
-            program, I was introduced to a bunch of likeminded people doing what
-            I was passionate something that only reaffirmed that I was on the
-            right path. By the end of the program not only did I get to exert my
-            knowledge and creativity in creating around 9 full stack
-            applications, but I also had the pleasure of working with several
-            intelligent and kind people. I've had such a comradery with my
-            teammates and coworkers that some have even become very close
-            friends of mine. My first entry into the professional workplace was
-            a great first impression. It was such a great time that it helped
-            foster my creativity and my passion for my profession.
-          </p>
-        </section>
+        <JobCard jobCardData={jobCardData} />
       </article>
     </main>
   );

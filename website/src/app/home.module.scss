@@ -83,6 +83,7 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
     align-items: center;
     background-color: rgb(187, 180, 174);
     width: 100%;
+    color: black;
     .jobCard {
       display: grid;
       grid-template-areas:
@@ -94,13 +95,11 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
       width: 80%;
       header {
         grid-area: header;
-        background-color: black;
       }
       .imgSection {
         display: grid;
         grid-template-columns: 1fr;
         grid-area: img;
-        background-color: red;
         span {
           max-width: 100%;
           max-height: auto;
@@ -108,7 +107,6 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
       }
       p {
         grid-area: desc;
-        background-color: green;
       }
     }
   }
