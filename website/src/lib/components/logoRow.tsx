@@ -18,14 +18,21 @@ const LogoRow = (p: Props) => {
       {p.logoData.map((logo: LogoInterface) => (
         <span key={logo.id}>
           <Link href={logo.link}>
-            <Image src={logo.image} alt={logo.alt} width={50} height={50} />
+            <Image
+              src={logo.image.src}
+              alt={logo.image.alt}
+              width={50}
+              height={50}
+            />
           </Link>
           <br />
           {logo.description}
-          {logo.credit && (
+          {logo.image.credits && logo.image.creditLink && (
             <Fragment>
               <br />
-              <span style={credits}>{logo.credit}</span>
+              <Link href={logo.image.creditLink} style={credits}>
+                {logo.image.credits}
+              </Link>
             </Fragment>
           )}
         </span>

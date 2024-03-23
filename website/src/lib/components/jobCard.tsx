@@ -29,7 +29,7 @@ const ProjectCard = (p: Props) => {
             {job.images.map((image: ImageSetInterface) => (
               <span key={image.id}>
                 <Image
-                  src={image.image}
+                  src={image.src}
                   alt={image.alt}
                   width={150}
                   height={100}
@@ -37,8 +37,8 @@ const ProjectCard = (p: Props) => {
                 {image.credits && image.creditLink && (
                   <Fragment>
                     <br />
-                    <Link href={image.creditLink}>
-                      <span style={credits}>{image.credits}</span>
+                    <Link href={image.creditLink} style={credits}>
+                      {image.credits}
                     </Link>
                   </Fragment>
                 )}
