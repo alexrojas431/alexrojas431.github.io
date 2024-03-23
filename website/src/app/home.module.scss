@@ -1,4 +1,4 @@
-@use "globals.scss";
+@use "./globals.scss";
 
 $background-color_1: rgba(globals.$callout-rgb, 0.5);
 
@@ -7,38 +7,55 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 0.5rem;
   min-height: 100vh;
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    span {
+      border-radius: 100px;
+      overflow: hidden;
+    }
+  }
+  article {
+    header {
+      text-align: center;
+    }
+  }
   .description {
-    display: inherit;
-    justify-content: inherit;
-    align-items: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 1rem;
+    gap: 1rem;
     font-size: 0.85rem;
     max-width: globals.$max-width;
     width: 100%;
     z-index: 2;
     font-family: globals.$font-mono;
-    article {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    p {
-      position: relative;
-      margin: 0;
-      padding: 1rem;
-      background-color: $background-color_1;
-      border: 1px solid rgba(globals.$callout-border-rgb, 0.3);
+    background-color: $background-color_1;
+    border: 1px solid rgba(globals.$callout-border-rgb, 0.3);
+    border-radius: globals.$border-radius;
+    .contactGrid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(50%, auto));
+      width: 100%;
+      text-align: center;
+      margin: auto;
       border-radius: globals.$border-radius;
+      border: 1px solid globals.$card-border-rgb;
     }
   }
-
   .grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(33%, auto));
+    grid-template-columns: repeat(4, minmax(25%, auto));
     max-width: 100%;
-    width: globals.$max-width;
+    width: 98%;
   }
   .card {
     padding: 1rem 1.2rem;
@@ -56,8 +73,43 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
       opacity: 0.6;
       font-size: 1rem;
       line-height: 1.5;
-      max-width: 30ch;
       text-wrap: balance;
+    }
+  }
+  .jobList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(187, 180, 174);
+    width: 100%;
+    .jobCard {
+      display: grid;
+      grid-template-areas:
+        "header header header"
+        "img desc desc"
+        "img desc desc";
+      padding: 1rem;
+      gap: 1rem;
+      width: 80%;
+      header {
+        grid-area: header;
+        background-color: black;
+      }
+      .imgSection {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-area: img;
+        background-color: red;
+        span {
+          max-width: 100%;
+          max-height: auto;
+        }
+      }
+      p {
+        grid-area: desc;
+        background-color: green;
+      }
     }
   }
 }
