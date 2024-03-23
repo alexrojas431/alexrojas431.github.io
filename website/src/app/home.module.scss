@@ -77,8 +77,40 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
     }
   }
   .jobList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     background-color: rgb(187, 180, 174);
     width: 100%;
+    .jobCard {
+      display: grid;
+      grid-template-areas:
+        "header header header"
+        "img desc desc"
+        "img desc desc";
+      padding: 1rem;
+      gap: 1rem;
+      width: 80%;
+      header {
+        grid-area: header;
+        background-color: black;
+      }
+      .imgSection {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-area: img;
+        background-color: red;
+        span {
+          max-width: 100%;
+          max-height: auto;
+        }
+      }
+      p {
+        grid-area: desc;
+        background-color: green;
+      }
+    }
   }
 }
 
