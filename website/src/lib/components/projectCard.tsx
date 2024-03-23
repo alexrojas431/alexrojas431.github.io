@@ -16,7 +16,11 @@ const ProjectCard = (p: Props) => {
             <h2>
               {proj.title} <span>-&gt;</span>
             </h2>
-            <p>{proj.description}</p>
+            <p>
+              {proj.description}
+              <br />
+              Click for more information
+            </p>
           </section>
         </Link>
       ))}

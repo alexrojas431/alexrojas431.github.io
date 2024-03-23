@@ -1,8 +1,9 @@
 import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { JobCardInterface } from "../interface/jobCardInterface";
-import { ImageSetInterface } from "../interface/imageSetInterface";
+import { JobCardInterface } from "@/interface/jobCardInterface";
+import { ImageSetInterface } from "@/interface/imageSetInterface";
+import { splitContent } from "@/util/splitContent";
 import styles from "@/app/home.module.scss";
 
 interface Props {
@@ -45,7 +46,7 @@ const ProjectCard = (p: Props) => {
               </span>
             ))}
           </span>
-          <p>{job.description}</p>
+          <p>{splitContent(job.id, job.description)}</p>
         </section>
       ))}
     </Fragment>

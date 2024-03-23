@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { LogoInterface } from "@/interface/logoInterface";
 import { Fragment } from "react";
+import { LogoInterface } from "@/interface/logoInterface";
 
 interface Props {
   readonly logoData: LogoInterface[];
