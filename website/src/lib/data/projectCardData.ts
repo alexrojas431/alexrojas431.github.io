@@ -27,10 +27,10 @@ export const projectCardData: ProjectCardInterface[] = [
     link: "/projects/starwarsapi",
     title: "My Personal Website",
     description: [
-        "I try to learn new things and challenge myself on every project I contribute to.",
-        "It's no different here, since I'm no stranger to making full stack websites let alone the front end for those websites,",
-        "I decided to use some new technologies. For instance I'm using Next.JS as well as Typescript ...",
-        "Click for more information"
-      ].join(" "),
-    }
+      "I try to learn new things and challenge myself on every project I contribute to.",
+      "It's no different here, since I'm no stranger to making full stack websites let alone the front end for those websites,",
+      "I decided to use some new technologies. For instance I'm using Next.JS as well as Typescript ...",
+      "Click for more information",
+    ].join(" "),
+  },
 ];
