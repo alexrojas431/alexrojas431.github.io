@@ -57,25 +57,7 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
     max-width: 100%;
     width: 98%;
   }
-  .card {
-    padding: 1rem 1.2rem;
-    @include globals.beforeHover;
-    span {
-      display: inline-block;
-      transition: transform 200ms;
-    }
-    h2 {
-      font-weight: 600;
-      margin-bottom: 0.7rem;
-    }
-    p {
-      margin: 0;
-      opacity: 0.6;
-      font-size: 1rem;
-      line-height: 1.5;
-      text-wrap: balance;
-    }
-  }
+
   .jobList {
     display: flex;
     flex-direction: column;
@@ -84,23 +66,6 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
     background-color: rgb(187, 180, 174);
     width: 100%;
     color: black;
-  }
-}
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  .card {
-    @include globals.hoverRight;
-  }
-}
-
-@media (prefers-reduced-motion) {
-  .card {
-    &:hover {
-      span {
-        transform: none;
-      }
-    }
   }
 }
 

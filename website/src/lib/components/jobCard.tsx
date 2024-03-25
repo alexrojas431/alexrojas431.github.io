@@ -10,7 +10,7 @@ interface Props {
   readonly jobCardData: JobCardInterface[];
 }
 
-const ProjectCard = (p: Props) => {
+const JobCard = (p: Props) => {
   const credits = {
     fontSize: "75%",
     fontStyle: "italic",
@@ -53,4 +53,4 @@ const ProjectCard = (p: Props) => {
   );
 };
 
-export default ProjectCard;
+export default JobCard;

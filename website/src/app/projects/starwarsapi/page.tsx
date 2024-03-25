@@ -2,7 +2,7 @@ import Link from "next/link";
 import LogoRow from "@/lib/components/logoRow";
 import { starLogoData } from "@/lib/data/logoData";
 import styles from "@/scss/projects.module.scss";
-import star from "@scss/pages/starwars.module.scss";
+import star from "@/scss/pages/starwars.module.scss";
 
 export default function StarWarsAPI() {
   return (
