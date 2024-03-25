@@ -36,12 +36,12 @@ $callout-border-rgb: rgb(172, 175, 176);
 $card-rgb: rgb(180, 185, 188);
 $card-border-rgb: rgb(131, 134, 135);
 $project-card-rgb: rgb(67, 72, 78);
-$card-shadow-left: -4.4px 3.4px 5.1px rgba(46, 4, 144, 0.165),
-  -9.7px 7.5px 10.6px rgba(46, 4, 144, 0.234),
-  -17px 13px 17.4px rgba(46, 4, 144, 0.288),
-  -28.1px 21.5px 27.2px rgba(46, 4, 144, 0.342),
-  -47.9px 36.7px 44.7px rgba(46, 4, 144, 0.411),
-  -102px 78px 96px rgba(46, 4, 144, 0.57);
+$card-shadow-left: -4.4px 3.4px 5.1px rgba(2, 12, 57, 0.165),
+  -9.7px 7.5px 10.6px rgba(2, 12, 57, 0.234),
+  -17px 13px 17.4px rgba(2, 12, 57, 0.288),
+  -28.1px 21.5px 27.2px rgba(2, 12, 57, 0.342),
+  -47.9px 36.7px 44.7px rgba(2, 12, 57, 0.411),
+  -102px 78px 96px rgba(2, 12, 57, 0.57);
 
 @mixin beforeHover {
   background: rgba($card-rgb, 0);

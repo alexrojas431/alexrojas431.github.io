@@ -6,7 +6,7 @@ import { homeLogoData } from "@/lib/data/logoData";
 import { projectCardData } from "@/lib/data/projectCardData";
 import { jobCardData } from "@/lib/data/jobCardData";
 import ProfilePic from "@/public/AlexRProfilePic.jpg";
-import styles from "@/app/home.module.scss";
+import styles from "@/scss/pages/home.module.scss";
 
 export default function Home() {
   return (

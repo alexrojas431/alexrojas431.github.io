@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Fragment } from "react";
 import { ProjectCardInterface } from "@/interface/projectCardInterface";
-import styles from "@/app/home.module.scss";
+import styles from "@/scss/pages/home.module.scss";
 
 interface Props {
   readonly projectCardData: ProjectCardInterface[];

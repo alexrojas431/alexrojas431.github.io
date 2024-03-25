@@ -1,0 +1,37 @@
+.jobCard {
+  display: grid;
+  grid-template-areas:
+    "header header header header header"
+    "img img desc desc desc"
+    "img img desc desc desc";
+  padding: 1rem;
+  gap: 1rem;
+  width: 80%;
+  header {
+    grid-area: header;
+    h2 {
+      color: blue;
+    }
+    h3 {
+      color: green;
+    }
+    h4 {
+      color: green;
+    }
+    h5 {
+      color: red;
+    }
+  }
+  .imgSection {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-area: img;
+    span {
+      max-width: 100%;
+      max-height: auto;
+    }
+  }
+  p {
+    grid-area: desc;
+  }
+}

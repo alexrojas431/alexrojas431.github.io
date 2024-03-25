@@ -4,7 +4,7 @@ import Link from "next/link";
 import { JobCardInterface } from "@/interface/jobCardInterface";
 import { ImageSetInterface } from "@/interface/imageSetInterface";
 import { splitContent } from "@/util/splitContent";
-import styles from "@/app/home.module.scss";
+import styles from "@/scss/components/jobCard.module.scss";
 
 interface Props {
   readonly jobCardData: JobCardInterface[];
