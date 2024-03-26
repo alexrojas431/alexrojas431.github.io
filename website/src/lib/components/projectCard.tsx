@@ -19,9 +19,7 @@ const ProjectCard = (p: Props) => {
             <p>
               {proj.description}
               <br />
-              <div>
-                <b>Click for more information</b>
-              </div>
+              <b>Click for more information</b>
             </p>
           </section>
         </Link>
