@@ -74,6 +74,7 @@ $star-shadow-right: 2.9px 1.5px 1.9px rgba(157, 157, 157, 0.119),
 
 @media (prefers-reduced-motion) {
   #twinkle {
+    -webkit-animation: none;
     animation: none;
   }
 }

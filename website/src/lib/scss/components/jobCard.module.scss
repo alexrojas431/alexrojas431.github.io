@@ -10,16 +10,19 @@
   header {
     grid-area: header;
     h2 {
-      color: blue;
+      color: rgb(32, 91, 150);
     }
     h3 {
-      color: green;
+      color: rgb(72, 125, 79);
+      font-weight: 550;
     }
     h4 {
-      color: green;
+      color: rgb(86, 144, 47);
+      font-weight: 500;
     }
     h5 {
-      color: red;
+      color: rgb(156, 44, 6);
+      font-weight: 450;
     }
   }
   .imgSection {
