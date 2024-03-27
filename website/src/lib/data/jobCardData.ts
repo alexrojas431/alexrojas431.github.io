@@ -1,18 +1,25 @@
 import { JobCardInterface } from "@/interface/jobCardInterface";
 import CodeOrange from "@/public/DFS/code_orange entry.jpg";
+import TCSLogo from "@/public/TCS/TCS.NS.png";
+import WalgreensLogo from "@/public/TCS/W_logo_RGB.png";
 
 export const jobCardData: JobCardInterface[] = [
   {
-    id: "jobCard-1",
+    id: "jobCard-2",
     company: "Tata Consultancy Services",
     department: "Walgreens RxI RunOps supports group",
     position: "TCS Contractor, March 2021 - March 2022",
     location: "Remote",
     images: [
       {
-        id: "jobCard1-image-01",
-        src: CodeOrange,
+        id: "jobCard2-image-01",
+        src: TCSLogo,
         alt: "A picture of the TCS logo.",
+      },
+      {
+        id: "jobCard2-image-02",
+        src: WalgreensLogo,
+        alt: "A picture of the Walgreens logo.",
       },
     ],
     description: [
@@ -32,14 +39,14 @@ export const jobCardData: JobCardInterface[] = [
     ].join(" "),
   },
   {
-    id: "jobCard-2",
+    id: "jobCard-1",
     company: "Discover Financial Services",
     department: "code_orange program",
     position: "Campus Innovator (Intern), May 2019 - August 2020",
     location: "Dekalb, IL, USA",
     images: [
       {
-        id: "jobCard2-image-01",
+        id: "jobCard1-image-01",
         src: CodeOrange,
         alt: "A picture of the code_orange space when you enter the office.",
       },

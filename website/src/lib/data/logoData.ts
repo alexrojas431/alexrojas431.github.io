@@ -1,7 +1,7 @@
 import { LogoInterface } from "@/interface/logoInterface";
-import GitHubIcon from "@/public/github-mark/github-mark-white.svg";
-import LinkedInIcon from "@/public/LinkedIn-Logos/In-Blue-128.png";
-import APIArch from "@/public/StarWarsCompAPI-Architecture.png";
+import GitHubIcon from "@/public/github-mark-white.svg";
+import LinkedInIcon from "@/public/In-Blue-128.png";
+import APIArch from "@/public/StarWars/StarWarsCompAPI-Architecture.png";
 import wikiIcon from "@/public/wiki icon.png";
 
 export const homeLogoData: LogoInterface[] = [
