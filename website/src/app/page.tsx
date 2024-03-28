@@ -82,7 +82,7 @@ export default function Home() {
         <header>
           <h1>My personal projects</h1>
         </header>
-        <div className={styles.grid}>
+        <div className={styles.projectGrid}>
           <ProjectCard projectCardData={projectCardData} />
         </div>
       </article>

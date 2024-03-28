@@ -2,22 +2,23 @@ import { JobCardInterface } from "@/interface/jobCardInterface";
 import CodeOrange from "@/public/DFS/code_orange entry.jpg";
 import TCSLogo from "@/public/TCS/TCS.NS.png";
 import WalgreensLogo from "@/public/TCS/W_logo_RGB.png";
+import mthreeLogo from "@/public/mthree/mthree logo-01.webp";
 
 export const jobCardData: JobCardInterface[] = [
   {
-    id: "jobCard-2",
+    id: "jobCard-3",
     company: "Tata Consultancy Services",
     department: "Walgreens RxI RunOps supports group",
     position: "TCS Contractor, March 2021 - March 2022",
     location: "Remote",
     images: [
       {
-        id: "jobCard2-image-01",
+        id: "jobCard3-image-01",
         src: TCSLogo,
         alt: "A picture of the TCS logo.",
       },
       {
-        id: "jobCard2-image-02",
+        id: "jobCard3-image-02",
         src: WalgreensLogo,
         alt: "A picture of the Walgreens logo.",
       },
@@ -39,14 +40,14 @@ export const jobCardData: JobCardInterface[] = [
     ].join(" "),
   },
   {
-    id: "jobCard-1",
+    id: "jobCard-2",
     company: "Discover Financial Services",
     department: "code_orange program",
     position: "Campus Innovator (Intern), May 2019 - August 2020",
     location: "Dekalb, IL, USA",
     images: [
       {
-        id: "jobCard1-image-01",
+        id: "jobCard2-image-01",
         src: CodeOrange,
         alt: "A picture of the code_orange space when you enter the office.",
       },
@@ -61,6 +62,38 @@ export const jobCardData: JobCardInterface[] = [
       "I've had such a comradery with my teammates and coworkers that some have even become very close friends of mine.",
       "This was my first entry into the professional workplace and it was a great first impression.",
       "\n\nI regard my time here so highly because it helped foster my creativity and my passion for my profession.",
+    ].join(" "),
+  },
+  {
+    id: "jobCard-1",
+    company: "mthree",
+    department: "Software Guild training",
+    position: "IT Consultant, Dec 2020 - April 2021",
+    location: "Remote",
+    images: [
+      {
+        id: "jobCard1-image-01",
+        src: mthreeLogo,
+        alt: "A picture of the mthree logo",
+      },
+    ],
+    description: [
+      "The second I was straight out of university I, like most, wanted to get a job immediately.",
+      "Luckily for me I was able to land on mthree.",
+      "\n\nmthree was fun as my prior experience within the internship really gave me a leg up there.",
+      "At mthree we were instructed to participate in individual work, later working in a group to make a big application, the full stack application being something I did regularly in the internship.",
+      "Not only was I able to make applications at a good pace, I was able to take up a leadership role.",
+      "\n\nMy new found leadership role was something I look back fondly on within my time in mthree.",
+      "Throughout every single prior experience, I was almost always new and in need of some kind of mentorship or tutor.",
+      "In mthree, my role switched, I was the one mentoring others, I also played a significant part in designing the group app.",
+      "It was an experience I did not expect myself to have so soon at that point in my career.",
+      "\n\nMy time in mthree was also interesting because it marks one of my failures.",
+      "At the end of the individual work and group work, there was an interview with recruiters from an external company.",
+      "I did pretty bad in my interview and the biggest reason why I did bad was because of my communication skills, specifically communicating while under pressure and communication concisely and accurately.",
+      "In hindsight the job I held in TCS afterwards was essential since the obstacles that made me trip were the same ones I'd successfully overcome while working in TCS.",
+      "It's nobody's preference to relitigate weaknesses or past failures but I think sometimes it's necessary context for the achivements that I would later take.",
+      "\n\nIt's a little hard to learn more about the company, even as I looked back for the sake for this post, I found out that the company had changed.",
+      "If you'd like to learn more about the company then the name they're now known as is Wiley Edge.",
     ].join(" "),
   },
 ];
