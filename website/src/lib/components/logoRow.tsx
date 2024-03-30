@@ -2,17 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
 import { LogoInterface } from "@/interface/logoInterface";
+import styles from "@/scss/components/logoRow.module.scss";
 
 interface Props {
   readonly logoData: LogoInterface[];
 }
 
 const LogoRow = (p: Props) => {
-  const credits = {
-    fontSize: "75%",
-    fontStyle: "italic",
-  };
-
   return (
     <Fragment>
       {p.logoData.map((logo: LogoInterface) => (
@@ -30,7 +26,7 @@ const LogoRow = (p: Props) => {
           {logo.image.credits && logo.image.creditLink && (
             <Fragment>
               <br />
-              <Link href={logo.image.creditLink} style={credits}>
+              <Link href={logo.image.creditLink} className={styles.credits}>
                 {logo.image.credits}
               </Link>
             </Fragment>

@@ -11,11 +11,6 @@ interface Props {
 }
 
 const JobCard = (p: Props) => {
-  const credits = {
-    fontSize: "75%",
-    fontStyle: "italic",
-  };
-
   return (
     <Fragment>
       {p.jobCardData.map((job: JobCardInterface) => (
@@ -38,7 +33,7 @@ const JobCard = (p: Props) => {
                 {image.credits && image.creditLink && (
                   <Fragment>
                     <br />
-                    <Link href={image.creditLink} style={credits}>
+                    <Link href={image.creditLink} className={styles.credits}>
                       {image.credits}
                     </Link>
                   </Fragment>
