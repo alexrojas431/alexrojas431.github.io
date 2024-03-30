@@ -19,6 +19,7 @@ const LogoRow = (p: Props) => {
               alt={logo.image.alt}
               width={50}
               height={50}
+              priority
             />
           </Link>
           <br />

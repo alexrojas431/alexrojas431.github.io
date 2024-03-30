@@ -19,6 +19,7 @@ export default function Home() {
             alt="A picture of myself - Alexander Rojas"
             width={140}
             height={203}
+            priority
           />
         </span>
       </header>
