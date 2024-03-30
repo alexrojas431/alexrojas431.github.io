@@ -36,7 +36,7 @@ export const starLogoData: LogoInterface[] = [
       src: GitHubIcon,
       alt: "GitHub Icon, click to go to the projects GitHub Page",
     },
-    description: "Code on GitHub",
+    description: "Project code on GitHub",
   },
   {
     id: "starLogo-2",
