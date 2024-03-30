@@ -50,6 +50,8 @@ export const jobCardData: JobCardInterface[] = [
         id: "jobCard2-image-01",
         src: CodeOrange,
         alt: "A picture of the code_orange space when you enter the office.",
+        credits: "Picture taken by NIU on NIU campus from the code_orange front door",
+        creditLink: "https://calendar.niu.edu/event/discover_financial_services_code_orange_program_open_house_6049",
       },
     ],
     description: [

@@ -89,6 +89,7 @@ export default function Home() {
       <article className={styles.jobList}>
         <header>
           <h1>My jobs</h1>
+          <br />
           Below better describes what I took away from my jobs rather than what
           I did. For that you can go to my LinkedIn page.
         </header>

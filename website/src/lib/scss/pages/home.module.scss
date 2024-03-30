@@ -9,6 +9,15 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
   align-items: center;
   padding: 0.5rem;
   min-height: 100vh;
+  article {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    header {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      text-align: center;
+    }
+  }
   .header {
     display: flex;
     flex-direction: row;
@@ -20,15 +29,6 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
     span {
       border-radius: 100px;
       overflow: hidden;
-    }
-  }
-  article {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    header {
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      text-align: center;
     }
   }
   .description {
@@ -53,8 +53,6 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
       width: 100%;
       text-align: center;
       margin: auto;
-      border-radius: globals.$border-radius;
-      border: 1px solid globals.$card-border-rgb;
     }
   }
   .projectGrid {
@@ -67,7 +65,7 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(187, 180, 174);
+    background-color: rgb(210, 206, 203);
     border-radius: 10px;
     width: 100%;
     color: black;
@@ -113,8 +111,6 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
         rgba(globals.$callout-rgb, 0.5)
       );
       background-clip: padding-box;
-      -webkit-backdrop-filter: blur(24px);
-      backdrop-filter: blur(24px);
     }
     div {
       display: flex;

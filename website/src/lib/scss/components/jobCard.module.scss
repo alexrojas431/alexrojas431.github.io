@@ -29,9 +29,13 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-area: img;
+    text-align: center;
+    width: 250px;
     span {
       max-width: 100%;
       max-height: auto;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
   p {
