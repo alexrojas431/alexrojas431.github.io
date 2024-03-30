@@ -1,4 +1,4 @@
-@use "./globals.scss";
+@use "@/scss/globals.scss";
 
 $background-color_1: rgba(globals.$callout-rgb, 0.5);
 
@@ -9,20 +9,26 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
   align-items: center;
   padding: 0.5rem;
   min-height: 100vh;
+  article {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    header {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      text-align: center;
+    }
+  }
   .header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     span {
       border-radius: 100px;
       overflow: hidden;
-    }
-  }
-  article {
-    header {
-      text-align: center;
     }
   }
   .description {
@@ -47,87 +53,22 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
       width: 100%;
       text-align: center;
       margin: auto;
-      border-radius: globals.$border-radius;
-      border: 1px solid globals.$card-border-rgb;
     }
   }
-  .grid {
+  .projectGrid {
     display: grid;
     grid-template-columns: repeat(4, minmax(25%, auto));
     max-width: 100%;
-    width: 98%;
-  }
-  .card {
-    padding: 1rem 1.2rem;
-    @include globals.beforeHover;
-    span {
-      display: inline-block;
-      transition: transform 200ms;
-    }
-    h2 {
-      font-weight: 600;
-      margin-bottom: 0.7rem;
-    }
-    p {
-      margin: 0;
-      opacity: 0.6;
-      font-size: 1rem;
-      line-height: 1.5;
-      text-wrap: balance;
-    }
   }
   .jobList {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(187, 180, 174);
+    background-color: rgb(210, 206, 203);
+    border-radius: 10px;
     width: 100%;
-    .jobCard {
-      display: grid;
-      grid-template-areas:
-        "header header header"
-        "img desc desc"
-        "img desc desc";
-      padding: 1rem;
-      gap: 1rem;
-      width: 80%;
-      header {
-        grid-area: header;
-        background-color: black;
-      }
-      .imgSection {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-area: img;
-        background-color: red;
-        span {
-          max-width: 100%;
-          max-height: auto;
-        }
-      }
-      p {
-        grid-area: desc;
-        background-color: green;
-      }
-    }
-  }
-}
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  .card {
-    @include globals.hoverRight;
-  }
-}
-
-@media (prefers-reduced-motion) {
-  .card {
-    &:hover {
-      span {
-        transform: none;
-      }
-    }
+    color: black;
   }
 }
 
@@ -170,8 +111,6 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
         rgba(globals.$callout-rgb, 0.5)
       );
       background-clip: padding-box;
-      -webkit-backdrop-filter: blur(24px);
-      backdrop-filter: blur(24px);
     }
     div {
       display: flex;

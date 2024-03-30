@@ -1,0 +1,49 @@
+@use "@/scss/globals.scss";
+
+.jobCard {
+  display: grid;
+  grid-template-areas:
+    "header header header header header"
+    "img img desc desc desc"
+    "img img desc desc desc";
+  padding: 1rem;
+  gap: 1rem;
+  width: 80%;
+  header {
+    grid-area: header;
+    h2 {
+      color: rgb(32, 91, 150);
+    }
+    h3 {
+      color: rgb(72, 125, 79);
+      font-weight: 550;
+    }
+    h4 {
+      color: rgb(86, 144, 47);
+      font-weight: 500;
+    }
+    h5 {
+      color: rgb(156, 44, 6);
+      font-weight: 450;
+    }
+  }
+  .imgSection {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-area: img;
+    text-align: center;
+    width: 250px;
+    span {
+      max-width: 100%;
+      max-height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      .credits{
+        @include globals.credits;
+      }
+    }
+  }
+  p {
+    grid-area: desc;
+  }
+}

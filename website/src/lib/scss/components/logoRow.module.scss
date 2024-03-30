@@ -1,0 +1,5 @@
+@use "@/scss/globals.scss";
+
+.credits{
+    @include globals.credits;
+}

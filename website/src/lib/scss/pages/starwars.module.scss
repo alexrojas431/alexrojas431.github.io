@@ -1,7 +1,7 @@
-@use "@/app/globals.scss";
+@use "@/scss/globals.scss";
 
-$starsURL: url("../../../../public/starry\ night\ -\ Transparent.png");
-$twinkleURL: url("../../../../public/twinkling.png");
+$starsURL: url("../../../../public/StarWars/starry\ night\ -\ Transparent.png");
+$twinkleURL: url("../../../../public/StarWars/twinkling.png");
 $star-background-rgb: rgb(80, 83, 89);
 $star-inset-shadow: 10px 10px 10px black inset;
 $star-shadow-right: 2.9px 1.5px 1.9px rgba(157, 157, 157, 0.119),
@@ -74,6 +74,7 @@ $star-shadow-right: 2.9px 1.5px 1.9px rgba(157, 157, 157, 0.119),
 
 @media (prefers-reduced-motion) {
   #twinkle {
+    -webkit-animation: none;
     animation: none;
   }
 }

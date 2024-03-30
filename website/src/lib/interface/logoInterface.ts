@@ -1,10 +1,8 @@
-import { StaticImageData } from "next/image";
+import { ImageSetInterface } from "@/interface/imageSetInterface";
 
 export interface LogoInterface {
   id: string;
   link: string;
-  image: string | StaticImageData;
-  alt: string;
+  image: ImageSetInterface;
   description: string;
-  credit?: string;
 }
