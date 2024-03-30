@@ -33,7 +33,7 @@ const JobCard = (p: Props) => {
                 {image.credits && image.creditLink && (
                   <Fragment>
                     <br />
-                    <Link href={image.creditLink} className={styles.credits}>
+                    <Link href={image.creditLink} title={image.creditTitle} className={styles.credits}>
                       {image.credits}
                     </Link>
                   </Fragment>

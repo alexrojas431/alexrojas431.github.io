@@ -6,4 +6,5 @@ export interface ImageSetInterface {
   alt: string;
   credits?: string;
   creditLink?: string;
+  creditTitle?: string;
 }

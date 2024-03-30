@@ -26,7 +26,7 @@ const LogoRow = (p: Props) => {
           {logo.image.credits && logo.image.creditLink && (
             <Fragment>
               <br />
-              <Link href={logo.image.creditLink} className={styles.credits}>
+              <Link href={logo.image.creditLink} title={logo.image.creditTitle} className={styles.credits}>
                 {logo.image.credits}
               </Link>
             </Fragment>

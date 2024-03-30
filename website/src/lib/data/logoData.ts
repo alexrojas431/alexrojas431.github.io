@@ -47,6 +47,7 @@ export const starLogoData: LogoInterface[] = [
       alt: "Wiki icon, click to go to the projects wiki",
       credits: "Wiki icons created by Freepik - Flaticon",
       creditLink: "https://www.flaticon.com/free-icons/wiki",
+      creditTitle: "wiki icons",
     },
     description: "Project Wiki",
   },
