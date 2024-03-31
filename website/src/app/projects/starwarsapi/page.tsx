@@ -1,5 +1,7 @@
 import Link from "next/link";
 import LogoRow from "@/lib/components/logoRow";
+import ProjectTemplate from "@/lib/components/projectTemplate";
+import { starWarsTemplateData } from "@/lib/data/projectTemplateData/starwarsTemplateData";
 import { starLogoData } from "@/lib/data/logoData";
 import styles from "@/scss/projects.module.scss";
 import star from "@/scss/pages/starwars.module.scss";
@@ -177,6 +179,7 @@ export default function StarWarsAPI() {
             Wars board game.
           </p>
         </section>
+        <ProjectTemplate projectPageData={starWarsTemplateData}/>
       </article>
     </main>
   );
