@@ -13,18 +13,15 @@ $star-shadow-right: 2.9px 1.5px 1.9px rgba(157, 157, 157, 0.119),
 #starCard {
   background-color: rgba(globals.$project-card-rgb, 0.2);
   #starGrid {
-    padding: 2em;
     background-color: $star-background-rgb;
     box-shadow: $star-inset-shadow;
   }
   p {
     opacity: 0.9;
-    padding: 1em;
     background-color: $star-background-rgb;
     box-shadow: $star-inset-shadow;
   }
   ul {
-    padding: 2rem;
     background-color: rgba($star-background-rgb, 0.8);
     box-shadow: $star-inset-shadow;
   }

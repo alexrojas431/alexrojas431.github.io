@@ -31,6 +31,7 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(33%, auto));
+      padding: 2em;
       max-width: 100%;
       width: globals.$max-width;
       text-align: center;
@@ -46,11 +47,13 @@
       }
       ul {
         margin: 1em;
+        padding: 2rem;
         border-radius: globals.$border-radius;
         border: 1px solid globals.$card-border-rgb;
       }
       p {
-        margin: 1em;
+        margin: 1rem;
+        padding: 2rem;
         border-radius: globals.$border-radius;
         border: 1px solid globals.$card-border-rgb;
       }
