@@ -31,7 +31,7 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(33%, auto));
-      padding: 2em;
+      padding: 2rem;
       max-width: 100%;
       width: globals.$max-width;
       text-align: center;
@@ -42,32 +42,35 @@
     section {
       line-height: 1.5;
       text-wrap: balance;
-      h2 {
-        text-decoration: underline;
+      header {
+        margin-top: 3rem;
+        h2 {
+          text-decoration: underline;
+        }
       }
       ul {
-        margin: 1em;
+        margin: 1rem;
         padding: 2rem;
         border-radius: globals.$border-radius;
         border: 1px solid globals.$card-border-rgb;
+      }
+      .gridList {
+        display: grid;
+        max-width: 100%;
+        margin: 1rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+        list-style-type: none;
+        text-align: center;
+        .finalItem {
+          grid-column: span 2;
+        }
       }
       p {
         margin: 1rem;
         padding: 2rem;
         border-radius: globals.$border-radius;
         border: 1px solid globals.$card-border-rgb;
-      }
-    }
-    .gridList {
-      display: grid;
-      max-width: 98%;
-      margin: auto;
-      grid-template-columns: 1fr 1fr;
-      gap: 1em;
-      list-style-type: none;
-      text-align: center;
-      .finalItem {
-        grid-column: span 2;
       }
     }
   }

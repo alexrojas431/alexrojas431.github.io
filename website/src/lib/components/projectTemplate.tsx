@@ -43,7 +43,6 @@ const ProjectTemplate = (p: Props) => {
             <header>
               <h2>Summary of my work on the project</h2>
             </header>
-            <br />
             <ul className={styles.gridList}>
               {project.summaryList.map((point: ListPoint, index: number) => (
                 <li
@@ -60,14 +59,12 @@ const ProjectTemplate = (p: Props) => {
               ))}
             </ul>
           </section>
-          <br />
           <section>
             <header>
               <h2>Tech Stack</h2>
             </header>
             <p>{splitContent(project.id + "-techStack", project.techStack)}</p>
             <section>
-              <br />
               <b>Tech Used</b>
               <ul>
                 {project.techStackList.map((tech: TechStack) => (
@@ -82,7 +79,6 @@ const ProjectTemplate = (p: Props) => {
             </header>
             <p>{splitContent(project.id + "-arch", project.architecture)}</p>
           </section>
-          <br />
           <section>
             <header>
               <h2>Overall Description</h2>
