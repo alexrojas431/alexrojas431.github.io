@@ -7,6 +7,17 @@ import {
 import { splitContent } from "@/util/splitContent";
 import styles from "@/scss/projects.module.scss";
 
+/**
+ * ProjectTemplate
+ *
+ * @what
+ * A projectTemplate are the common sections found across all project pages.
+ *
+ * @param projectPageData - Fills in the details of the template
+ *
+ * @relatedFiles projectTemplateData folder, projectTemplateInterface.ts
+ */
+
 interface Props {
   readonly projectPageData: ProjectTemplateInterface[];
 }
