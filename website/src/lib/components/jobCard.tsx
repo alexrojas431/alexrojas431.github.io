@@ -6,6 +6,18 @@ import { ImageSetInterface } from "@/interface/imageSetInterface";
 import { splitContent } from "@/util/splitContent";
 import styles from "@/scss/components/jobCard.module.scss";
 
+/**
+ * JobCard
+ *
+ * @what
+ * A jobCard is a section within the jobList article in the homepage.
+ * This makes up the template for a jobCard.
+ *
+ * @param jobCardData - Fills in the details of the template
+ *
+ * @related jobCardData.ts, jobCardInterface.ts
+ */
+
 interface Props {
   readonly jobCardData: JobCardInterface[];
 }
@@ -33,7 +45,11 @@ const JobCard = (p: Props) => {
                 {image.credits && image.creditLink && (
                   <Fragment>
                     <br />
-                    <Link href={image.creditLink} title={image.creditTitle} className={styles.credits}>
+                    <Link
+                      href={image.creditLink}
+                      title={image.creditTitle}
+                      className={styles.credits}
+                    >
                       {image.credits}
                     </Link>
                   </Fragment>
@@ -41,7 +57,7 @@ const JobCard = (p: Props) => {
               </span>
             ))}
           </span>
-          <p>{splitContent(job.id, job.description)}</p>
+          <p>{splitContent(job.id + "-desc", job.description)}</p>
         </section>
       ))}
     </Fragment>
