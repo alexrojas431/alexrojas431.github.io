@@ -1,52 +1,105 @@
 .carousel {
-  width: 100%;
-  margin: 0 auto;
   background-color: blue;
-}
-
-.slides {
   position: relative;
-  overflow: hidden;
-}
-
-.currentSlide {
-  display: block;
-  width: 100%;
-  background-color: red;
-}
-
-.notCurrentSlide {
-  display: none;
-}
-
-.slide img {
-  width: 100%;
-  height: auto;
-}
-
-.prev,
-.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  font-size: 1.5rem;
-  padding: 0.5rem;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.prev {
-  left: 0;
-}
-
-.next {
-  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  #caraHeader {
+    text-align: center;
+  }
+  .currentSlide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    background-color: darkblue;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    .imgContainer {
+      background-color: green;
+      position: relative;
+      .slideImg {
+        margin: 1rem;
+        background-color: yellow;
+      }
+      .backArrow {
+        background-color: red;
+        position: absolute;
+        top: 20%;
+        left: 0;
+        font-size: 15rem;
+        opacity: 0.6;
+      }
+      .forwardArrow {
+        background-color: red;
+        position: absolute;
+        top: 20%;
+        right: 0;
+        font-size: 15rem;
+        opacity: 0.6;
+      }
+      .thumbnail {
+        background-color: grey;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+    p {
+      text-align: center;
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      background-color: green;
+    }
+  }
+  .notCurrentSlide {
+    display: none;
+  }
+  .thumbnails {
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    min-width: -webkit-fit-content;
+    min-width: -webkit-fill-available;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    width: 15%;
+    max-width: 45%;
+    position: absolute;
+    bottom: 13%;
+    img {
+      border-radius: 50%;
+    }
+    .notCurrentThumb {
+      opacity: 0.6;
+    }
+  }
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .prev {
+    left: 0;
+  }
+  .next {
+    right: 0;
+  }
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
 }

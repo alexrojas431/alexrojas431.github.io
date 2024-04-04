@@ -43,6 +43,9 @@ const ImageCarousel = (p: Props) => {
 
   return (
     <section className={styles.carousel}>
+      <header id={styles.caraHeader}>
+        <h2>Images</h2>
+      </header>
       {p.imageCarouselData.map((image: ImageSetCaptions, index: number) => (
         <div
           key={image.id}
@@ -52,19 +55,36 @@ const ImageCarousel = (p: Props) => {
               : styles.notCurrentSlide
           }`}
         >
-          <Image src={image.src} alt={image.alt} width={500} height={500} />
-          <p>{image.caption}</p>
-          <span className="thumbnail">
+          <span className={styles.imgContainer}>
             <Image
-              key={image.id}
+              className={styles.slideImg}
               src={image.src}
-              alt=""
-              width={50}
-              height={50}
+              alt={image.alt}
+              width={700}
+              height={700}
             />
+            <span className={styles.backArrow}>&lt;</span>
+            <span className={styles.forwardArrow}>&gt;</span>
           </span>
+          <p>{image.caption}</p>
         </div>
       ))}
+      <span className={styles.thumbnails}>
+        {p.imageCarouselData.map((image: ImageSetCaptions, index: number) => (
+          <Image
+            key={image.id + "-thumbnail"}
+            src={image.src}
+            alt=""
+            className={`${
+              index === currentSlide
+                ? ""
+                : styles.notCurrentThumb
+            }`}
+            width={55}
+            height={50}
+          />
+        ))}
+      </span>
     </section>
   );
 };

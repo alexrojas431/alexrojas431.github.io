@@ -13,7 +13,6 @@ export default function Home() {
     <main className={styles.main}>
       <header className={styles.header}>
         <h1>Hey, I'm Alex</h1>
-        <span>
           <Image
             src={ProfilePic}
             alt="A picture of myself - Alexander Rojas"
@@ -21,7 +20,6 @@ export default function Home() {
             height={203}
             priority
           />
-        </span>
       </header>
       <article className={styles.description}>
         <section>
