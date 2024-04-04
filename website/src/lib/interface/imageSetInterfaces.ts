@@ -8,3 +8,7 @@ export interface ImageSetInterface {
   creditLink?: string;
   creditTitle?: string;
 }
+
+export interface ImageSetCaptions extends ImageSetInterface{
+    caption: string;
+}
