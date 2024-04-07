@@ -63,8 +63,12 @@ const ImageCarousel = (p: Props) => {
               width={700}
               height={700}
             />
-            <span className={styles.backArrow}>&lt;</span>
-            <span className={styles.forwardArrow}>&gt;</span>
+            <button className={styles.back} onClick={previousSlide}>
+              &lt;
+            </button>
+            <button className={styles.next} onClick={nextSlide}>
+              &gt;
+            </button>
           </span>
           <p>{image.caption}</p>
         </div>
@@ -76,9 +80,7 @@ const ImageCarousel = (p: Props) => {
             src={image.src}
             alt=""
             className={`${
-              index === currentSlide
-                ? ""
-                : styles.notCurrentThumb
+              index === currentSlide ? "" : styles.notCurrentThumb
             }`}
             width={55}
             height={50}

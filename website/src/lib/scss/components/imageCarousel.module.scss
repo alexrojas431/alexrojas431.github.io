@@ -24,27 +24,42 @@
         margin: 1rem;
         background-color: yellow;
       }
-      .backArrow {
-        background-color: red;
+      .back,
+      .next {
         position: absolute;
-        top: 20%;
-        left: 0;
+        top: 25%;
+        background: none;
+        border: none;
         font-size: 15rem;
+        color: white;
         opacity: 0.6;
+        transition: transform 500ms, ease-in-out;
       }
-      .forwardArrow {
-        background-color: red;
-        position: absolute;
-        top: 20%;
+      .back {
+        left: 0;
+      }
+      .next {
         right: 0;
-        font-size: 15rem;
-        opacity: 0.6;
       }
       .thumbnail {
         background-color: grey;
         position: absolute;
         bottom: 0;
         left: 0;
+      }
+      @media (hover: hover) and (pointer: fine) {
+        .back:hover {
+          opacity: 1;
+          transform: translateX(-8px);
+          cursor: pointer;
+        }
+      }
+      @media (hover: hover) and (pointer: fine) {
+        .next:hover {
+          opacity: 1;
+          transform: translateX(8px);
+          cursor: pointer;
+        }
       }
     }
     p {
@@ -78,28 +93,5 @@
     .notCurrentThumb {
       opacity: 0.6;
     }
-  }
-  .prev,
-  .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-size: 1.5rem;
-    padding: 0.5rem;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .prev {
-    left: 0;
-  }
-  .next {
-    right: 0;
-  }
-  .prev:hover,
-  .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
   }
 }
