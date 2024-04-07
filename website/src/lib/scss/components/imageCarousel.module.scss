@@ -1,10 +1,10 @@
 .carousel {
-  background-color: blue;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: auto;
+  height: 850px;
   #caraHeader {
     text-align: center;
   }
@@ -13,68 +13,42 @@
     flex-direction: column;
     align-items: center;
     margin: auto;
-    background-color: darkblue;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    .imgContainer {
-      background-color: green;
-      position: relative;
-      .slideImg {
-        margin: 1rem;
-        background-color: yellow;
-      }
-      .back,
-      .next {
-        position: absolute;
-        top: 25%;
-        background: none;
-        border: none;
-        font-size: 15rem;
-        color: white;
-        opacity: 0.6;
-        transition: transform 500ms, ease-in-out;
-      }
-      .back {
-        left: 0;
-      }
-      .next {
-        right: 0;
-      }
-      .thumbnail {
-        background-color: grey;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-      }
-      @media (hover: hover) and (pointer: fine) {
-        .back:hover {
-          opacity: 1;
-          transform: translateX(-8px);
-          cursor: pointer;
-        }
-      }
-      @media (hover: hover) and (pointer: fine) {
-        .next:hover {
-          opacity: 1;
-          transform: translateX(8px);
-          cursor: pointer;
-        }
-      }
+    height: 100%;
+    width: 100%;
+    .slideImg {
+      margin: auto;
+      width: auto;
+      max-width: 75%;
+      max-height: 80%;
     }
     p {
-      text-align: center;
       width: -webkit-fit-content;
       width: -moz-fit-content;
       width: fit-content;
-      background-color: green;
+      text-align: center;
     }
   }
   .notCurrentSlide {
     display: none;
   }
+  .back,
+  .next {
+    position: absolute;
+    top: 25%;
+    background: none;
+    border: none;
+    font-size: 15rem;
+    color: white;
+    opacity: 0.6;
+    transition: transform 500ms, ease-in-out;
+  }
+  .back {
+    left: 0;
+  }
+  .next {
+    right: 0;
+  }
   .thumbnails {
-    background-color: grey;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -85,13 +59,26 @@
     min-width: fit-content;
     width: 15%;
     max-width: 45%;
-    position: absolute;
-    bottom: 13%;
     img {
       border-radius: 50%;
     }
     .notCurrentThumb {
       opacity: 0.6;
     }
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .back:hover {
+    opacity: 1;
+    transform: translateX(-8px);
+    cursor: pointer;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .next:hover {
+    opacity: 1;
+    transform: translateX(8px);
+    cursor: pointer;
   }
 }

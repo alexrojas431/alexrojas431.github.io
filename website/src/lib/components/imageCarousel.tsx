@@ -1,5 +1,5 @@
 "use client";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { ImageSetCaptions } from "@/interface/imageSetInterfaces";
 import styles from "@/scss/components/imageCarousel.module.scss";
@@ -55,24 +55,23 @@ const ImageCarousel = (p: Props) => {
               : styles.notCurrentSlide
           }`}
         >
-          <span className={styles.imgContainer}>
+          <span className={styles.slideImg}>
             <Image
-              className={styles.slideImg}
               src={image.src}
               alt={image.alt}
-              width={700}
-              height={700}
+              layout="responsive"
+              style={{ maxWidth: "100%", maxHeight: "100%" }}
             />
-            <button className={styles.back} onClick={previousSlide}>
-              &lt;
-            </button>
-            <button className={styles.next} onClick={nextSlide}>
-              &gt;
-            </button>
           </span>
           <p>{image.caption}</p>
         </div>
       ))}
+      <button className={styles.back} onClick={previousSlide}>
+        &lt;
+      </button>
+      <button className={styles.next} onClick={nextSlide}>
+        &gt;
+      </button>
       <span className={styles.thumbnails}>
         {p.imageCarouselData.map((image: ImageSetCaptions, index: number) => (
           <Image
