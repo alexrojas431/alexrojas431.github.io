@@ -41,9 +41,13 @@ const ImageCarousel = (p: Props) => {
     }
   }
 
+  function goToSlide(newIndex: number): void {
+    setCurrentSlide(newIndex);
+  }
+
   return (
     <section className={styles.carousel}>
-      <header id={styles.caraHeader}>
+      <header className={styles.caraHeader}>
         <h2>Images</h2>
       </header>
       {p.imageCarouselData.map((image: ImageSetCaptions, index: number) => (
@@ -56,12 +60,7 @@ const ImageCarousel = (p: Props) => {
           }`}
         >
           <span className={styles.slideImg}>
-            <Image
-              src={image.src}
-              alt={image.alt}
-              layout="responsive"
-              style={{ maxWidth: "100%", maxHeight: "100%" }}
-            />
+            <Image src={image.src} alt={image.alt} width={800} height={800} />
           </span>
           <p>{image.caption}</p>
         </div>
@@ -74,16 +73,22 @@ const ImageCarousel = (p: Props) => {
       </button>
       <span className={styles.thumbnails}>
         {p.imageCarouselData.map((image: ImageSetCaptions, index: number) => (
-          <Image
+          <button
             key={image.id + "-thumbnail"}
-            src={image.src}
-            alt=""
-            className={`${
-              index === currentSlide ? "" : styles.notCurrentThumb
-            }`}
-            width={55}
-            height={50}
-          />
+            onClick={() => goToSlide(index)}
+          >
+            <Image
+              src={image.src}
+              alt=""
+              className={`${
+                index === currentSlide
+                  ? styles.currentThumb
+                  : styles.notCurrentThumb
+              }`}
+              width={55}
+              height={50}
+            />
+          </button>
         ))}
       </span>
     </section>
