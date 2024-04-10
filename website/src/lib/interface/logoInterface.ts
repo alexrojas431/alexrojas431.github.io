@@ -1,4 +1,4 @@
-import { ImageSetInterface } from "@/interface/imageSetInterface";
+import { ImageSetInterface } from "@/lib/interface/imageSetInterfaces";
 
 export interface LogoInterface {
   id: string;

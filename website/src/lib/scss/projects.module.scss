@@ -6,6 +6,7 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  min-width: 100vw;
   .arrow {
     position: absolute;
     top: 5px;
@@ -30,7 +31,6 @@
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(33%, auto));
       padding: 2rem;
       max-width: 100%;
       width: globals.$max-width;
@@ -42,11 +42,9 @@
     section {
       line-height: 1.5;
       text-wrap: balance;
-      header {
-        margin-top: 3rem;
-        h2 {
-          text-decoration: underline;
-        }
+      margin-top: 3rem;
+      h2 {
+        text-decoration: underline;
       }
       ul {
         margin: 1rem;

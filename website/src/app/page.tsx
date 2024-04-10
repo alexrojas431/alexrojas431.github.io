@@ -13,15 +13,14 @@ export default function Home() {
     <main className={styles.main}>
       <header className={styles.header}>
         <h1>Hey, I'm Alex</h1>
-        <span>
           <Image
             src={ProfilePic}
             alt="A picture of myself - Alexander Rojas"
-            width={140}
-            height={203}
+            width={1334}
+            height={1959}
             priority
+            style={{width:"auto", height:"150px"}}
           />
-        </span>
       </header>
       <article className={styles.description}>
         <section>

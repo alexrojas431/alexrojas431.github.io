@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { JobCardInterface } from "@/interface/jobCardInterface";
-import { ImageSetInterface } from "@/interface/imageSetInterface";
+import { ImageSetInterface } from "@/lib/interface/imageSetInterfaces";
 import { splitContent } from "@/util/splitContent";
 import styles from "@/scss/components/jobCard.module.scss";
 

@@ -26,9 +26,8 @@ $background-color_1: rgba(globals.$callout-rgb, 0.5);
     width: 100%;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    span {
-      border-radius: 100px;
-      overflow: hidden;
+    img {
+      border-radius: 50%;
     }
   }
   .description {
