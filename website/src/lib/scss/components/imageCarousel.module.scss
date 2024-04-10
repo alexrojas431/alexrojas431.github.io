@@ -22,11 +22,21 @@
       width: auto;
       max-width: 75%;
       max-height: 80%;
+      animation-name: fade;
+      animation-duration: 1s;
       img {
         max-width: 100%;
         max-height: 100%;
         height: auto;
         width: auto;
+      }
+    }
+    @keyframes fade {
+      from {
+        opacity: 0.2;
+      }
+      to {
+        opacity: 1;
       }
     }
     p {
@@ -82,7 +92,6 @@
       opacity: 0.3;
       transition: border 200ms;
     }
-
     @media (hover: hover) and (pointer: fine) {
       .notCurrentThumb:hover {
         opacity: 1;
@@ -106,5 +115,11 @@
     opacity: 1;
     transform: translateX(8px);
     cursor: pointer;
+  }
+}
+@media all {
+  .back:active,
+  .next:active {
+    transform: translateY(8px);
   }
 }
