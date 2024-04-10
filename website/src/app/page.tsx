@@ -16,9 +16,10 @@ export default function Home() {
           <Image
             src={ProfilePic}
             alt="A picture of myself - Alexander Rojas"
-            width={140}
-            height={203}
+            width={1334}
+            height={1959}
             priority
+            style={{width:"auto", height:"150px"}}
           />
       </header>
       <article className={styles.description}>
