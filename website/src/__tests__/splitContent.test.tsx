@@ -42,7 +42,6 @@ describe("splitContent function", () => {
     const content = "";
 
     const result = splitContent(id, content);
-    console.log(result);
 
     expect(result).toEqual(content);
   });
