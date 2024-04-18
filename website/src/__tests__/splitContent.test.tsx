@@ -1,4 +1,3 @@
-import "@testing-library/jest-dom";
 import { describe, expect, it } from "@jest/globals";
 import { Fragment } from "react";
 import { splitContent } from "@/lib/util/splitContent";
