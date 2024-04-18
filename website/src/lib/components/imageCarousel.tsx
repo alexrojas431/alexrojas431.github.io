@@ -23,7 +23,7 @@ interface Props {
 const ImageCarousel = (p: Props) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  function nextSlide() {
+  function nextSlide(): void {
     const newIndex = currentSlide + 1;
     if (newIndex >= 0 && newIndex < p.imageCarouselData.length) {
       setCurrentSlide(newIndex);
@@ -32,7 +32,7 @@ const ImageCarousel = (p: Props) => {
     }
   }
 
-  function previousSlide() {
+  function previousSlide(): void {
     const newIndex = currentSlide - 1;
     if (newIndex >= 0 && newIndex < p.imageCarouselData.length) {
       setCurrentSlide(newIndex);
@@ -58,6 +58,7 @@ const ImageCarousel = (p: Props) => {
               ? styles.currentSlide
               : styles.notCurrentSlide
           }`}
+          data-testid={`${index === currentSlide ? "currentSlide" : "notCurrentSlide "+index}`}
         >
           <span className={styles.slideImg}>
             <Image src={image.src} alt={image.alt} width={800} height={800} />
@@ -75,11 +76,11 @@ const ImageCarousel = (p: Props) => {
         {p.imageCarouselData.map((image: ImageSetCaptions, index: number) => (
           <button
             key={image.id + "-thumbnail"}
-            onClick={() => goToSlide(index)}
+            onClick={(): void => goToSlide(index)}
           >
             <Image
               src={image.src}
-              alt=""
+              alt={"image " + (index+1) + " thumbnail"}
               className={`${
                 index === currentSlide
                   ? styles.currentThumb
