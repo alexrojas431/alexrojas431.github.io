@@ -24,9 +24,70 @@ const mockImageData: ImageSetCaptions[] = [
   },
 ];
 
+const mockInvalidNonArray: any = {
+  id: 1,
+  location: "location",
+};
+
+const mockInvalidCarouselData: any[] = [
+  {
+    id: 1,
+    location: "location",
+  },
+];
+
+const mockIncompleteCarouselData: any[] = [
+  {
+    id: "",
+    src: "",
+    alt: "",
+    caption: "",
+  },
+];
+
+const mockInvalidTypeCarouselData: any[] = [
+  {
+    id: 1,
+    src: 1,
+    alt: 1,
+    caption: 2,
+  },
+];
+
 describe("imageCarousel component", (): void => {
-  it("Should render component without crashing", (): void => {
-    render(<ImageCarousel imageCarouselData={mockImageData} />);
+  // Check that invalid data is an array
+  it("Should throw error if props isn't an array", (): void => {
+    expect(() =>
+      render(<ImageCarousel imageCarouselData={mockInvalidNonArray} />)
+    ).toThrow("\nImageCarousel requires data to be an array.\n");
+  });
+
+  // Check that data is filled in
+  it("Should throw error if props has not data", (): void => {
+    expect(() => render(<ImageCarousel imageCarouselData={[]} />)).toThrow(
+      "\nImageCarousel requires data to be passed in.\n"
+    );
+  });
+
+  // Check that invalid object in array fails validation and that it's not empty
+  it("Should throw error if props doesn't follow interface, has incorrect types for keys or has empty required keys", (): void => {
+    expect(() =>
+      render(<ImageCarousel imageCarouselData={mockInvalidCarouselData} />)
+    ).toThrow(
+      "\nImageCarousel: 'imageCarouselData' should contain non empty elements of following the interface 'JobCardInterface'.\n"
+    );
+
+    expect(() =>
+      render(<ImageCarousel imageCarouselData={mockIncompleteCarouselData} />)
+    ).toThrow(
+      "\nImageCarousel: 'imageCarouselData' should contain non empty elements of following the interface 'JobCardInterface'.\n"
+    );
+
+    expect(() =>
+      render(<ImageCarousel imageCarouselData={mockInvalidTypeCarouselData} />)
+    ).toThrow(
+      "\nImageCarousel: 'imageCarouselData' should contain non empty elements of following the interface 'JobCardInterface'.\n"
+    );
   });
 
   // Props are rendered in the page

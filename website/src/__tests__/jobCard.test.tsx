@@ -90,24 +90,72 @@ const mockInvalidJobData: any[] = [
   },
 ];
 
+const mockIncompleteJobData: any[] = [
+  {
+    id: "",
+    company: "",
+    department: "",
+    position: "",
+    location: "",
+    images: [
+      {
+        id: "",
+        src: "",
+        alt: "",
+      },
+    ],
+    description: "",
+  },
+];
+
+const mockInvalidTypeJobData: any[] = [
+  {
+    id: 1,
+    company: 1,
+    department: 1,
+    position: 1,
+    location: 1,
+    images: [
+      {
+        id: 1,
+        src: 1,
+        alt: 1,
+      },
+    ],
+    description: 1,
+  },
+];
+
 describe("JobCard component", (): void => {
-  // Check that invalid data is an array
+  // Check that invalid object fails validation
   it("Should throw error if props isn't an array", (): void => {
     expect(() => render(<JobCard jobCardData={mockInvalidNonArray} />)).toThrow(
       "\nJobCard requires data to be an array.\n"
     );
   });
 
-  // Check that the relevant error message is thrown
+  // Check thrown error when array is empty
   it("Should throw error if props has no data", (): void => {
     expect(() => render(<JobCard jobCardData={[]} />)).toThrow(
       "\nJobCard requires data to be passed in.\n"
     );
   });
 
-  // Check that jobData is validated
-  it("Should throw error if prop validation fails", (): void => {
+  // Check that invalid object in array fails validation
+  it("Should throw error if props doesn't follow interface, has incorrect types or has empty required keys", (): void => {
     expect(() => render(<JobCard jobCardData={mockInvalidJobData} />)).toThrow(
+      "\nJobCard: 'jobCardData' should contain non empty elements of following the interface 'JobCardInterface'.\n"
+    );
+
+    expect(() =>
+      render(<JobCard jobCardData={mockIncompleteJobData} />)
+    ).toThrow(
+      "\nJobCard: 'jobCardData' should contain non empty elements of following the interface 'JobCardInterface'.\n"
+    );
+
+    expect(() =>
+      render(<JobCard jobCardData={mockInvalidTypeJobData} />)
+    ).toThrow(
       "\nJobCard: 'jobCardData' should contain non empty elements of following the interface 'JobCardInterface'.\n"
     );
   });

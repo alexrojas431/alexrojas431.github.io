@@ -23,6 +23,41 @@ interface Props {
 const ImageCarousel = (p: Props) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  if (!Array.isArray(p.imageCarouselData)) {
+    throw new Error("\nImageCarousel requires data to be an array.\n");
+  } else if (p.imageCarouselData.length === 0) {
+    throw new Error("\nImageCarousel requires data to be passed in.\n");
+  }
+
+  // Check that props are in form of imageSetCaptions
+  const isValidData = p.imageCarouselData.every((image): boolean => {
+    const isValidImage =
+      typeof image === "object" &&
+      "id" in image &&
+      "src" in image &&
+      "alt" in image &&
+      typeof image.id === "string" &&
+      (typeof image.src === "string" || typeof image.src === "object") &&
+      typeof image.alt === "string" &&
+      image.id.length > 0 &&
+      Object.keys(image.src).length > 0 &&
+      image.alt.length > 0;
+
+    const creditsExists = typeof image.credits === "string";
+    const creditTitleExists = typeof image.creditTitle === "string";
+    const creditLinkExists = typeof image.creditLink === "string";
+    const creditItemsAlign =
+      creditsExists === creditTitleExists && creditsExists === creditLinkExists;
+
+    return isValidImage && creditItemsAlign;
+  });
+
+  if (!isValidData) {
+    throw new Error(
+      "\nImageCarousel: 'imageCarouselData' should contain non empty elements of following the interface 'JobCardInterface'.\n"
+    );
+  }
+
   function nextSlide(): void {
     const newIndex = currentSlide + 1;
     if (newIndex >= 0 && newIndex < p.imageCarouselData.length) {
@@ -58,7 +93,9 @@ const ImageCarousel = (p: Props) => {
               ? styles.currentSlide
               : styles.notCurrentSlide
           }`}
-          data-testid={`${index === currentSlide ? "currentSlide" : "notCurrentSlide "+index}`}
+          data-testid={`${
+            index === currentSlide ? "currentSlide" : "notCurrentSlide " + index
+          }`}
         >
           <span className={styles.slideImg}>
             <Image src={image.src} alt={image.alt} width={800} height={800} />
@@ -80,7 +117,7 @@ const ImageCarousel = (p: Props) => {
           >
             <Image
               src={image.src}
-              alt={"image " + (index+1) + " thumbnail"}
+              alt={"image " + (index + 1) + " thumbnail"}
               className={`${
                 index === currentSlide
                   ? styles.currentThumb
