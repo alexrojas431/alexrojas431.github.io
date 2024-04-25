@@ -64,6 +64,14 @@ const JobCard = (p: Props) => {
           Object.keys(image.src).length > 0 &&
           image.alt.length > 0;
 
+        let staticImage = true;
+        if (typeof image.src === "object") {
+          staticImage =
+            typeof image.src.src === "string" &&
+            typeof image.src.width === "number" &&
+            typeof image.src.height === "number";
+        }
+
         const creditsExists = typeof image.credits === "string";
         const creditTitleExists = typeof image.creditTitle === "string";
         const creditLinkExists = typeof image.creditLink === "string";
@@ -71,7 +79,7 @@ const JobCard = (p: Props) => {
           creditsExists === creditTitleExists &&
           creditsExists === creditLinkExists;
 
-        return isValidImage && creditItemsAlign;
+        return isValidImage && creditItemsAlign && staticImage;
       }) &&
       typeof job.description === "string" &&
       job.description.length > 0 &&
@@ -99,12 +107,23 @@ const JobCard = (p: Props) => {
           <span className={styles.imgSection} data-testid="jobCardImgSection">
             {job.images.map((image: ImageSetInterface) => (
               <span key={image.id}>
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  width={150}
-                  height={100}
-                />
+                <div>
+                  {typeof image.src === "object" ? (
+                    <Image
+                      src={image.src.src}
+                      alt={image.alt}
+                      width={image.src.width}
+                      height={image.src.height}
+                    />
+                  ) : (
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={150}
+                      height={100}
+                    />
+                  )}
+                </div>
                 {image.credits && image.creditLink && (
                   <Fragment>
                     <br />

@@ -35,10 +35,22 @@
     width: 250px;
     span {
       max-width: 100%;
-      max-height: auto;
+      max-height: 100%;
       margin-left: auto;
       margin-right: auto;
-      .credits{
+      background-color: black;
+      div {
+        background-color: blue;
+        height: auto;
+        width: auto;
+        img {
+          height: auto;
+          width: auto;
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+      .credits {
         @include globals.credits;
       }
     }

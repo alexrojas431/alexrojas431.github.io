@@ -1,8 +1,9 @@
 "use client";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import Image from "next/image";
 import { ImageSetCaptions } from "@/interface/imageSetInterfaces";
 import styles from "@/scss/components/imageCarousel.module.scss";
+import Link from "next/link";
 
 /**
  * ImageCarousel
@@ -43,13 +44,21 @@ const ImageCarousel = (p: Props) => {
       Object.keys(image.src).length > 0 &&
       image.alt.length > 0;
 
+    let staticImage = true;
+    if (typeof image.src === "object") {
+      staticImage =
+        typeof image.src.src === "string" &&
+        typeof image.src.width === "number" &&
+        typeof image.src.height === "number";
+    }
+
     const creditsExists = typeof image.credits === "string";
     const creditTitleExists = typeof image.creditTitle === "string";
     const creditLinkExists = typeof image.creditLink === "string";
     const creditItemsAlign =
       creditsExists === creditTitleExists && creditsExists === creditLinkExists;
 
-    return isValidImage && creditItemsAlign;
+    return isValidImage && creditItemsAlign && staticImage;
   });
 
   if (!isValidData) {
@@ -98,9 +107,32 @@ const ImageCarousel = (p: Props) => {
           }`}
         >
           <span className={styles.slideImg}>
-            <Image src={image.src} alt={image.alt} width={800} height={800} />
+            {typeof image.src === "object" ? (
+              <Image
+                src={image.src.src}
+                alt={image.alt}
+                width={image.src.width}
+                height={image.src.height}
+              />
+            ) : (
+              <Image src={image.src} alt={image.alt} width={800} height={800} />
+            )}
           </span>
-          <p>{image.caption}</p>
+          <p>
+            {image.caption}
+            {image.credits && image.creditLink && (
+              <Fragment>
+                <br />
+                <Link
+                  href={image.creditLink}
+                  title={image.creditTitle}
+                  className={styles.credits}
+                >
+                  {image.credits}
+                </Link>
+              </Fragment>
+            )}
+          </p>
         </div>
       ))}
       <button className={styles.back} onClick={previousSlide}>

@@ -1,9 +1,74 @@
 import "@testing-library/jest-dom";
-import { render } from "@testing-library/react";
+import { render, waitFor } from "@testing-library/react";
 import JobCard from "@/lib/components/jobCard";
 import { JobCardInterface } from "@/lib/interface/jobCardInterface";
 
-const mockJobDataWithoutCredits: JobCardInterface[] = [
+const mockJobCardData: JobCardInterface[] = [
+  {
+    id: "job_0",
+    company: "comp_0",
+    department: "dep_0",
+    position: "pos_0",
+    location: "loc_0",
+    images: [
+      {
+        id: "job_0-img_0",
+        src: "/image_1.jpg",
+        alt: "alt of image_0",
+        credits: "credits of image_0",
+        creditLink: "https://google.com",
+        creditTitle: "image_0",
+      },
+      {
+        id: "job_0-img_1",
+        src: "/image_2.jpg",
+        alt: "alt of image_2",
+        credits: "credits of image_2",
+        creditLink: "https://bing.com",
+        creditTitle: "image_2",
+      },
+    ],
+    description: "desc_0",
+  },
+  {
+    id: "job_1",
+    company: "comp_1",
+    department: "dep_1",
+    position: "pos_1",
+    location: "loc_1",
+    images: [
+      {
+        id: "job_1-img_0",
+        src: "/image_3.jpg",
+        alt: "alt of image_3",
+        credits: "credits of image_3",
+        creditLink: "https://yahoo.com",
+        creditTitle: "image_3",
+      },
+    ],
+    description: "desc_1",
+  },
+];
+
+const mockDataWithoutCredits: JobCardInterface[] = [
+  {
+    id: "job_0",
+    company: "comp_0",
+    department: "dep_0",
+    position: "pos_0",
+    location: "loc_0",
+    images: [
+      {
+        id: "job_0-img_0",
+        src: "/image_0.jpg",
+        alt: "alt of image_0",
+      },
+    ],
+    description: "desc_0",
+  },
+];
+
+const mockWithStaticImageData: JobCardInterface[] = [
   {
     id: "job_0",
     company: "comp_0",
@@ -25,28 +90,7 @@ const mockJobDataWithoutCredits: JobCardInterface[] = [
   },
 ];
 
-const mockJobDataWithCredits: JobCardInterface[] = [
-  {
-    id: "job_1",
-    company: "comp_1",
-    department: "dep_1",
-    position: "pos_1",
-    location: "loc_1",
-    images: [
-      {
-        id: "job_1-img_0",
-        src: "/image_1.jpg",
-        alt: "alt of image_1",
-        credits: "credits of image_1",
-        creditLink: "https://example.com",
-        creditTitle: "image_1",
-      },
-    ],
-    description: "desc_1",
-  },
-];
-
-const mockJobDataWithoutImages: JobCardInterface[] = [
+const mockDataWithoutImages: JobCardInterface[] = [
   {
     id: "job_2",
     company: "comp_2",
@@ -78,12 +122,12 @@ const mockInvalidCredits: JobCardInterface[] = [
   },
 ];
 
-const mockInvalidNonArray: any = {
+const mockNonArrayData: any = {
   id: 1,
   location: "location",
 };
 
-const mockInvalidJobData: any[] = [
+const mockInvalidObjectData: any[] = [
   {
     id: 1,
     location: "location",
@@ -108,7 +152,7 @@ const mockIncompleteJobData: any[] = [
   },
 ];
 
-const mockInvalidTypeJobData: any[] = [
+const mockInvalidTypeData: any[] = [
   {
     id: 1,
     company: 1,
@@ -127,14 +171,14 @@ const mockInvalidTypeJobData: any[] = [
 ];
 
 describe("JobCard component", (): void => {
-  // Check that invalid object fails validation
+  // Check that props is an array
   it("Should throw error if props isn't an array", (): void => {
-    expect(() => render(<JobCard jobCardData={mockInvalidNonArray} />)).toThrow(
+    expect(() => render(<JobCard jobCardData={mockNonArrayData} />)).toThrow(
       "\nJobCard requires data to be an array.\n"
     );
   });
 
-  // Check thrown error when array is empty
+  // Check that props is not empty
   it("Should throw error if props has no data", (): void => {
     expect(() => render(<JobCard jobCardData={[]} />)).toThrow(
       "\nJobCard requires data to be passed in.\n"
@@ -143,7 +187,9 @@ describe("JobCard component", (): void => {
 
   // Check that invalid object in array fails validation
   it("Should throw error if props doesn't follow interface, has incorrect types or has empty required keys", (): void => {
-    expect(() => render(<JobCard jobCardData={mockInvalidJobData} />)).toThrow(
+    expect(() =>
+      render(<JobCard jobCardData={mockInvalidObjectData} />)
+    ).toThrow(
       "\nJobCard: 'jobCardData' should contain non empty elements of following the interface 'JobCardInterface'.\n"
     );
 
@@ -153,43 +199,36 @@ describe("JobCard component", (): void => {
       "\nJobCard: 'jobCardData' should contain non empty elements of following the interface 'JobCardInterface'.\n"
     );
 
-    expect(() =>
-      render(<JobCard jobCardData={mockInvalidTypeJobData} />)
-    ).toThrow(
+    expect(() => render(<JobCard jobCardData={mockInvalidTypeData} />)).toThrow(
+      "\nJobCard: 'jobCardData' should contain non empty elements of following the interface 'JobCardInterface'.\n"
+    );
+
+    expect(() => render(<JobCard jobCardData={mockInvalidCredits} />)).toThrow(
       "\nJobCard: 'jobCardData' should contain non empty elements of following the interface 'JobCardInterface'.\n"
     );
   });
 
-  // Check that every item in the object renders
-  it("Renders all content from object when available", (): void => {
-    const { getByAltText, getByText } = render(
-      <JobCard jobCardData={mockJobDataWithCredits} />
+  // Check that staticImageData properties are used
+  it("Renders JobCard even with staticImageData", (): void => {
+    const { getByAltText } = render(
+      <JobCard jobCardData={mockWithStaticImageData} />
     );
 
-    const job = mockJobDataWithCredits[0];
+    mockWithStaticImageData[0].images.forEach(async (image): Promise<void> => {
+      let tag = getByAltText(image.alt);
 
-    expect(getByText(job.company)).toBeInTheDocument();
-    expect(getByText(job.department)).toBeInTheDocument();
-    expect(getByText(job.position)).toBeInTheDocument();
-    expect(getByText(job.location)).toBeInTheDocument();
-    expect(getByText(job.description)).toBeInTheDocument();
-    expect(getByText(job.description)).toBeInTheDocument();
-    expect(getByAltText(job.images[0].alt)).toBeInTheDocument();
-    expect(getByText(job.images[0].credits as string)).toBeInTheDocument();
-    expect(getByText(job.images[0].credits as string)).toHaveAttribute(
-      "href",
-      job.images[0].creditLink
-    );
-    expect(getByText(job.images[0].credits as string)).toHaveAttribute(
-      "title",
-      job.images[0].creditTitle
-    );
+      await waitFor((): void => {
+        expect(tag).toHaveAttribute("src", image.src);
+        expect(tag).toHaveAttribute("height", 50);
+        expect(tag).toHaveAttribute("width", 50);
+      });
+    });
   });
 
   // Check that Images is not rendered when not provided
   it("Does not render Images as it's empty", (): void => {
     const { getByTestId } = render(
-      <JobCard jobCardData={mockJobDataWithoutImages} />
+      <JobCard jobCardData={mockDataWithoutImages} />
     );
 
     expect(getByTestId("jobCardImgSection")).toBeEmptyDOMElement();
@@ -197,30 +236,55 @@ describe("JobCard component", (): void => {
 
   // Check that Credits text are not rendered when not provided
   it("Does not render credits as it's empty", (): void => {
-    const { getByAltText } = render(
-      <JobCard jobCardData={mockJobDataWithoutCredits} />
+    const { getByTestId } = render(
+      <JobCard jobCardData={mockDataWithoutCredits} />
     );
 
-    const image = getByAltText(mockJobDataWithoutCredits[0].images[0].alt);
+    const imageSection = getByTestId("jobCardImgSection");
 
-    expect(image).not.toHaveTextContent("[\\s\\S]");
+    expect(imageSection).not.toHaveTextContent(/credits/);
   });
 
-  // Check that CreditTitle and Link are not rendered when Credits text not provided
-  it("Should throw error if prop validation fails because of credit items being inconsitently filled/empty", (): void => {
-    expect(() => render(<JobCard jobCardData={mockInvalidCredits} />)).toThrow(
-      "\nJobCard: 'jobCardData' should contain non empty elements of following the interface 'JobCardInterface'.\n"
+  // Check that every item in the object renders
+  it("Renders all content from object when available", (): void => {
+    const { getByAltText, getByText } = render(
+      <JobCard jobCardData={mockJobCardData} />
     );
-  });
 
-  // Check that splitContent does what it's supposed to
+    mockJobCardData.forEach((job): void => {
+      expect(getByText(job.company)).toBeInTheDocument();
+      expect(getByText(job.department)).toBeInTheDocument();
+      expect(getByText(job.position)).toBeInTheDocument();
+      expect(getByText(job.location)).toBeInTheDocument();
+      expect(getByText(job.description)).toBeInTheDocument();
+
+      job.images.forEach(async (image): Promise<void> => {
+        let tag = getByAltText(image.alt);
+
+        await waitFor((): void => {
+          expect(tag).toHaveAttribute("src", image.src);
+        });
+
+        expect(tag).toHaveAttribute("alt", image.alt);
+        expect(getByText(image.credits as string)).toBeInTheDocument();
+        expect(getByText(image.credits as string)).toHaveAttribute(
+          "href",
+          image.creditLink
+        );
+        expect(getByText(image.credits as string)).toHaveAttribute(
+          "title",
+          image.creditTitle
+        );
+      });
+    });
+  });
 });
 
 describe("JobCard Integration", (): void => {
   // Check that splitContent made br tags in description
   test("SplitContent's behavior and make sure there are newlines in the description", (): void => {
     const { getByText } = render(
-      <JobCard jobCardData={mockJobDataWithoutImages} />
+      <JobCard jobCardData={mockDataWithoutImages} />
     );
 
     const desc = getByText(/desc_2/);
