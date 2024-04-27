@@ -12,7 +12,7 @@ import {
   EMPTY_PROPS_ERROR_MESSAGE,
   EMPTY_OBJECT_KEYS_ERROR_MESSAGE,
   INVALID_TYPE_ERROR_MESSAGE,
-} from "@/lib/util/globalConstants";
+} from "@/util/globalConstants";
 
 /**
  * ImageCarousel
@@ -45,7 +45,8 @@ const ImageCarousel = (p: Props) => {
       typeof image === "object" &&
       "id" in image &&
       "src" in image &&
-      "alt" in image;
+      "alt" in image &&
+      "caption" in image;
 
     if (!hasValidKeys) {
       throw new Error(
@@ -58,7 +59,8 @@ const ImageCarousel = (p: Props) => {
     const hasValidTypes =
       typeof image.id === "string" &&
       (typeof image.src === "string" || typeof image.src === "object") &&
-      typeof image.alt === "string";
+      typeof image.alt === "string" &&
+      typeof image.caption === "string";
 
     if (!hasValidTypes) {
       throw new Error(
@@ -71,7 +73,8 @@ const ImageCarousel = (p: Props) => {
     const isNotEmpty =
       image.id.length > 0 &&
       Object.keys(image.src).length > 0 &&
-      image.alt.length > 0;
+      image.alt.length > 0 &&
+      image.caption.length > 0;
 
     if (!isNotEmpty) {
       throw new Error(

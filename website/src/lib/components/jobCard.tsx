@@ -2,9 +2,17 @@ import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { JobCardInterface } from "@/interface/jobCardInterface";
-import { ImageSetInterface } from "@/lib/interface/imageSetInterfaces";
+import { ImageSetInterface } from "@/interface/imageSetInterfaces";
 import { splitContent } from "@/util/splitContent";
 import styles from "@/scss/components/jobCard.module.scss";
+import {
+  EMPTY_OBJECT_KEYS_ERROR_MESSAGE,
+  EMPTY_PROPS_ERROR_MESSAGE,
+  INVALID_INTERFACE_ERROR_MESSAGE,
+  INVALID_TYPE_ERROR_MESSAGE,
+  NON_ARRAY_ERROR_MESSAGE,
+} from "@/util/globalConstants";
+import { imageSetValidation } from "@/util/imageSetValidation";
 
 /**
  * JobCard
@@ -24,14 +32,14 @@ interface Props {
 
 const JobCard = (p: Props) => {
   if (!Array.isArray(p.jobCardData)) {
-    throw new Error("\nJobCard requires data to be an array.\n");
+    throw new Error("\nJobCard: " + NON_ARRAY_ERROR_MESSAGE + "\n");
   } else if (p.jobCardData.length === 0) {
-    throw new Error("\nJobCard requires data to be passed in.\n");
+    throw new Error("\nJobCard: " + EMPTY_PROPS_ERROR_MESSAGE + "\n");
   }
 
   // Check that props are in form of JobCardInterface
-  const isValidData = p.jobCardData.every((job): boolean => {
-    const isValidJob =
+  p.jobCardData.every((job): void => {
+    const hasValidKeys =
       typeof job === "object" &&
       "id" in job &&
       "company" in job &&
@@ -39,60 +47,51 @@ const JobCard = (p: Props) => {
       "position" in job &&
       "location" in job &&
       "description" in job &&
+      "images" in job;
+
+    if (!hasValidKeys) {
+      throw new Error(
+        "\nJobCard: " +
+          INVALID_INTERFACE_ERROR_MESSAGE +
+          " 'JobCardInterface'.\n"
+      );
+    }
+
+    const hasValidTypes =
       typeof job.id === "string" &&
+      typeof job.description === "string" &&
       typeof job.company === "string" &&
       typeof job.department === "string" &&
       typeof job.position === "string" &&
       typeof job.location === "string" &&
+      Array.isArray(job.images);
+
+    if (!hasValidTypes) {
+      throw new Error(
+        "\nJobCard: " + INVALID_TYPE_ERROR_MESSAGE + " 'JobCardInterface'.\n"
+      );
+    }
+
+    const isNotEmpty =
       job.id.length > 0 &&
       job.company.length > 0 &&
       job.department.length > 0 &&
       job.position.length > 0 &&
       job.location.length > 0 &&
-      "images" in job &&
-      Array.isArray(job.images) &&
-      job.images.every((image): boolean => {
-        const isValidImage =
-          typeof image === "object" &&
-          "id" in image &&
-          "src" in image &&
-          "alt" in image &&
-          typeof image.id === "string" &&
-          (typeof image.src === "string" || typeof image.src === "object") &&
-          typeof image.alt === "string" &&
-          image.id.length > 0 &&
-          Object.keys(image.src).length > 0 &&
-          image.alt.length > 0;
+      job.description.length > 0;
 
-        let staticImage = true;
-        if (typeof image.src === "object") {
-          staticImage =
-            typeof image.src.src === "string" &&
-            typeof image.src.width === "number" &&
-            typeof image.src.height === "number";
-        }
+    if (!isNotEmpty) {
+      throw new Error(
+        "\nJobCard: " +
+          EMPTY_OBJECT_KEYS_ERROR_MESSAGE +
+          " 'JobCardInterface'.\n"
+      );
+    }
 
-        const creditsExists = typeof image.credits === "string";
-        const creditTitleExists = typeof image.creditTitle === "string";
-        const creditLinkExists = typeof image.creditLink === "string";
-        const creditItemsAlign =
-          creditsExists === creditTitleExists &&
-          creditsExists === creditLinkExists;
-
-        return isValidImage && creditItemsAlign && staticImage;
-      }) &&
-      typeof job.description === "string" &&
-      job.description.length > 0 &&
-      typeof job.description === "string";
-
-    return isValidJob;
+    job.images.every((image): void => {
+      imageSetValidation("JobCard", image);
+    });
   });
-
-  if (!isValidData) {
-    throw new Error(
-      "\nJobCard: 'jobCardData' should contain non empty elements of following the interface 'JobCardInterface'.\n"
-    );
-  }
 
   return (
     <Fragment>
