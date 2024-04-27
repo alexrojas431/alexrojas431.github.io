@@ -1,9 +1,18 @@
 "use client";
 import { Fragment, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ImageSetCaptions } from "@/interface/imageSetInterfaces";
 import styles from "@/scss/components/imageCarousel.module.scss";
-import Link from "next/link";
+import {
+  INVALID_STATICIMAGEDATA_OBJECT_ERROR_MESSAGE,
+  INVALID_CREDITS_ERROR_MESSAGE,
+  INVALID_INTERFACE_ERROR_MESSAGE,
+  NON_ARRAY_ERROR_MESSAGE,
+  EMPTY_PROPS_ERROR_MESSAGE,
+  EMPTY_OBJECT_KEYS_ERROR_MESSAGE,
+  INVALID_TYPE_ERROR_MESSAGE,
+} from "@/lib/util/globalConstants";
 
 /**
  * ImageCarousel
@@ -25,24 +34,52 @@ const ImageCarousel = (p: Props) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   if (!Array.isArray(p.imageCarouselData)) {
-    throw new Error("\nImageCarousel requires data to be an array.\n");
+    throw new Error("\nImageCarousel: " + NON_ARRAY_ERROR_MESSAGE + "\n");
   } else if (p.imageCarouselData.length === 0) {
-    throw new Error("\nImageCarousel requires data to be passed in.\n");
+    throw new Error("\nImageCarousel: " + EMPTY_PROPS_ERROR_MESSAGE + "\n");
   }
 
-  // Check that props are in form of imageSetCaptions
-  const isValidData = p.imageCarouselData.every((image): boolean => {
-    const isValidImage =
+  // Go through props data and validate it
+  p.imageCarouselData.every((image): void => {
+    const hasValidKeys =
       typeof image === "object" &&
       "id" in image &&
       "src" in image &&
-      "alt" in image &&
+      "alt" in image;
+
+    if (!hasValidKeys) {
+      throw new Error(
+        "\nImageCarousel: " +
+          INVALID_INTERFACE_ERROR_MESSAGE +
+          " 'ImageSetCaptions'.\n"
+      );
+    }
+
+    const hasValidTypes =
       typeof image.id === "string" &&
       (typeof image.src === "string" || typeof image.src === "object") &&
-      typeof image.alt === "string" &&
+      typeof image.alt === "string";
+
+    if (!hasValidTypes) {
+      throw new Error(
+        "\nImageCarousel: " +
+          INVALID_TYPE_ERROR_MESSAGE +
+          " 'ImageSetCaptions'.\n"
+      );
+    }
+
+    const isNotEmpty =
       image.id.length > 0 &&
       Object.keys(image.src).length > 0 &&
       image.alt.length > 0;
+
+    if (!isNotEmpty) {
+      throw new Error(
+        "\nImageCarousel: " +
+          EMPTY_OBJECT_KEYS_ERROR_MESSAGE +
+          " 'ImageSetCaptions'.\n"
+      );
+    }
 
     let staticImage = true;
     if (typeof image.src === "object") {
@@ -52,20 +89,26 @@ const ImageCarousel = (p: Props) => {
         typeof image.src.height === "number";
     }
 
+    if (!staticImage) {
+      throw new Error(
+        "\nImageCarousel: " +
+          INVALID_STATICIMAGEDATA_OBJECT_ERROR_MESSAGE +
+          "\n"
+      );
+    }
+
     const creditsExists = typeof image.credits === "string";
     const creditTitleExists = typeof image.creditTitle === "string";
     const creditLinkExists = typeof image.creditLink === "string";
     const creditItemsAlign =
       creditsExists === creditTitleExists && creditsExists === creditLinkExists;
 
-    return isValidImage && creditItemsAlign && staticImage;
+    if (!creditItemsAlign) {
+      throw new Error(
+        "\nImageCarousel: " + INVALID_CREDITS_ERROR_MESSAGE + "\n"
+      );
+    }
   });
-
-  if (!isValidData) {
-    throw new Error(
-      "\nImageCarousel: 'imageCarouselData' should contain non empty elements of following the interface 'JobCardInterface'.\n"
-    );
-  }
 
   function nextSlide(): void {
     const newIndex = currentSlide + 1;

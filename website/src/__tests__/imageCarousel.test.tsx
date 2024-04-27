@@ -2,6 +2,15 @@ import "@testing-library/jest-dom";
 import { fireEvent, render, waitFor } from "@testing-library/react";
 import ImageCarousel from "@/lib/components/imageCarousel";
 import { ImageSetCaptions } from "@/lib/interface/imageSetInterfaces";
+import {
+  EMPTY_OBJECT_KEYS_ERROR_MESSAGE,
+  EMPTY_PROPS_ERROR_MESSAGE,
+  INVALID_CREDITS_ERROR_MESSAGE,
+  INVALID_INTERFACE_ERROR_MESSAGE,
+  INVALID_STATICIMAGEDATA_OBJECT_ERROR_MESSAGE,
+  INVALID_TYPE_ERROR_MESSAGE,
+  NON_ARRAY_ERROR_MESSAGE,
+} from "@/lib/util/globalConstants";
 
 const mockCarouselData: ImageSetCaptions[] = [
   {
@@ -96,45 +105,78 @@ const mockInvalidTypeData: any[] = [
   },
 ];
 
+const mockInvalidStaticImageData: any[] = [
+  {
+    id: "0",
+    src: {
+      src: "/image_0.jpg",
+    },
+    alt: "alt of image_0",
+    caption: "caption of image_0",
+  },
+];
+
 describe("imageCarousel component", (): void => {
   // Check that props is an array
   it("Should throw error if props isn't an array", (): void => {
     expect(() =>
       render(<ImageCarousel imageCarouselData={mockNonArrayData} />)
-    ).toThrow("\nImageCarousel requires data to be an array.\n");
+    ).toThrow("\nImageCarousel: " + NON_ARRAY_ERROR_MESSAGE + "\n");
   });
 
   // Check that props is not empty
   it("Should throw error if props has not data", (): void => {
     expect(() => render(<ImageCarousel imageCarouselData={[]} />)).toThrow(
-      "\nImageCarousel requires data to be passed in.\n"
+      "\nImageCarousel: " + EMPTY_PROPS_ERROR_MESSAGE + "\n"
     );
   });
 
-  // Check that invalid object in array fails validation and that it's not empty
-  it("Should throw error if props doesn't follow interface, has incorrect types for keys, has empty required keys or has inconsistant filled/empty credit items", (): void => {
+  // Check that invalid object fails interface validation
+  it("Should throw error if object doesn't follow interface's keys", (): void => {
     expect(() =>
       render(<ImageCarousel imageCarouselData={mockInvalidObjectData} />)
     ).toThrow(
-      "\nImageCarousel: 'imageCarouselData' should contain non empty elements of following the interface 'JobCardInterface'.\n"
+      "\nImageCarousel: " +
+        INVALID_INTERFACE_ERROR_MESSAGE +
+        " 'ImageSetCaptions'.\n"
     );
+  });
 
-    expect(() =>
-      render(<ImageCarousel imageCarouselData={mockIncompleteData} />)
-    ).toThrow(
-      "\nImageCarousel: 'imageCarouselData' should contain non empty elements of following the interface 'JobCardInterface'.\n"
-    );
-
-    expect(() =>
-      render(<ImageCarousel imageCarouselData={mockInvalidCreditsData} />)
-    ).toThrow(
-      "\nImageCarousel: 'imageCarouselData' should contain non empty elements of following the interface 'JobCardInterface'.\n"
-    );
-
+  // Check that invalid object fails type validation
+  it("Should throw error if object doesn't follow interface's key types", (): void => {
     expect(() =>
       render(<ImageCarousel imageCarouselData={mockInvalidTypeData} />)
     ).toThrow(
-      "\nImageCarousel: 'imageCarouselData' should contain non empty elements of following the interface 'JobCardInterface'.\n"
+      "\nImageCarousel: " +
+        INVALID_TYPE_ERROR_MESSAGE +
+        " 'ImageSetCaptions'.\n"
+    );
+  });
+
+  // Check that invalid object fails empty props for keys validation
+  it("Should throw error if object has empty properties for required keys", (): void => {
+    expect(() =>
+      render(<ImageCarousel imageCarouselData={mockIncompleteData} />)
+    ).toThrow(
+      "\nImageCarousel: " +
+        EMPTY_OBJECT_KEYS_ERROR_MESSAGE +
+        " 'ImageSetCaptions'.\n"
+    );
+  });
+
+  // Check that invalid object fails credits validation
+  it("Should throw error if object has inconsistant filled/empty credit items", (): void => {
+    expect(() =>
+      render(<ImageCarousel imageCarouselData={mockInvalidCreditsData} />)
+    ).toThrow("\nImageCarousel: " + INVALID_CREDITS_ERROR_MESSAGE + "\n");
+  });
+
+  // Check that invalid object fails next/Image validation
+  it("Should throw error if src key has object that doesn't follow StaticImageData.", (): void => {
+    expect(() =>
+      render(<ImageCarousel imageCarouselData={mockInvalidStaticImageData} />)
+    ).toThrow(
+      "\nImageCarousel: " + INVALID_STATICIMAGEDATA_OBJECT_ERROR_MESSAGE + "\n"
     );
   });
 
