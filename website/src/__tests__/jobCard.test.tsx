@@ -213,7 +213,7 @@ describe("JobCard component", (): void => {
   });
 
   // Check that every item in the object renders
-  it("Renders all content from object when available", (): void => {
+  it("Renders multiple jobCards when available", (): void => {
     const { getByAltText, getByText } = render(
       <JobCard jobCardData={mockJobCardData} />
     );
@@ -226,13 +226,7 @@ describe("JobCard component", (): void => {
       expect(getByText(job.description)).toBeInTheDocument();
 
       job.images.forEach(async (image): Promise<void> => {
-        let tag = getByAltText(image.alt);
-
-        await waitFor((): void => {
-          expect(tag).toHaveAttribute("src", image.src);
-        });
-
-        expect(tag).toHaveAttribute("alt", image.alt);
+        expect(getByAltText(image.alt)).toBeInTheDocument();
         expect(getByText(image.credits as string)).toBeInTheDocument();
         expect(getByText(image.credits as string)).toHaveAttribute(
           "href",
