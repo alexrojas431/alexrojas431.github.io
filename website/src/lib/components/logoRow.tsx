@@ -5,7 +5,7 @@ import { LogoInterface } from "@/interface/logoInterface";
 import styles from "@/scss/components/logoRow.module.scss";
 
 /**
- * LogoRow
+ ** LogoRow
  *
  * @what
  * A logoRow is the set of images that would link to another website.

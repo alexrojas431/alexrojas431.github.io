@@ -15,7 +15,7 @@ import {
 } from "@/util/globalConstants";
 
 /**
- * ImageCarousel
+ ** ImageCarousel
  *
  * @what
  * ImageCarousel is the template for a set of images that are displayed in a slideshow format.

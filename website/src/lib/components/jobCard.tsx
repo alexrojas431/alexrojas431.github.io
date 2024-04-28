@@ -15,7 +15,7 @@ import {
 import { imageSetValidation } from "@/util/imageSetValidation";
 
 /**
- * JobCard
+ ** JobCard
  *
  * @what
  * A jobCard is a section within the jobList article in the homepage.

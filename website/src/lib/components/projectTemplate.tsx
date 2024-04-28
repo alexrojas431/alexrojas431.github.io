@@ -8,7 +8,7 @@ import { splitContent } from "@/util/splitContent";
 import styles from "@/scss/projects.module.scss";
 
 /**
- * ProjectTemplate
+ ** ProjectTemplate
  *
  * @what
  * A projectTemplate are the common sections found across all project pages.

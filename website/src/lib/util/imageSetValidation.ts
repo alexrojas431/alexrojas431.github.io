@@ -7,6 +7,20 @@ import {
   INVALID_TYPE_ERROR_MESSAGE,
 } from "@/util/globalConstants";
 
+/**
+ ** imageSetValidation
+ *
+ * @what
+ * Takes imageSetInterface object and checks that the properties are valid.
+ * If invalid, then it throws a slightly customized error message for the given failure
+ *
+ * @why
+ * If the object does not conform to imageSetInterface than it's unusable in the component that calls this function
+ *
+ * @param component - the name of the component is needed in order to customize the error message
+ * @param image - ImageSetInterface object that will go through validation
+ */
+
 export function imageSetValidation(
   component: string,
   image: ImageSetInterface
