@@ -12,6 +12,8 @@ import {
   NON_ARRAY_ERROR_MESSAGE,
 } from "@/lib/util/globalConstants";
 
+//* Mock data
+
 const mockCarouselData: ImageSetCaptions[] = [
   {
     id: "0",
@@ -64,16 +66,7 @@ const mockWithoutCreditsData: ImageSetCaptions[] = [
   },
 ];
 
-const mockInvalidCreditsData: ImageSetCaptions[] = [
-  {
-    id: "0",
-    src: "/image_0.jpg",
-    alt: "alt of image_0",
-    creditTitle: "exCreditsTitle",
-    creditLink: "https://google.com",
-    caption: "caption of image_0",
-  },
-];
+//* Invalid mock data
 
 const mockNonArrayData: any = {
   id: 1,
@@ -116,7 +109,18 @@ const mockInvalidStaticImageData: any[] = [
   },
 ];
 
-describe("imageCarousel component", (): void => {
+const mockInvalidCreditsData: ImageSetCaptions[] = [
+  {
+    id: "0",
+    src: "/image_0.jpg",
+    alt: "alt of image_0",
+    creditTitle: "exCreditsTitle",
+    creditLink: "https://google.com",
+    caption: "caption of image_0",
+  },
+];
+
+describe("imageCarousel prop validation", (): void => {
   // Check that props is an array
   it("Should throw error if props isn't an array", (): void => {
     expect(() =>
@@ -179,7 +183,9 @@ describe("imageCarousel component", (): void => {
       "\nImageCarousel: " + INVALID_STATICIMAGEDATA_OBJECT_ERROR_MESSAGE + "\n"
     );
   });
+});
 
+describe("imageCarousel component", (): void => {
   // Check that staticImageData properties are used
   it("Renders ImageCarousel even with staticImageData", (): void => {
     const { getByAltText } = render(

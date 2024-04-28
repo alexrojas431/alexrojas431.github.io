@@ -12,6 +12,8 @@ import {
   NON_ARRAY_ERROR_MESSAGE,
 } from "@/lib/util/globalConstants";
 
+//* Mock data
+
 const mockJobCardData: JobCardInterface[] = [
   {
     id: "job_0",
@@ -111,6 +113,8 @@ const mockDataWithoutImages: JobCardInterface[] = [
   },
 ];
 
+//* Invalid mock data
+
 const mockNonArrayData: any = {
   id: 1,
   location: "location",
@@ -159,7 +163,7 @@ const mockInvalidTypeData: any[] = [
   },
 ];
 
-const mockInvalidCreditsData: JobCardInterface[] = [
+const mockInvalidCreditsData: any[] = [
   {
     id: "job_3",
     company: "comp_3",
@@ -200,7 +204,7 @@ const mockInvalidStaticImageData: any[] = [
   },
 ];
 
-describe("JobCard component", (): void => {
+describe("JobCard prop validation", (): void => {
   // Check that props is an array
   it("Should throw error if props isn't an array", (): void => {
     expect(() => render(<JobCard jobCardData={mockNonArrayData} />)).toThrow(
@@ -255,7 +259,9 @@ describe("JobCard component", (): void => {
       "\nJobCard: " + INVALID_STATICIMAGEDATA_OBJECT_ERROR_MESSAGE + "\n"
     );
   });
+});
 
+describe("JobCard component", (): void => {
   // Check that staticImageData properties are used
   it("Renders JobCard even with staticImageData", (): void => {
     const { getByAltText } = render(
