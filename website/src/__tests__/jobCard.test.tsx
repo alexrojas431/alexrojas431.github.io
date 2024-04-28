@@ -6,10 +6,6 @@ import {
   EMPTY_OBJECT_KEYS_ERROR_MESSAGE,
   EMPTY_PROPS_ERROR_MESSAGE,
   INVALID_CREDITS_ERROR_MESSAGE,
-  INVALID_INTERFACE_ERROR_MESSAGE,
-  INVALID_STATICIMAGEDATA_OBJECT_ERROR_MESSAGE,
-  INVALID_TYPE_ERROR_MESSAGE,
-  NON_ARRAY_ERROR_MESSAGE,
 } from "@/util/globalConstants";
 
 //* Mock data
@@ -115,18 +111,6 @@ const mockDataWithoutImages: JobCardInterface[] = [
 
 //* Invalid mock data
 
-const mockNonArrayData: any = {
-  id: 1,
-  location: "location",
-};
-
-const mockInvalidObjectData: any[] = [
-  {
-    id: 1,
-    location: "location",
-  },
-];
-
 const mockIncompleteJobData: any[] = [
   {
     id: "",
@@ -142,24 +126,6 @@ const mockIncompleteJobData: any[] = [
       },
     ],
     description: "",
-  },
-];
-
-const mockInvalidTypeData: any[] = [
-  {
-    id: 1,
-    company: 1,
-    department: 1,
-    position: 1,
-    location: 1,
-    images: [
-      {
-        id: 1,
-        src: 1,
-        alt: 1,
-      },
-    ],
-    description: 1,
   },
 ];
 
@@ -183,55 +149,11 @@ const mockInvalidCreditsData: any[] = [
   },
 ];
 
-const mockInvalidStaticImageData: any[] = [
-  {
-    id: "job_0",
-    company: "comp_0",
-    department: "dep_0",
-    position: "pos_0",
-    location: "loc_0",
-    images: [
-      {
-        id: "job_0-img_0",
-        src: {
-          height: 50,
-          width: 50,
-        },
-        alt: "alt of image_0",
-      },
-    ],
-    description: "desc_0",
-  },
-];
-
 describe("JobCard prop validation", (): void => {
-  // Check that props is an array
-  it("Should throw error if props isn't an array", (): void => {
-    expect(() => render(<JobCard jobCardData={mockNonArrayData} />)).toThrow(
-      "\nJobCard: " + NON_ARRAY_ERROR_MESSAGE + "\n"
-    );
-  });
-
   // Check that props is not empty
   it("Should throw error if props has no data", (): void => {
     expect(() => render(<JobCard jobCardData={[]} />)).toThrow(
       "\nJobCard: " + EMPTY_PROPS_ERROR_MESSAGE + "\n"
-    );
-  });
-
-  // Check that invalid object fails interface validation
-  it("Should throw error if object doesn't follow JobCardInterface's keys", (): void => {
-    expect(() =>
-      render(<JobCard jobCardData={mockInvalidObjectData} />)
-    ).toThrow(
-      "\nJobCard: " + INVALID_INTERFACE_ERROR_MESSAGE + " 'JobCardInterface'.\n"
-    );
-  });
-
-  // Check that invalid object fails type validation
-  it("Should throw error if object doesn't follow JobCardInterface's key types", (): void => {
-    expect(() => render(<JobCard jobCardData={mockInvalidTypeData} />)).toThrow(
-      "\nJobCard: " + INVALID_TYPE_ERROR_MESSAGE + " 'JobCardInterface'.\n"
     );
   });
 
@@ -249,15 +171,6 @@ describe("JobCard prop validation", (): void => {
     expect(() =>
       render(<JobCard jobCardData={mockInvalidCreditsData} />)
     ).toThrow("\nJobCard: " + INVALID_CREDITS_ERROR_MESSAGE + "\n");
-  });
-
-  // Check that invalid object fails next/Image validation
-  it("Should throw error if src key has object that doesn't follow StaticImageData.", (): void => {
-    expect(() =>
-      render(<JobCard jobCardData={mockInvalidStaticImageData} />)
-    ).toThrow(
-      "\nJobCard: " + INVALID_STATICIMAGEDATA_OBJECT_ERROR_MESSAGE + "\n"
-    );
   });
 });
 

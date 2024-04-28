@@ -5,13 +5,9 @@ import Link from "next/link";
 import { ImageSetCaptions } from "@/interface/imageSetInterfaces";
 import styles from "@/scss/components/imageCarousel.module.scss";
 import {
-  INVALID_STATICIMAGEDATA_OBJECT_ERROR_MESSAGE,
   INVALID_CREDITS_ERROR_MESSAGE,
-  INVALID_INTERFACE_ERROR_MESSAGE,
-  NON_ARRAY_ERROR_MESSAGE,
   EMPTY_PROPS_ERROR_MESSAGE,
   EMPTY_OBJECT_KEYS_ERROR_MESSAGE,
-  INVALID_TYPE_ERROR_MESSAGE,
 } from "@/util/globalConstants";
 
 /**
@@ -33,43 +29,12 @@ interface Props {
 const ImageCarousel = (p: Props) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  if (!Array.isArray(p.imageCarouselData)) {
-    throw new Error("\nImageCarousel: " + NON_ARRAY_ERROR_MESSAGE + "\n");
-  } else if (p.imageCarouselData.length === 0) {
+  if (p.imageCarouselData.length === 0) {
     throw new Error("\nImageCarousel: " + EMPTY_PROPS_ERROR_MESSAGE + "\n");
   }
 
   // Go through props data and validate it
   p.imageCarouselData.every((image): void => {
-    const hasValidKeys: boolean =
-      typeof image === "object" &&
-      "id" in image &&
-      "src" in image &&
-      "alt" in image &&
-      "caption" in image;
-
-    if (!hasValidKeys) {
-      throw new Error(
-        "\nImageCarousel: " +
-          INVALID_INTERFACE_ERROR_MESSAGE +
-          " 'ImageSetCaptions'.\n"
-      );
-    }
-
-    const hasValidTypes: boolean =
-      typeof image.id === "string" &&
-      (typeof image.src === "string" || typeof image.src === "object") &&
-      typeof image.alt === "string" &&
-      typeof image.caption === "string";
-
-    if (!hasValidTypes) {
-      throw new Error(
-        "\nImageCarousel: " +
-          INVALID_TYPE_ERROR_MESSAGE +
-          " 'ImageSetCaptions'.\n"
-      );
-    }
-
     const isNotEmpty: boolean =
       image.id.length > 0 &&
       Object.keys(image.src).length > 0 &&
@@ -81,22 +46,6 @@ const ImageCarousel = (p: Props) => {
         "\nImageCarousel: " +
           EMPTY_OBJECT_KEYS_ERROR_MESSAGE +
           " 'ImageSetCaptions'.\n"
-      );
-    }
-
-    let staticImage: boolean = true;
-    if (typeof image.src === "object") {
-      staticImage =
-        typeof image.src.src === "string" &&
-        typeof image.src.width === "number" &&
-        typeof image.src.height === "number";
-    }
-
-    if (!staticImage) {
-      throw new Error(
-        "\nImageCarousel: " +
-          INVALID_STATICIMAGEDATA_OBJECT_ERROR_MESSAGE +
-          "\n"
       );
     }
 

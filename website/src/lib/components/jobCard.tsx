@@ -8,11 +8,8 @@ import styles from "@/scss/components/jobCard.module.scss";
 import {
   EMPTY_OBJECT_KEYS_ERROR_MESSAGE,
   EMPTY_PROPS_ERROR_MESSAGE,
-  INVALID_INTERFACE_ERROR_MESSAGE,
-  INVALID_TYPE_ERROR_MESSAGE,
-  NON_ARRAY_ERROR_MESSAGE,
+  INVALID_CREDITS_ERROR_MESSAGE,
 } from "@/util/globalConstants";
-import { imageSetValidation } from "@/util/imageSetValidation";
 
 /**
  ** JobCard
@@ -31,47 +28,12 @@ interface Props {
 }
 
 const JobCard = (p: Props) => {
-  if (!Array.isArray(p.jobCardData)) {
-    throw new Error("\nJobCard: " + NON_ARRAY_ERROR_MESSAGE + "\n");
-  } else if (p.jobCardData.length === 0) {
+  if (p.jobCardData.length === 0) {
     throw new Error("\nJobCard: " + EMPTY_PROPS_ERROR_MESSAGE + "\n");
   }
 
   // Check that props are in form of JobCardInterface
   p.jobCardData.every((job): void => {
-    const hasValidKeys: boolean =
-      typeof job === "object" &&
-      "id" in job &&
-      "company" in job &&
-      "department" in job &&
-      "position" in job &&
-      "location" in job &&
-      "description" in job &&
-      "images" in job;
-
-    if (!hasValidKeys) {
-      throw new Error(
-        "\nJobCard: " +
-          INVALID_INTERFACE_ERROR_MESSAGE +
-          " 'JobCardInterface'.\n"
-      );
-    }
-
-    const hasValidTypes: boolean =
-      typeof job.id === "string" &&
-      typeof job.description === "string" &&
-      typeof job.company === "string" &&
-      typeof job.department === "string" &&
-      typeof job.position === "string" &&
-      typeof job.location === "string" &&
-      Array.isArray(job.images);
-
-    if (!hasValidTypes) {
-      throw new Error(
-        "\nJobCard: " + INVALID_TYPE_ERROR_MESSAGE + " 'JobCardInterface'.\n"
-      );
-    }
-
     const isNotEmpty: boolean =
       job.id.length > 0 &&
       job.company.length > 0 &&
@@ -89,7 +51,16 @@ const JobCard = (p: Props) => {
     }
 
     job.images.every((image): void => {
-      imageSetValidation("JobCard", image);
+      const creditsExists: boolean = typeof image.credits === "string";
+      const creditTitleExists: boolean = typeof image.creditTitle === "string";
+      const creditLinkExists: boolean = typeof image.creditLink === "string";
+      const creditItemsAlign: boolean =
+        creditsExists === creditTitleExists &&
+        creditsExists === creditLinkExists;
+
+      if (!creditItemsAlign) {
+        throw new Error("\nJobCard: " + INVALID_CREDITS_ERROR_MESSAGE + "\n");
+      }
     });
   });
 

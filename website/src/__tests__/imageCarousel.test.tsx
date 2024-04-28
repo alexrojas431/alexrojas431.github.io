@@ -6,10 +6,6 @@ import {
   EMPTY_OBJECT_KEYS_ERROR_MESSAGE,
   EMPTY_PROPS_ERROR_MESSAGE,
   INVALID_CREDITS_ERROR_MESSAGE,
-  INVALID_INTERFACE_ERROR_MESSAGE,
-  INVALID_STATICIMAGEDATA_OBJECT_ERROR_MESSAGE,
-  INVALID_TYPE_ERROR_MESSAGE,
-  NON_ARRAY_ERROR_MESSAGE,
 } from "@/util/globalConstants";
 
 //* Mock data
@@ -68,44 +64,12 @@ const mockWithoutCreditsData: ImageSetCaptions[] = [
 
 //* Invalid mock data
 
-const mockNonArrayData: any = {
-  id: 1,
-  location: "location",
-};
-
-const mockInvalidObjectData: any[] = [
-  {
-    id: 1,
-    location: "location",
-  },
-];
-
 const mockIncompleteData: any[] = [
   {
     id: "",
     src: "",
     alt: "",
     caption: "",
-  },
-];
-
-const mockInvalidTypeData: any[] = [
-  {
-    id: 1,
-    src: 1,
-    alt: 1,
-    caption: 2,
-  },
-];
-
-const mockInvalidStaticImageData: any[] = [
-  {
-    id: "0",
-    src: {
-      src: "/image_0.jpg",
-    },
-    alt: "alt of image_0",
-    caption: "caption of image_0",
   },
 ];
 
@@ -121,39 +85,10 @@ const mockInvalidCreditsData: ImageSetCaptions[] = [
 ];
 
 describe("imageCarousel prop validation", (): void => {
-  // Check that props is an array
-  it("Should throw error if props isn't an array", (): void => {
-    expect(() =>
-      render(<ImageCarousel imageCarouselData={mockNonArrayData} />)
-    ).toThrow("\nImageCarousel: " + NON_ARRAY_ERROR_MESSAGE + "\n");
-  });
-
   // Check that props is not empty
   it("Should throw error if props has not data", (): void => {
     expect(() => render(<ImageCarousel imageCarouselData={[]} />)).toThrow(
       "\nImageCarousel: " + EMPTY_PROPS_ERROR_MESSAGE + "\n"
-    );
-  });
-
-  // Check that invalid object fails interface validation
-  it("Should throw error if object doesn't follow interface's keys", (): void => {
-    expect(() =>
-      render(<ImageCarousel imageCarouselData={mockInvalidObjectData} />)
-    ).toThrow(
-      "\nImageCarousel: " +
-        INVALID_INTERFACE_ERROR_MESSAGE +
-        " 'ImageSetCaptions'.\n"
-    );
-  });
-
-  // Check that invalid object fails type validation
-  it("Should throw error if object doesn't follow interface's key types", (): void => {
-    expect(() =>
-      render(<ImageCarousel imageCarouselData={mockInvalidTypeData} />)
-    ).toThrow(
-      "\nImageCarousel: " +
-        INVALID_TYPE_ERROR_MESSAGE +
-        " 'ImageSetCaptions'.\n"
     );
   });
 
@@ -173,15 +108,6 @@ describe("imageCarousel prop validation", (): void => {
     expect(() =>
       render(<ImageCarousel imageCarouselData={mockInvalidCreditsData} />)
     ).toThrow("\nImageCarousel: " + INVALID_CREDITS_ERROR_MESSAGE + "\n");
-  });
-
-  // Check that invalid object fails next/Image validation
-  it("Should throw error if src key has object that doesn't follow StaticImageData.", (): void => {
-    expect(() =>
-      render(<ImageCarousel imageCarouselData={mockInvalidStaticImageData} />)
-    ).toThrow(
-      "\nImageCarousel: " + INVALID_STATICIMAGEDATA_OBJECT_ERROR_MESSAGE + "\n"
-    );
   });
 });
 
