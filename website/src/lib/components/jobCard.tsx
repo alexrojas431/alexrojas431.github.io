@@ -39,7 +39,7 @@ const JobCard = (p: Props) => {
 
   // Check that props are in form of JobCardInterface
   p.jobCardData.every((job): void => {
-    const hasValidKeys =
+    const hasValidKeys: boolean =
       typeof job === "object" &&
       "id" in job &&
       "company" in job &&
@@ -57,7 +57,7 @@ const JobCard = (p: Props) => {
       );
     }
 
-    const hasValidTypes =
+    const hasValidTypes: boolean =
       typeof job.id === "string" &&
       typeof job.description === "string" &&
       typeof job.company === "string" &&
@@ -72,7 +72,7 @@ const JobCard = (p: Props) => {
       );
     }
 
-    const isNotEmpty =
+    const isNotEmpty: boolean =
       job.id.length > 0 &&
       job.company.length > 0 &&
       job.department.length > 0 &&

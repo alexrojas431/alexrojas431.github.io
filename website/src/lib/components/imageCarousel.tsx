@@ -41,7 +41,7 @@ const ImageCarousel = (p: Props) => {
 
   // Go through props data and validate it
   p.imageCarouselData.every((image): void => {
-    const hasValidKeys =
+    const hasValidKeys: boolean =
       typeof image === "object" &&
       "id" in image &&
       "src" in image &&
@@ -56,7 +56,7 @@ const ImageCarousel = (p: Props) => {
       );
     }
 
-    const hasValidTypes =
+    const hasValidTypes: boolean =
       typeof image.id === "string" &&
       (typeof image.src === "string" || typeof image.src === "object") &&
       typeof image.alt === "string" &&
@@ -70,7 +70,7 @@ const ImageCarousel = (p: Props) => {
       );
     }
 
-    const isNotEmpty =
+    const isNotEmpty: boolean =
       image.id.length > 0 &&
       Object.keys(image.src).length > 0 &&
       image.alt.length > 0 &&
@@ -84,7 +84,7 @@ const ImageCarousel = (p: Props) => {
       );
     }
 
-    let staticImage = true;
+    let staticImage: boolean = true;
     if (typeof image.src === "object") {
       staticImage =
         typeof image.src.src === "string" &&
