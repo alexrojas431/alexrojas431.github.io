@@ -3,7 +3,7 @@ import {
   ListPoint,
   ProjectTemplateInterface,
   TechStack,
-} from "@/lib/interface/projectTemplateInterface";
+} from "@/interface/projectTemplateInterface";
 import { splitContent } from "@/util/splitContent";
 import styles from "@/scss/projects.module.scss";
 

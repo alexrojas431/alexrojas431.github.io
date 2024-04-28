@@ -1,4 +1,4 @@
-import { ProjectTemplateInterface } from "@/lib/interface/projectTemplateInterface";
+import { ProjectTemplateInterface } from "@/interface/projectTemplateInterface";
 
 export const starWarsTemplateData: ProjectTemplateInterface[] = [
   {

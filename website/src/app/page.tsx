@@ -1,10 +1,10 @@
 import Image from "next/image";
-import LogoRow from "@/lib/components/logoRow";
-import ProjectCard from "@/lib/components/projectCard";
-import JobCard from "@/lib/components/jobCard";
-import { homeLogoData } from "@/lib/data/logoData";
-import { projectCardData } from "@/lib/data/projectCardData";
-import { jobCardData } from "@/lib/data/jobCardData";
+import LogoRow from "@/components/logoRow";
+import ProjectCard from "@/components/projectCard";
+import JobCard from "@/components/jobCard";
+import { homeLogoData } from "@/data/logoData";
+import { projectCardData } from "@/data/projectCardData";
+import { jobCardData } from "@/data/jobCardData";
 import ProfilePic from "@/public/AlexRProfilePic.jpg";
 import styles from "@/scss/pages/home.module.scss";
 

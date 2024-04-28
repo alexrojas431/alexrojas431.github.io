@@ -23,7 +23,6 @@
       "@/public/*": ["public/*"],
       "@/app/*": ["src/app/*"],
       "@/projects/*": ["src/app/projects/*"],
-      "@/lib/*": ["src/lib/*"],
       "@/components/*": ["src/lib/components/*"],
       "@/scss/*": ["src/lib/scss/*"],
       "@/data/*": ["src/lib/data/*"],

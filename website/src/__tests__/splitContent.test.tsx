@@ -1,6 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 import { Fragment } from "react";
-import { splitContent } from "@/lib/util/splitContent";
+import { splitContent } from "@/util/splitContent";
 
 describe("splitContent function", () => {
   const id = "test";

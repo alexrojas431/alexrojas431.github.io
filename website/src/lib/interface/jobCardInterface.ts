@@ -1,4 +1,4 @@
-import { ImageSetInterface } from "@/lib/interface/imageSetInterfaces";
+import { ImageSetInterface } from "@/interface/imageSetInterfaces";
 
 export interface JobCardInterface {
   id: string;

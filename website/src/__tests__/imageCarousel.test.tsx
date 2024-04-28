@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { fireEvent, render, waitFor } from "@testing-library/react";
-import ImageCarousel from "@/lib/components/imageCarousel";
-import { ImageSetCaptions } from "@/lib/interface/imageSetInterfaces";
+import ImageCarousel from "@/components/imageCarousel";
+import { ImageSetCaptions } from "@/interface/imageSetInterfaces";
 import {
   EMPTY_OBJECT_KEYS_ERROR_MESSAGE,
   EMPTY_PROPS_ERROR_MESSAGE,
@@ -10,7 +10,7 @@ import {
   INVALID_STATICIMAGEDATA_OBJECT_ERROR_MESSAGE,
   INVALID_TYPE_ERROR_MESSAGE,
   NON_ARRAY_ERROR_MESSAGE,
-} from "@/lib/util/globalConstants";
+} from "@/util/globalConstants";
 
 //* Mock data
 

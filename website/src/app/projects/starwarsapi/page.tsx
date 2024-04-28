@@ -1,10 +1,10 @@
 import Link from "next/link";
-import LogoRow from "@/lib/components/logoRow";
-import ProjectTemplate from "@/lib/components/projectTemplate";
-import ImageCarousel from "@/lib/components/imageCarousel";
-import { starWarsCarousel } from "@/lib/data/imageCarouselData";
-import { starWarsTemplateData } from "@/lib/data/projectTemplateData/starwarsTemplateData";
-import { starLogoData } from "@/lib/data/logoData";
+import LogoRow from "@/components/logoRow";
+import ProjectTemplate from "@/components/projectTemplate";
+import ImageCarousel from "@/components/imageCarousel";
+import { starWarsCarousel } from "@/data/imageCarouselData";
+import { starWarsTemplateData } from "@/data/projectTemplateData/starwarsTemplateData";
+import { starLogoData } from "@/data/logoData";
 import styles from "@/scss/projects.module.scss";
 import star from "@/scss/pages/starwars.module.scss";
 

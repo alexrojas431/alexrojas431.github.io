@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { render, waitFor } from "@testing-library/react";
-import JobCard from "@/lib/components/jobCard";
-import { JobCardInterface } from "@/lib/interface/jobCardInterface";
+import JobCard from "@/components/jobCard";
+import { JobCardInterface } from "@/interface/jobCardInterface";
 import {
   EMPTY_OBJECT_KEYS_ERROR_MESSAGE,
   EMPTY_PROPS_ERROR_MESSAGE,
@@ -10,7 +10,7 @@ import {
   INVALID_STATICIMAGEDATA_OBJECT_ERROR_MESSAGE,
   INVALID_TYPE_ERROR_MESSAGE,
   NON_ARRAY_ERROR_MESSAGE,
-} from "@/lib/util/globalConstants";
+} from "@/util/globalConstants";
 
 //* Mock data
 

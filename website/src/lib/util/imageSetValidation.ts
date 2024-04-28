@@ -1,11 +1,11 @@
-import { ImageSetInterface } from "../interface/imageSetInterfaces";
+import { ImageSetInterface } from "@/interface/imageSetInterfaces";
 import {
   EMPTY_OBJECT_KEYS_ERROR_MESSAGE,
   INVALID_CREDITS_ERROR_MESSAGE,
   INVALID_INTERFACE_ERROR_MESSAGE,
   INVALID_STATICIMAGEDATA_OBJECT_ERROR_MESSAGE,
   INVALID_TYPE_ERROR_MESSAGE,
-} from "./globalConstants";
+} from "@/util/globalConstants";
 
 export function imageSetValidation(
   component: string,
