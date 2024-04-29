@@ -35,6 +35,36 @@ const mockProjectTemplateData: ProjectTemplateInterface = {
   description: "desc of project",
 };
 
+const mockDataFocusOnSummaryList: ProjectTemplateInterface = {
+  id: "project",
+  summaryList: [
+    {
+      id: "project-point_1",
+      title: "title of point_1",
+      content: "content of point_1",
+    },
+    {
+      id: "project-point_2",
+      title: "title of point_2",
+      content: "content of point_2",
+    },
+    {
+      id: "project-point_3",
+      title: "title of point_3",
+      content: "content of point_3",
+    },
+  ],
+  techStack: "techStack of project",
+  techStackList: [
+    {
+      id: "project-tech_1",
+      tech: "tech of tech_1",
+    },
+  ],
+  architecture: "architecture of project",
+  description: "desc of project",
+};
+
 //* Invalid mock data
 
 const mockIncompleteData: any = {
@@ -60,6 +90,21 @@ describe("ProjectTemplate prop validation", (): void => {
 });
 
 describe("ProjectTemplate component", (): void => {
+  // Check that finalItem function is giving the uneven final item special CSS
+  it("Should render uneven final point with special CSS in summaryList section", (): void => {
+    const { getByText } = render(
+      <ProjectTemplate projectTemplateData={mockDataFocusOnSummaryList} />
+    );
+
+    expect(
+      getByText(mockDataFocusOnSummaryList.summaryList[1].content)
+    ).not.toHaveClass("finalItem");
+
+    expect(
+      getByText(mockDataFocusOnSummaryList.summaryList[2].content)
+    ).toHaveClass("finalItem");
+  });
+
   // Check that every item was rendered
   it("Should render every element", (): void => {
     const { getByText } = render(
