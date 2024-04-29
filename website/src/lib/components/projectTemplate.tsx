@@ -23,7 +23,7 @@ interface Props {
   readonly projectTemplateData: ProjectTemplateInterface;
 }
 
-const ProjectTemplate = (p: Props) => {
+function ProjectTemplate(p: Props) {
   const project = p.projectTemplateData;
 
   const isNotEmpty: boolean =
@@ -58,12 +58,12 @@ const ProjectTemplate = (p: Props) => {
    * @returns boolean
    */
 
-  const isFinalItem = (i: number, sizeOfArray: number): boolean => {
+  function isFinalItem(i: number, sizeOfArray: number): boolean {
     if (i === sizeOfArray - 1) {
       return i % 2 === 0;
     }
     return false;
-  };
+  }
 
   return (
     <Fragment key={project.id}>
@@ -115,6 +115,6 @@ const ProjectTemplate = (p: Props) => {
       </section>
     </Fragment>
   );
-};
+}
 
 export default ProjectTemplate;

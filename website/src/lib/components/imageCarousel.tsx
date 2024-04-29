@@ -26,7 +26,7 @@ interface Props {
   readonly imageCarouselData: ImageSetCaptions[];
 }
 
-const ImageCarousel = (p: Props) => {
+function ImageCarousel(p: Props) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   if (p.imageCarouselData.length === 0) {
@@ -158,6 +158,6 @@ const ImageCarousel = (p: Props) => {
       </span>
     </section>
   );
-};
+}
 
 export default ImageCarousel;

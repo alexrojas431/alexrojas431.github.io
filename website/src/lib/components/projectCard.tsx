@@ -22,7 +22,7 @@ interface Props {
   readonly projectCardData: ProjectCardInterface[];
 }
 
-const ProjectCard = (p: Props) => {
+function ProjectCard(p: Props) {
   if (p.projectCardData.length === 0) {
     throw new Error("\nProjectCard: " + EMPTY_PROPS_ERROR_MESSAGE + "\n");
   }
@@ -61,6 +61,6 @@ const ProjectCard = (p: Props) => {
       ))}
     </Fragment>
   );
-};
+}
 
 export default ProjectCard;

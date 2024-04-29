@@ -27,7 +27,7 @@ interface Props {
   readonly jobCardData: JobCardInterface[];
 }
 
-const JobCard = (p: Props) => {
+function JobCard(p: Props) {
   if (p.jobCardData.length === 0) {
     throw new Error("\nJobCard: " + EMPTY_PROPS_ERROR_MESSAGE + "\n");
   }
@@ -114,6 +114,6 @@ const JobCard = (p: Props) => {
       ))}
     </Fragment>
   );
-};
+}
 
 export default JobCard;

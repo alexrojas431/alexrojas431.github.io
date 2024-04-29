@@ -25,7 +25,7 @@ interface Props {
   readonly logoData: LogoInterface[];
 }
 
-const LogoRow = (p: Props) => {
+function LogoRow(p: Props) {
   if (p.logoData.length === 0) {
     throw new Error("\nLogoRow: " + EMPTY_PROPS_ERROR_MESSAGE + "\n");
   }
@@ -88,6 +88,6 @@ const LogoRow = (p: Props) => {
       ))}
     </Fragment>
   );
-};
+}
 
 export default LogoRow;
