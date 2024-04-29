@@ -19,12 +19,12 @@ import styles from "@/scss/projects.module.scss";
  */
 
 interface Props {
-  readonly projectPageData: ProjectTemplateInterface[];
+  readonly projectTemplateData: ProjectTemplateInterface;
 }
 
 const ProjectTemplate = (p: Props) => {
   /**
-   * isFinalItem
+   ** isFinalItem
    *
    * @what
    * Determines if the index given is the last element in the array
@@ -46,58 +46,56 @@ const ProjectTemplate = (p: Props) => {
     return false;
   };
 
+  const project = p.projectTemplateData;
+
   return (
-    <Fragment>
-      {p.projectPageData.map((project: ProjectTemplateInterface) => (
-        <Fragment key={project.id}>
-          <section>
-            <header>
-              <h2>Summary of my work on the project</h2>
-            </header>
-            <ul className={styles.gridList}>
-              {project.summaryList.map((point: ListPoint, index: number) => (
-                <li
-                  key={point.id}
-                  className={`${
-                    isFinalItem(index, project.summaryList.length)
-                      ? styles.finalItem
-                      : ""
-                  }`}
-                >
-                  <h3>{point.title}</h3>
-                  {point.content}
-                </li>
-              ))}
-            </ul>
-          </section>
-          <section>
-            <header>
-              <h2>Tech Stack</h2>
-            </header>
-            <p>{splitContent(project.id + "-techStack", project.techStack)}</p>
-            <section>
-              <b>Tech Used</b>
-              <ul>
-                {project.techStackList.map((tech: TechStack) => (
-                  <li key={tech.id}>{tech.tech}</li>
-                ))}
-              </ul>
-            </section>
-          </section>
-          <section>
-            <header>
-              <h2>Architecture</h2>
-            </header>
-            <p>{splitContent(project.id + "-arch", project.architecture)}</p>
-          </section>
-          <section>
-            <header>
-              <h2>Overall Description</h2>
-            </header>
-            <p>{splitContent(project.id + "-desc", project.description)}</p>
-          </section>
-        </Fragment>
-      ))}
+    <Fragment key={project.id}>
+      <section>
+        <header>
+          <h2>Summary of my work on the project</h2>
+        </header>
+        <ul className={styles.gridList}>
+          {project.summaryList.map((point: ListPoint, index: number) => (
+            <li
+              key={point.id}
+              className={`${
+                isFinalItem(index, project.summaryList.length)
+                  ? styles.finalItem
+                  : ""
+              }`}
+            >
+              <h3>{point.title}</h3>
+              {point.content}
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section>
+        <header>
+          <h2>Tech Stack</h2>
+        </header>
+        <p>{splitContent(project.id + "-techStack", project.techStack)}</p>
+        <section>
+          <b>Tech Used</b>
+          <ul>
+            {project.techStackList.map((tech: TechStack) => (
+              <li key={tech.id}>{tech.tech}</li>
+            ))}
+          </ul>
+        </section>
+      </section>
+      <section>
+        <header>
+          <h2>Architecture</h2>
+        </header>
+        <p>{splitContent(project.id + "-arch", project.architecture)}</p>
+      </section>
+      <section>
+        <header>
+          <h2>Overall Description</h2>
+        </header>
+        <p>{splitContent(project.id + "-desc", project.description)}</p>
+      </section>
     </Fragment>
   );
 };
