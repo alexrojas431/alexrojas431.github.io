@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { render } from "@testing-library/react";
+import { render, waitFor } from "@testing-library/react";
 import LogoRow from "@/components/logoRow";
 import { LogoInterface } from "@/interface/logoInterface";
 import {
@@ -119,5 +119,64 @@ describe("LogoRow prop validation", (): void => {
     expect(() => render(<LogoRow logoData={mockInvalidCreditsData} />)).toThrow(
       "\nLogoRow: " + INVALID_CREDITS_ERROR_MESSAGE + "\n"
     );
+  });
+});
+
+describe("LogoRow component", (): void => {
+  // Check that staticImageData properties are used
+  it("Renders LogoRow even with staticImageData", (): void => {
+    const { getByAltText } = render(
+      <LogoRow logoData={mockWithStaticImageData} />
+    );
+
+    expect(
+      getByAltText(mockWithStaticImageData[0].image.alt)
+    ).toBeInTheDocument();
+
+    let tag = getByAltText(mockWithStaticImageData[0].image.alt);
+
+    const expectedSrc = expect.stringMatching("image-1.jpg");
+
+    expect(tag).toHaveAttribute("src", expectedSrc);
+    expect(tag).toHaveAttribute("height", "50");
+    expect(tag).toHaveAttribute("width", "50");
+  });
+
+  // Check that Credits text are not rendered when not provided
+  it("Does not render credits as it's empty", (): void => {
+    const { getByText } = render(<LogoRow logoData={mockDataWithoutCredits} />);
+
+    expect(
+      getByText(mockDataWithoutCredits[0].description)
+    ).not.toHaveTextContent(/credits/);
+  });
+
+  // Check that every item in the object renders
+  it("Renders multiple Logo's when available", (): void => {
+    const { getByAltText, getByText } = render(
+      <LogoRow logoData={mockLogoData} />
+    );
+
+    mockLogoData.forEach(async (logo): Promise<void> => {
+      expect(getByText(logo.description)).toBeInTheDocument();
+      expect(getByAltText(logo.image.alt)).toBeInTheDocument();
+
+      const imgTag = getByAltText(logo.image.alt);
+
+      await waitFor((): void => {
+        expect(imgTag).toHaveAttribute("src", logo.image.src);
+      });
+
+      expect(imgTag.parentElement).toHaveAttribute("href", logo.link);
+      expect(getByText(logo.image.credits as string)).toBeInTheDocument();
+      expect(getByText(logo.image.credits as string)).toHaveAttribute(
+        "href",
+        logo.image.creditLink
+      );
+      expect(getByText(logo.image.credits as string)).toHaveAttribute(
+        "title",
+        logo.image.creditTitle
+      );
+    });
   });
 });

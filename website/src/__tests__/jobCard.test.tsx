@@ -185,7 +185,7 @@ describe("JobCard component", (): void => {
       let tag = getByAltText(image.alt);
 
       await waitFor((): void => {
-        expect(tag).toHaveAttribute("src", image.src);
+        expect(tag).toHaveAttribute("src", "/image_0.jpg");
         expect(tag).toHaveAttribute("height", 50);
         expect(tag).toHaveAttribute("width", 50);
       });
@@ -225,8 +225,12 @@ describe("JobCard component", (): void => {
       expect(getByText(job.location)).toBeInTheDocument();
       expect(getByText(job.description)).toBeInTheDocument();
 
-      job.images.forEach(async (image): Promise<void> => {
+      job.images.forEach((image): void => {
         expect(getByAltText(image.alt)).toBeInTheDocument();
+
+        const expectedSrc = expect.stringMatching("image");
+
+        expect(getByAltText(image.alt)).toHaveAttribute("src", expectedSrc);
         expect(getByText(image.credits as string)).toBeInTheDocument();
         expect(getByText(image.credits as string)).toHaveAttribute(
           "href",
