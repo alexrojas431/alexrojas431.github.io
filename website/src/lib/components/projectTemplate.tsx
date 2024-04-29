@@ -6,6 +6,7 @@ import {
 } from "@/interface/projectTemplateInterface";
 import { splitContent } from "@/util/splitContent";
 import styles from "@/scss/projects.module.scss";
+import { EMPTY_OBJECT_KEYS_ERROR_MESSAGE } from "@/util/globalConstants";
 
 /**
  ** ProjectTemplate
@@ -23,6 +24,24 @@ interface Props {
 }
 
 const ProjectTemplate = (p: Props) => {
+  const project = p.projectTemplateData;
+
+  const isNotEmpty: boolean =
+    project.id.length > 0 &&
+    project.summaryList.length > 0 &&
+    project.techStack.length > 0 &&
+    project.techStackList.length > 0 &&
+    project.architecture.length > 0 &&
+    project.description.length > 0;
+
+  if (!isNotEmpty) {
+    throw new Error(
+      "\nProjectTemplate: " +
+        EMPTY_OBJECT_KEYS_ERROR_MESSAGE +
+        " 'ProjectTemplateInterface'.\n"
+    );
+  }
+
   /**
    ** isFinalItem
    *
@@ -45,8 +64,6 @@ const ProjectTemplate = (p: Props) => {
     }
     return false;
   };
-
-  const project = p.projectTemplateData;
 
   return (
     <Fragment key={project.id}>
