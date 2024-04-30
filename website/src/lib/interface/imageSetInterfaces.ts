@@ -9,6 +9,6 @@ export interface ImageSetInterface {
   creditTitle?: string;
 }
 
-export interface ImageSetCaptions extends ImageSetInterface{
-    caption: string;
+export interface ImageSetCaptions extends ImageSetInterface {
+  caption: string;
 }

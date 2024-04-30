@@ -1,11 +1,17 @@
 "use client";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ImageSetCaptions } from "@/interface/imageSetInterfaces";
 import styles from "@/scss/components/imageCarousel.module.scss";
+import {
+  INVALID_CREDITS_ERROR_MESSAGE,
+  EMPTY_PROPS_ERROR_MESSAGE,
+  EMPTY_OBJECT_KEYS_ERROR_MESSAGE,
+} from "@/util/globalConstants";
 
 /**
- * ImageCarousel
+ ** ImageCarousel
  *
  * @what
  * ImageCarousel is the template for a set of images that are displayed in a slideshow format.
@@ -20,10 +26,43 @@ interface Props {
   readonly imageCarouselData: ImageSetCaptions[];
 }
 
-const ImageCarousel = (p: Props) => {
+function ImageCarousel(p: Props) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  function nextSlide() {
+  if (p.imageCarouselData.length === 0) {
+    throw new Error("\nImageCarousel: " + EMPTY_PROPS_ERROR_MESSAGE + "\n");
+  }
+
+  // Go through props data and validate it
+  p.imageCarouselData.every((image): void => {
+    const isNotEmpty: boolean =
+      image.id.length > 0 &&
+      Object.keys(image.src).length > 0 &&
+      image.alt.length > 0 &&
+      image.caption.length > 0;
+
+    if (!isNotEmpty) {
+      throw new Error(
+        "\nImageCarousel: " +
+          EMPTY_OBJECT_KEYS_ERROR_MESSAGE +
+          " 'ImageSetCaptions'.\n"
+      );
+    }
+
+    const creditsExists = typeof image.credits === "string";
+    const creditTitleExists = typeof image.creditTitle === "string";
+    const creditLinkExists = typeof image.creditLink === "string";
+    const creditItemsAlign =
+      creditsExists === creditTitleExists && creditsExists === creditLinkExists;
+
+    if (!creditItemsAlign) {
+      throw new Error(
+        "\nImageCarousel: " + INVALID_CREDITS_ERROR_MESSAGE + "\n"
+      );
+    }
+  });
+
+  function nextSlide(): void {
     const newIndex = currentSlide + 1;
     if (newIndex >= 0 && newIndex < p.imageCarouselData.length) {
       setCurrentSlide(newIndex);
@@ -32,7 +71,7 @@ const ImageCarousel = (p: Props) => {
     }
   }
 
-  function previousSlide() {
+  function previousSlide(): void {
     const newIndex = currentSlide - 1;
     if (newIndex >= 0 && newIndex < p.imageCarouselData.length) {
       setCurrentSlide(newIndex);
@@ -58,11 +97,37 @@ const ImageCarousel = (p: Props) => {
               ? styles.currentSlide
               : styles.notCurrentSlide
           }`}
+          data-testid={`${
+            index === currentSlide ? "currentSlide" : "notCurrentSlide " + index
+          }`}
         >
           <span className={styles.slideImg}>
-            <Image src={image.src} alt={image.alt} width={800} height={800} />
+            {typeof image.src === "object" ? (
+              <Image
+                src={image.src.src}
+                alt={image.alt}
+                width={image.src.width}
+                height={image.src.height}
+              />
+            ) : (
+              <Image src={image.src} alt={image.alt} width={800} height={800} />
+            )}
           </span>
-          <p>{image.caption}</p>
+          <p>
+            {image.caption}
+            {image.credits && image.creditLink && (
+              <Fragment>
+                <br />
+                <Link
+                  href={image.creditLink}
+                  title={image.creditTitle}
+                  className={styles.credits}
+                >
+                  {image.credits}
+                </Link>
+              </Fragment>
+            )}
+          </p>
         </div>
       ))}
       <button className={styles.back} onClick={previousSlide}>
@@ -75,11 +140,11 @@ const ImageCarousel = (p: Props) => {
         {p.imageCarouselData.map((image: ImageSetCaptions, index: number) => (
           <button
             key={image.id + "-thumbnail"}
-            onClick={() => goToSlide(index)}
+            onClick={(): void => goToSlide(index)}
           >
             <Image
               src={image.src}
-              alt=""
+              alt={"image " + (index + 1) + " thumbnail"}
               className={`${
                 index === currentSlide
                   ? styles.currentThumb
@@ -93,6 +158,6 @@ const ImageCarousel = (p: Props) => {
       </span>
     </section>
   );
-};
+}
 
 export default ImageCarousel;

@@ -2,9 +2,13 @@ import Link from "next/link";
 import { Fragment } from "react";
 import { ProjectCardInterface } from "@/interface/projectCardInterface";
 import styles from "@/scss/components/projectCard.module.scss";
+import {
+  EMPTY_OBJECT_KEYS_ERROR_MESSAGE,
+  EMPTY_PROPS_ERROR_MESSAGE,
+} from "@/util/globalConstants";
 
 /**
- * ProjectCard
+ ** ProjectCard
  *
  * @what
  * A projectCard is the template for the cards that show a summary for a personal project on the homepage
@@ -18,7 +22,27 @@ interface Props {
   readonly projectCardData: ProjectCardInterface[];
 }
 
-const ProjectCard = (p: Props) => {
+function ProjectCard(p: Props) {
+  if (p.projectCardData.length === 0) {
+    throw new Error("\nProjectCard: " + EMPTY_PROPS_ERROR_MESSAGE + "\n");
+  }
+
+  p.projectCardData.every((project): void => {
+    const isNotEmpty: boolean =
+      project.id.length > 0 &&
+      project.link.length > 0 &&
+      project.title.length > 0 &&
+      project.description.length > 0;
+
+    if (!isNotEmpty) {
+      throw new Error(
+        "\nProjectCard: " +
+          EMPTY_OBJECT_KEYS_ERROR_MESSAGE +
+          " 'ProjectCardInterface'.\n"
+      );
+    }
+  });
+
   return (
     <Fragment>
       {p.projectCardData.map((proj: ProjectCardInterface) => (
@@ -37,6 +61,6 @@ const ProjectCard = (p: Props) => {
       ))}
     </Fragment>
   );
-};
+}
 
 export default ProjectCard;
