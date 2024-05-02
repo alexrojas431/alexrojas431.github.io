@@ -1,0 +1,122 @@
+import { ProjectTemplateInterface } from "@/interface/projectTemplateInterface";
+
+export const personalsiteProjectTemplate: ProjectTemplateInterface = {
+  id: "personalWebsite",
+  summaryList: [
+    {
+      id: "personalWebsite-point-1",
+      title: "Modular design - React elements and SCSS",
+      content: [
+        "I designed the website with modularity in mind.",
+        "This meant that the codebase would be able to handle components being slotted in or have sections of code able to be turned into components.",
+        "This components allow for a more concise codebase, by sectioning out redundant code found in several pages, the files are then easier to read.",
+        "This extends past React elements and also applies to the SCSS for the website.",
+        "Much like the React elements, the components would be used by a parent element.",
+        "There's a common foundation of SCSS that other pages employes its own SCSS in order to build its unique visual flare.",
+      ].join(" "),
+    },
+    {
+      id: "personalWebsite-point-2",
+      title: "Modular data and type checking with Typescript",
+      content: [
+        "Building off of the previous point, to make a project capable of handling modular functionality then it's data should be consistent.",
+        "Typescript allows for this, with the type checking and more traditional interfaces, I'm able to format data that if incorrect will not let the app deploy.",
+        "For each unique set of data that needs to be passed into component I can then create a unique interface.",
+        "On top of this, as a bonus, typescript allows for easy validation for props through its strict adherence to types.",
+      ].join(" "),
+    },
+    {
+      id: "personalWebsite-point-3",
+      title: "Visual flare with SCSS",
+      content: [
+        "Utilized SCSS to create the visual flare found on the website.",
+        "Created variables, mix-ins and media queries with SCSS.",
+        "SCSS helped make the website visually modular and easy to work with by using variables and mix-ins allowing pages to have a consistent presentation.",
+        "Using media queries allowed for more unique pages like for example the shadows on hover or the moving backgrounds in certain pages.",
+      ].join(" "),
+    },
+    {
+      id: "personalWebsite-point-4",
+      title: "100% code coverage with Jest Testing",
+      content: [
+        "Used Jest testing methods to achieve complete code coverage.",
+        "This makes sure that the functional aspect of the codebase acts in a consistent manner regardless of future changes.",
+        "The reliability and stability of the project is ensured, especially important when considering the fact that I will be using and updating this project for years to come.",
+      ].join(" "),
+    },
+    {
+      id: "personalWebsite-point-5",
+      title: "Implementing Next.JS optimizations",
+      content: [
+        "Next.JS has a lot of benefits from the easy to make website/URL paths through its app/pages router, optimizations of certain HTML tags like images, and how content is rendered and generated.",
+        "The optimizations made to images allow for unique behavior to be achieved relatively with ease.",
+        "Next.JS also easily allows the dev to implement different kinds of rendering from client side to server side as well as includes static site generation (SSG).",
+        "Most of the content in this project is statically generated which is content that is generated during build time.",
+        "This significantly improves performance as opposed to having a completely client/server rendering of content as SSG reuses content built during the build.",
+        "This project was the first time I have worked with Next.JS and I'm glad I did because it has brough in a lot of benefits to this project.",
+      ].join(" "),
+    },
+  ],
+  techStack: [
+    "Currently there is no dedicated back-end and by extension no database.",
+    "With that said images may be placed in a remote storage site in the future.",
+  ].join(" "),
+  techStackList: [
+    {
+      id: "personalWebsite-tech-1",
+      tech: "Next.JS, a framework of React.JS",
+    },
+    { id: "personalWebsite-tech-2", tech: "SCSS, a superset of CSS" },
+    {
+      id: "personalWebsite-tech-3",
+      tech: "Javascript ES6",
+    },
+    {
+      id: "personalWebsite-tech-4",
+      tech: "HTML6",
+    },
+    {
+      id: "personalWebsite-tech-5",
+      tech: "Typescript, used for its addition of types as well as more traditional forms of interfaces",
+    },
+    { id: "personalWebsite-tech-6", tech: "Jest for testing" },
+    { id: "personalWebsite-tech-7", tech: "Webpack, build tool" },
+  ],
+  architecture: [
+    "As per Next.JS, two very important parts of the project are built in which is React and Webpack.",
+    "\nReact introduces a method to make sections of code into components and also makes those sections reusable.",
+    "\nWebpack is a build tool which automates the compilation and bundling of code.",
+    "\n\nThis project focuses on a component focused architecture where reusability is the goal for the majority of the codebase.",
+  ].join(" "),
+  description: [
+    "Up until I created this project, the only avenues to find out about myself was through professional networks like LinkedIn but I wanted more.",
+    "On top of that, I'm creating this website during the begining of my career so creating the website myself allows for the opportunity to get more experience with coding.",
+    "Not to mention that I get to create a project and talk about it like I am right now.",
+    "This website mainly focuses on my professional career and other projects that may be related to my field of expertise.",
+    "\n\nYou can look through the website's pages to see everything but I'll describe the general content in the website.",
+    "\nIn the website you'll find a brief description of myself, my personality and my workstyle.",
+    "Beyond that, the rest of the website is focused on my career.",
+    "\nFirst, you'll find a list of projects I've made, or participated in that are unrelated to the jobs I've held.",
+    "Clicking on the overview of the personal project will lead you to a new page dedicated to detailing that specific project.",
+    "\nFinally, below the list of my personal projects, you can see a list of my jobs that I've held.",
+    "There's an overview of what I did in that job, what I felt about the job and what I took away from that job.",
+    "\n\nI didn't want to spend a ton of time on this project, so the simplicity of the project reflects this goal.",
+    "The design of the website was made with this goal in mind as was the design of the components within the codebase.",
+    "\n\nPages:",
+    "\n\nHome Page - Holds a description of myself, and a list of personal projects and jobs I've held.",
+    "\n\nProject Pages - Each listed personal project has a dedicated page to it that has a more detailed overview of the project.",
+    "Clicking on any project description will take you to its project page, like you did to get here.",
+    "\n\nComponents:",
+    "\n\nProjectCard - A ProjectCard contains the projects title and a short description of the project.",
+    "\nEX: The list of personal projects on the home page is made up of several of these.",
+    "\n\nJobCard - A JobCard contains details of that specific job and may include a couple of images representing that company or my experience there.",
+    "\nEX: The list of jobs on the home page is made up of several of these.",
+    "\n\nLogoRow - A LogoRow is a series of logos that when clicked link you to the relevant external website.",
+    "\nEX: Look at the home page where you can see 2 images linking to my GitHub profile and to my LinkedIn profile.",
+    "\n\nImageCarousel - An ImageCarousel is a series of images with its own caption that the user can sift through.",
+    "\nEX: Look at the starwarsapi project page to see 5 images that are relevant to the project.",
+    "\n\nProjectTemplate - A ProjectTemplate is a set of standards for the project pages.",
+    "Since most of the projects I'll ever post here will involve coding, I can assume that a lot of information can be presented in the same way.",
+    "\nEX: Look at any project page, everything from 'Summary of my work on the project' down to 'Overall Description' is part of the template.",
+  ].join(" "),
+};

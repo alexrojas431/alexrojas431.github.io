@@ -34,7 +34,7 @@ export const projectCardData: ProjectCardInterface[] = [
   },
   {
     id: "projectCard-4",
-    link: "/projects/starwarsapi",
+    link: "/projects/personalWebsite",
     title: "My Personal Website",
     description: [
       "I try to learn new things and challenge myself on every project I contribute to.",

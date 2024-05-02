@@ -62,3 +62,16 @@ export const starLogoData: LogoInterface[] = [
     description: "Detailed explanation of architecture of API",
   },
 ];
+
+export const personalSiteLogoData: LogoInterface[] = [
+  {
+    id: "personalSiteLogo-1",
+    link: "https://github.com/alexrojas431/alexrojas431.github.io",
+    image: {
+      id: "personalSiteLogo-1-img",
+      src: GitHubIcon,
+      alt: "GitHub Icon, click to go to the projects GitHub Page",
+    },
+    description: "Project code on GitHub",
+  },
+];
