@@ -39,31 +39,31 @@ $big-web-shadow-right: 4.4px 3.4px 5.1px rgba(1, 6, 26, 0.165),
   background-image: $web-image-url;
   background-repeat: repeat;
   position: fixed;
-  top: 0;
+  top: -1000px;
   left: 0;
   overflow: hidden;
-  height: 100%;
-  width: 200%;
+  height: 500%;
+  width: 500%;
   z-index: -2;
-  -webkit-animation: move-background-left 100s linear infinite;
-  animation: move-background-left 100s linear infinite;
+  -webkit-animation: move-background-diagonal-left 100s linear infinite;
+  animation: move-background-diagonal-left 100s linear infinite;
 }
 
-@-webkit-keyframes move-background-left {
+@-webkit-keyframes move-background-diagonal-left {
   0% {
     transform: translate3d(0px, 0px, 0px);
   }
   100% {
-    transform: translate3d(-1000px, 0px, 0px);
+    transform: translate3d(-1000px, -1000px, 0px);
   }
 }
 
-@keyframes move-background-left {
+@keyframes move-background-diagonal-left {
   0% {
     transform: translate3d(0px, 0px, 0px);
   }
   100% {
-    transform: translate3d(-1000px, 0px, 0px);
+    transform: translate3d(-1000px, 1000px, 0px);
   }
 }
 
