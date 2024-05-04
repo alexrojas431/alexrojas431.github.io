@@ -10,17 +10,17 @@ $web-shadow-right: 2.9px 1.5px 1.9px rgba(1, 6, 26, 0.119),
   11.2px 5.7px 7.8px rgba(1, 6, 26, 0.203),
   18.4px 9.4px 13.3px rgba(1, 6, 26, 0.246),
   25px 16px 23.4px rgba(1, 6, 26, 0.311);
-$web-shadow-left: -4.4px 3.4px 5.1px rgba(1, 6, 26, 0.165),
-  -9.7px 7.5px 10.6px rgba(1, 6, 26, 0.234),
-  -17px 13px 17.4px rgba(1, 6, 26, 0.288),
-  -28.1px 21.5px 27.2px rgba(1, 6, 26, 0.342),
-  -47.9px 36.7px 44.7px rgba(1, 6, 26, 0.411),
-  -102px 78px 96px rgba(1, 6, 26, 0.57);
+$big-web-shadow-right: 4.4px 3.4px 5.1px rgba(1, 6, 26, 0.165),
+  9.7px 7.5px 10.6px rgba(1, 6, 26, 0.234),
+  17px 13px 17.4px rgba(1, 6, 26, 0.288),
+  28.1px 21.5px 27.2px rgba(1, 6, 26, 0.342),
+  47.9px 36.7px 44.7px rgba(1, 6, 26, 0.411),
+  102px 78px 96px rgba(1, 6, 26, 0.57);
 
 #webCard {
   background: linear-gradient(to bottom, transparent, $web-background-end-rgb)
     $web-background-start-rgb;
-  box-shadow: $web-shadow-left;
+  box-shadow: $big-web-shadow-right;
   #webGrid {
     background-color: $web-background-container-rgb;
     box-shadow: $web-inset-shadow;
