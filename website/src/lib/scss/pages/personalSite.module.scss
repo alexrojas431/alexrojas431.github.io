@@ -1,0 +1,100 @@
+@use "@/scss/globals.scss";
+
+$web-image-url: url("../../../../public/personalSite/softwareTechLogoBackgroundImage.svg");
+$web-background-start-rgb: rgb(103, 41, 203);
+$web-background-end-rgb: rgb(35, 24, 67);
+$web-background-container-rgb: rgb(63, 30, 125);
+$web-inset-shadow: 10px 10px 10px black inset;
+$web-shadow-right: 2.9px 1.5px 1.9px rgba(1, 6, 26, 0.119),
+  6.4px 3.2px 4.4px rgba(1, 6, 26, 0.165),
+  11.2px 5.7px 7.8px rgba(1, 6, 26, 0.203),
+  18.4px 9.4px 13.3px rgba(1, 6, 26, 0.246),
+  25px 16px 23.4px rgba(1, 6, 26, 0.311);
+$web-shadow-left: -4.4px 3.4px 5.1px rgba(1, 6, 26, 0.165),
+  -9.7px 7.5px 10.6px rgba(1, 6, 26, 0.234),
+  -17px 13px 17.4px rgba(1, 6, 26, 0.288),
+  -28.1px 21.5px 27.2px rgba(1, 6, 26, 0.342),
+  -47.9px 36.7px 44.7px rgba(1, 6, 26, 0.411),
+  -102px 78px 96px rgba(1, 6, 26, 0.57);
+
+#webCard {
+  background: linear-gradient(to bottom, transparent, $web-background-end-rgb)
+    $web-background-start-rgb;
+  box-shadow: $web-shadow-left;
+  #webGrid {
+    background-color: $web-background-container-rgb;
+    box-shadow: $web-inset-shadow;
+  }
+  p {
+    background-color: $web-background-container-rgb;
+    box-shadow: $web-inset-shadow;
+  }
+  ul {
+    background-color: $web-background-container-rgb;
+    box-shadow: $web-inset-shadow;
+  }
+}
+
+#webMain {
+  background-image: $web-image-url;
+  background-repeat: repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 200%;
+  z-index: -2;
+  -webkit-animation: move-background-left 100s linear infinite;
+  animation: move-background-left 100s linear infinite;
+}
+
+@-webkit-keyframes move-background-left {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  100% {
+    transform: translate3d(-1000px, 0px, 0px);
+  }
+}
+
+@keyframes move-background-left {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  100% {
+    transform: translate3d(-1000px, 0px, 0px);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  #webMain {
+    -webkit-animation: none;
+    animation: none;
+  }
+}
+
+#webArrow {
+  background-color: globals.$background-start-rgb;
+  border: 1px solid globals.$card-border-rgb;
+  box-shadow: 2px 2px 2px 2px rgba(black, 1);
+}
+
+@mixin WebHoverLeft {
+  &:hover {
+    background: rgba(globals.$background-start-rgb, 1);
+    border: 2px solid rgba(white, 0.6);
+    transform: translateX(-4px);
+    box-shadow: $web-shadow-right;
+    span {
+      transform: translateX(-8px);
+    }
+  }
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  #webArrow {
+    @include WebHoverLeft;
+  }
+}
