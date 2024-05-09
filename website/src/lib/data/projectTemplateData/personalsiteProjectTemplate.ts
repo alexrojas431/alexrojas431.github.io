@@ -89,7 +89,7 @@ export const personalsiteProjectTemplate: ProjectTemplateInterface = {
     "\n\nThis project focuses on a component focused architecture where reusability is the goal for the majority of the codebase.",
   ].join(" "),
   description: [
-    "Up until I created this project, the only avenues to find out about myself was through professional networks like LinkedIn but I wanted more.",
+    "Up until I created this project, the only avenues to find out about myself was through professional networks like LinkedIn but that didn't allow for a lot of personality or creativity.",
     "On top of that, I'm creating this website during the begining of my career so creating the website myself allows for the opportunity to get more experience with coding.",
     "Not to mention that I get to create a project and talk about it like I am right now.",
     "This website mainly focuses on my professional career and other projects that may be related to my field of expertise.",
