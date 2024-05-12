@@ -2,7 +2,7 @@ import Link from "next/link";
 import LogoRow from "@/components/logoRow";
 import ProjectTemplate from "@/components/projectTemplate";
 import { personalsiteProjectTemplate } from "@/data/projectTemplateData/personalsiteProjectTemplate";
-import { personalSiteLogoData } from "@/data/logoData";
+import { personalSiteLogoData } from "@/data/logoData/personalSiteLogoData";
 import styles from "@/scss/projects.module.scss";
 import web from "@/scss/pages/personalSite.module.scss";
 

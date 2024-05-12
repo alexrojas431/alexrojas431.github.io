@@ -2,7 +2,7 @@ import Link from "next/link";
 import LogoRow from "@/components/logoRow";
 import ProjectTemplate from "@/components/projectTemplate";
 import { reactJam23_24WinterProjectTemplate } from "@/data/projectTemplateData/reactJam23_24WinterProjectTemplate";
-import { reactJam23_24WinterLogoData } from "@/data/logoData";
+import { reactJam23_24WinterLogoData } from "@/data/logoData/reactJam23_24WinterLogoData";
 import styles from "@/scss/projects.module.scss";
 
 export default function ReactJam23_24Winter() {
