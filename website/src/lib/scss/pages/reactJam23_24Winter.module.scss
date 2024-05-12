@@ -1,0 +1,30 @@
+@use "@/scss/globals.scss";
+
+$web-shadow-right: 2.9px 1.5px 1.9px rgba(1, 6, 26, 0.119),
+  6.4px 3.2px 4.4px rgba(1, 6, 26, 0.165),
+  11.2px 5.7px 7.8px rgba(1, 6, 26, 0.203),
+  18.4px 9.4px 13.3px rgba(1, 6, 26, 0.246),
+  25px 16px 23.4px rgba(1, 6, 26, 0.311);
+
+#jam23WinterGrid {
+  grid-template-columns: repeat(2, minmax(50%, auto));
+}
+
+@mixin JamHoverLeft {
+  &:hover {
+    background: rgba(globals.$background-start-rgb, 1);
+    border: 2px solid rgba(white, 0.6);
+    transform: translateX(-4px);
+    box-shadow: $web-shadow-right;
+    span {
+      transform: translateX(-8px);
+    }
+  }
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  #jam23WinterArrow {
+    @include JamHoverLeft;
+  }
+}
