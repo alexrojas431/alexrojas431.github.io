@@ -3,7 +3,6 @@
 $starsURL: url("../../../../public/StarWars/starry\ night\ -\ Transparent.png");
 $twinkleURL: url("../../../../public/StarWars/twinkling.png");
 $star-background-rgb: rgb(80, 83, 89);
-$star-inset-shadow: 10px 10px 10px black inset;
 $star-shadow-right: 2.9px 1.5px 1.9px rgba(157, 157, 157, 0.119),
   6.4px 3.2px 4.4px rgba(157, 157, 157, 0.165),
   11.2px 5.7px 7.8px rgba(157, 157, 157, 0.203),
@@ -14,17 +13,17 @@ $star-shadow-right: 2.9px 1.5px 1.9px rgba(157, 157, 157, 0.119),
   background-color: rgba(globals.$project-card-rgb, 0.2);
   #starGrid {
     background-color: $star-background-rgb;
-    box-shadow: $star-inset-shadow;
+    box-shadow: globals.$project-default-inset-shadow;
     grid-template-columns: repeat(3, minmax(33%, auto));
   }
   p {
     opacity: 0.9;
     background-color: $star-background-rgb;
-    box-shadow: $star-inset-shadow;
+    box-shadow: globals.$project-default-inset-shadow;
   }
   ul {
     background-color: rgba($star-background-rgb, 0.8);
-    box-shadow: $star-inset-shadow;
+    box-shadow: globals.$project-default-inset-shadow;
   }
 }
 

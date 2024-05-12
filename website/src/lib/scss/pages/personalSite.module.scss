@@ -4,7 +4,6 @@ $web-image-url: url("../../../../public/personalSite/softwareTechLogoBackgroundI
 $web-background-start-rgb: rgb(103, 41, 203);
 $web-background-end-rgb: rgb(35, 24, 67);
 $web-background-container-rgb: rgb(63, 30, 125);
-$web-inset-shadow: 10px 10px 10px black inset;
 $web-shadow-right: 2.9px 1.5px 1.9px rgba(1, 6, 26, 0.119),
   6.4px 3.2px 4.4px rgba(1, 6, 26, 0.165),
   11.2px 5.7px 7.8px rgba(1, 6, 26, 0.203),
@@ -23,15 +22,15 @@ $big-web-shadow-right: 4.4px 3.4px 5.1px rgba(1, 6, 26, 0.165),
   box-shadow: $big-web-shadow-right;
   #webGrid {
     background-color: $web-background-container-rgb;
-    box-shadow: $web-inset-shadow;
+    box-shadow: globals.$project-default-inset-shadow;
   }
   p {
     background-color: $web-background-container-rgb;
-    box-shadow: $web-inset-shadow;
+    box-shadow: globals.$project-default-inset-shadow;
   }
   ul {
     background-color: $web-background-container-rgb;
-    box-shadow: $web-inset-shadow;
+    box-shadow: globals.$project-default-inset-shadow;
   }
 }
 
