@@ -141,5 +141,6 @@ export const reactJam23_24WinterProjectTemplate: ProjectTemplateInterface = {
     "This screen also holds the UI for the game.",
     "\n\nAs the project grew, and more mechanics got introduced, the organization of the code became more important.",
     "Thankfully, that was something we had planned for at the begining of the project.",
+    "\n\n*Project code is updated in GitHub with some added features while the game on reactJam is out of date.",
   ].join(" "),
 };
