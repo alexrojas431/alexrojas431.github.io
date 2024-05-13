@@ -69,7 +69,7 @@ export const reactJam23_24WinterProjectTemplate: ProjectTemplateInterface = {
   techStackList: [
     {
       id: "personalWebsite-tech-1",
-      tech: "Pixi.JS, renderer that uses WebGl to optimize 2d visuals",
+      tech: "Pixi.JS, renderer that uses WebGL to optimize 2d visuals",
     },
     {
       id: "personalWebsite-tech-2",
