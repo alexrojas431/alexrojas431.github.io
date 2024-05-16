@@ -76,7 +76,7 @@ $big-web-shadow-right: 4.4px 3.4px 5.1px rgba(1, 6, 26, 0.165),
 #webArrow {
   background-color: globals.$background-start-rgb;
   border: 1px solid globals.$card-border-rgb;
-  box-shadow: 2px 2px 2px 2px rgba(black, 1);
+  box-shadow: 2px 2px 2px 2px black;
 }
 
 @mixin WebHoverLeft {

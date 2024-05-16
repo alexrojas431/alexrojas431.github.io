@@ -1,25 +1,51 @@
 @use "@/scss/globals.scss";
 
-$web-shadow-right: 2.9px 1.5px 1.9px rgba(1, 6, 26, 0.119),
+$snowURL: url("../../../../public/ReactJam23_24Winter/fallingSnow-modified.png");
+$jam-shadow-right: 2.9px 1.5px 1.9px rgba(1, 6, 26, 0.119),
   6.4px 3.2px 4.4px rgba(1, 6, 26, 0.165),
   11.2px 5.7px 7.8px rgba(1, 6, 26, 0.203),
   18.4px 9.4px 13.3px rgba(1, 6, 26, 0.246),
   25px 16px 23.4px rgba(1, 6, 26, 0.311);
+$jam-background-start-rgb: rgb(18, 45, 143);
+$jam-background-end-rgb: rgb(2, 14, 52);
+$jam-paper-rgb: rgb(120, 118, 104);
+$jam-card-rgb: rgb(108, 55, 41);
 
-#jam23WinterGrid {
-  grid-template-columns: repeat(2, minmax(50%, auto));
+#jam23WinterMain {
+  background-image: $snowURL;
+
+  #jam23WinterCard {
+    z-index: 1;
+    background-color: $jam-card-rgb;
+
+    #jam23WinterGrid {
+      background: $jam-paper-rgb;
+      grid-template-columns: repeat(2, minmax(50%, auto));
+    }
+    p {
+      background: $jam-paper-rgb;
+    }
+    ul {
+      background: $jam-paper-rgb;
+    }
+  }
 }
 
 @mixin JamHoverLeft {
   &:hover {
-    background: rgba(globals.$background-start-rgb, 1);
+    background-color: $jam-background-start-rgb;
     border: 2px solid rgba(white, 0.6);
     transform: translateX(-4px);
-    box-shadow: $web-shadow-right;
+    box-shadow: $jam-shadow-right;
     span {
       transform: translateX(-8px);
     }
   }
+}
+
+#jam23WinterArrow {
+  background: rgba(globals.$background-start-rgb, 1);
+  box-shadow: 2px 2px 2px 2px black;
 }
 
 /* Enable hover only on non-touch devices */
