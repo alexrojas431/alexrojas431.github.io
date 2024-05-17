@@ -8,8 +8,8 @@ $jam-shadow-right: 2.9px 1.5px 1.9px rgba(1, 6, 26, 0.119),
   25px 16px 23.4px rgba(1, 6, 26, 0.311);
 $jam-background-start-rgb: rgb(18, 45, 143);
 $jam-background-end-rgb: rgb(2, 14, 52);
-$jam-paper-rgb: rgb(120, 118, 104);
-$jam-card-rgb: rgb(108, 55, 41);
+$jam-paper-rgb: rgb(123, 132, 97);
+$jam-card-rgb: rgb(112, 71, 60);
 
 #jam23WinterMain {
   background-image: $snowURL;
@@ -21,12 +21,15 @@ $jam-card-rgb: rgb(108, 55, 41);
     #jam23WinterGrid {
       background: $jam-paper-rgb;
       grid-template-columns: repeat(2, minmax(50%, auto));
+      box-shadow: globals.$project-default-inset-shadow;
     }
     p {
       background: $jam-paper-rgb;
+      box-shadow: globals.$project-default-inset-shadow;
     }
     ul {
       background: $jam-paper-rgb;
+      box-shadow: globals.$project-default-inset-shadow;
     }
   }
 }
