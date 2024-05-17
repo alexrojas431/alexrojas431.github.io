@@ -2,9 +2,9 @@ import Link from "next/link";
 import LogoRow from "@/components/logoRow";
 import ProjectTemplate from "@/components/projectTemplate";
 import ImageCarousel from "@/components/imageCarousel";
-import { starWarsCarousel } from "@/data/imageCarouselData";
+import { starWarsCarousel } from "@/data/imageCarouselData/starWarsCarouselData";
 import { starWarsProjectTemplate } from "@/data/projectTemplateData/starwarsProjectTemplate";
-import { starLogoData } from "@/data/logoData";
+import { starLogoData } from "@/data/logoData/starWarsLogoData";
 import styles from "@/scss/projects.module.scss";
 import star from "@/scss/pages/starwars.module.scss";
 

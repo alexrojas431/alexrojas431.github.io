@@ -9,7 +9,7 @@ export const personalsiteProjectTemplate: ProjectTemplateInterface = {
       content: [
         "I designed the website with modularity in mind.",
         "This meant that the codebase would be able to handle components being slotted in or have sections of code able to be turned into components.",
-        "This components allow for a more concise codebase, by sectioning out redundant code found in several pages, the files are then easier to read.",
+        "These components allow for a more concise codebase, by sectioning out redundant code found in several pages, the files are then easier to read.",
         "This extends past React elements and also applies to the SCSS for the website.",
         "Much like the React elements, the components would be used by a parent element.",
         "There's a common foundation of SCSS that other pages employes its own SCSS in order to build its unique visual flare.",
@@ -58,7 +58,7 @@ export const personalsiteProjectTemplate: ProjectTemplateInterface = {
     },
   ],
   techStack: [
-    "Currently there is no dedicated back-end and by extension no database.",
+    "Currently there is no dedicated back end and by extension no database.",
     "With that said images may be placed in a remote storage site in the future.",
   ].join(" "),
   techStackList: [
@@ -89,7 +89,7 @@ export const personalsiteProjectTemplate: ProjectTemplateInterface = {
     "\n\nThis project focuses on a component focused architecture where reusability is the goal for the majority of the codebase.",
   ].join(" "),
   description: [
-    "Up until I created this project, the only avenues to find out about myself was through professional networks like LinkedIn but I wanted more.",
+    "Up until I created this project, the only avenues to find out about myself was through professional networks like LinkedIn but that didn't allow for a lot of personality or creativity.",
     "On top of that, I'm creating this website during the begining of my career so creating the website myself allows for the opportunity to get more experience with coding.",
     "Not to mention that I get to create a project and talk about it like I am right now.",
     "This website mainly focuses on my professional career and other projects that may be related to my field of expertise.",

@@ -12,7 +12,7 @@ export const projectCardData: ProjectCardInterface[] = [
   },
   {
     id: "projectCard-2",
-    link: "/projects/starwarsapi",
+    link: "/projects/reactJam23_24Winter",
     title: "ReactJam Winter 23/24: Cyberpunk Tycoon",
     description: [
       "Along with a friend of mine, we used React.JS to make a game within 12 days in the event called ReactJam 23/24.",

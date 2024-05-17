@@ -2,7 +2,7 @@ import Image from "next/image";
 import LogoRow from "@/components/logoRow";
 import ProjectCard from "@/components/projectCard";
 import JobCard from "@/components/jobCard";
-import { homeLogoData } from "@/data/logoData";
+import { homeLogoData } from "@/data/logoData/homeLogoData";
 import { projectCardData } from "@/data/projectCardData";
 import { jobCardData } from "@/data/jobCardData";
 import ProfilePic from "@/public/AlexRProfilePic.jpg";
