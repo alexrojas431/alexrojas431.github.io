@@ -16,7 +16,7 @@ export const reactJam23_24WinterProjectTemplate: ProjectTemplateInterface = {
       ].join(" "),
     },
     {
-      id: "personalWebsite-point-2",
+      id: "reactJam23_24Winter-point-2",
       title: "Modular data and type checking with Typescript",
       content: [
         "Building off of the previous point, to make a project capable of handling modular functionality then it's data should be consistent.",
@@ -26,7 +26,7 @@ export const reactJam23_24WinterProjectTemplate: ProjectTemplateInterface = {
       ].join(" "),
     },
     {
-      id: "personalWebsite-point-3",
+      id: "reactJam23_24Winter-point-3",
       title: "Optimized rendering with Pixi.JS",
       content: [
         "Games incorporate several mediums at once, one being a visual one.",
@@ -36,7 +36,7 @@ export const reactJam23_24WinterProjectTemplate: ProjectTemplateInterface = {
       ].join(" "),
     },
     {
-      id: "personalWebsite-point-4",
+      id: "reactJam23_24Winter-point-4",
       title: "Global state management with Jotai",
       content: [
         "The game needs to keep track of items that the player interacts with.",
@@ -47,7 +47,7 @@ export const reactJam23_24WinterProjectTemplate: ProjectTemplateInterface = {
       ].join(" "),
     },
     {
-      id: "personalWebsite-point-5",
+      id: "reactJam23_24Winter-point-5",
       title: "Game design",
       content: [
         "The focus of my career is learning more about programming.",
@@ -68,32 +68,32 @@ export const reactJam23_24WinterProjectTemplate: ProjectTemplateInterface = {
   ].join(" "),
   techStackList: [
     {
-      id: "personalWebsite-tech-1",
+      id: "reactJam23_24Winter-tech-1",
       tech: "Pixi.JS, renderer that uses WebGL to optimize 2d visuals",
     },
     {
-      id: "personalWebsite-tech-2",
+      id: "reactJam23_24Winter-tech-2",
       tech: "React.JS",
     },
-    { id: "personalWebsite-tech-3", tech: "CSS" },
+    { id: "reactJam23_24Winter-tech-3", tech: "CSS" },
     {
-      id: "personalWebsite-tech-4",
+      id: "reactJam23_24Winter-tech-4",
       tech: "Javascript ES6",
     },
     {
-      id: "personalWebsite-tech-5",
+      id: "reactJam23_24Winter-tech-5",
       tech: "HTML6",
     },
     {
-      id: "personalWebsite-tech-6",
+      id: "reactJam23_24Winter-tech-6",
       tech: "Typescript, used for its addition of types as well as more traditional forms of interfaces",
     },
     {
-      id: "personalWebsite-tech-7",
+      id: "reactJam23_24Winter-tech-7",
       tech: "Jotai, minimal global state management",
     },
-    { id: "personalWebsite-tech-8", tech: "Jest for testing" },
-    { id: "personalWebsite-tech-9", tech: "Webpack, build tool" },
+    { id: "reactJam23_24Winter-tech-8", tech: "Jest for testing" },
+    { id: "reactJam23_24Winter-tech-9", tech: "Webpack, build tool" },
   ],
   architecture: [
     "Pixi allows for optimized visual content, especially important due to the nature of a video game.",

@@ -25,7 +25,7 @@ export const projectCardData: ProjectCardInterface[] = [
   },
   {
     id: "projectCard-3",
-    link: "/projects/starwarsapi",
+    link: "/projects/rollbackNetcode",
     title: "Rollback Netcode Implementation",
     description: [
       "One of the reasons why I decided to pursue a career in programming is because of my interest in making videogames.",
