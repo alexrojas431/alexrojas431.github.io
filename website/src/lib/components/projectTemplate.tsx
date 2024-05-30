@@ -91,7 +91,11 @@ function ProjectTemplate(p: Props) {
         <header>
           <h2>Tech Stack</h2>
         </header>
-        <p>{splitContent(project.id + "-techStack", project.techStack)}</p>
+        <p>
+          {splitContent(project.id + "-techStack", project.techStack)}
+          <br />
+          <br />A list of tech used in this project can be seen below:
+        </p>
         <section>
           <b>Tech Used</b>
           <ul>

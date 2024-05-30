@@ -58,8 +58,9 @@ export const personalsiteProjectTemplate: ProjectTemplateInterface = {
     },
   ],
   techStack: [
-    "Currently there is no dedicated back end and by extension no database.",
-    "With that said images may be placed in a remote storage site in the future.",
+    "As per Next.JS, two very important parts of the project are built in which is React and Webpack.",
+    "\nReact introduces a method to make sections of code into components and also makes those sections reusable.",
+    "\nWebpack is a build tool which automates the compilation and bundling of code.",
   ].join(" "),
   techStackList: [
     {
@@ -81,11 +82,15 @@ export const personalsiteProjectTemplate: ProjectTemplateInterface = {
     },
     { id: "personalWebsite-tech-6", tech: "Jest for testing" },
     { id: "personalWebsite-tech-7", tech: "Webpack, build tool" },
+    { id: "personalWebsite-tech-8", tech: "GitHub, version control" },
+    {
+      id: "personalWebsite-tech-9",
+      tech: "Visual Studio Code",
+    },
   ],
   architecture: [
-    "As per Next.JS, two very important parts of the project are built in which is React and Webpack.",
-    "\nReact introduces a method to make sections of code into components and also makes those sections reusable.",
-    "\nWebpack is a build tool which automates the compilation and bundling of code.",
+    "Currently there is no dedicated back end and by extension no database.",
+    "With that said images may be placed in a remote storage site in the future.",
     "\n\nThis project focuses on a component focused architecture where reusability is the goal for the majority of the codebase.",
   ].join(" "),
   description: [

@@ -51,7 +51,6 @@ export const starWarsProjectTemplate: ProjectTemplateInterface = {
     },
   ],
   techStack: [
-    "This project has no dedicated front-end, only focusing on constructing the API and how those requests are handled.",
     "If needed there is a bare bones page where your requests are displayed on a webpage however, it's best to use Postman to make requests.",
   ].join(" "),
   techStackList: [
@@ -71,9 +70,18 @@ export const starWarsProjectTemplate: ProjectTemplateInterface = {
       id: "starwarsapi-tech-4",
       tech: "Internal H2 Database",
     },
+    {
+      id: "starwarsapi-tech-5",
+      tech: "GitHub, version control",
+    },
+    {
+      id: "starwarsapi-tech-6",
+      tech: "IntelliJ IDEA, Integrated Development Environment (IDE)",
+    },
   ],
   architecture: [
-    "This project uses REST principles with a variation of the MVC structure along with the DAO design pattern for our entities.",
+    "This project has no dedicated front-end, only focusing on constructing the API and how those requests are handled.",
+    "\nThis project uses REST principles with a variation of the MVC structure along with the DAO design pattern for our entities.",
     "\nThis is only a brief overview of the architecture, there is a detailed description of the architecture linked above.",
   ].join(" "),
   description: [

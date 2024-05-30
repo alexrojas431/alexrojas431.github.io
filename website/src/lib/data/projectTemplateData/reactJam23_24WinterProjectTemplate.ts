@@ -64,7 +64,6 @@ export const reactJam23_24WinterProjectTemplate: ProjectTemplateInterface = {
     "The tech that can be used is limited by the rules of the game jam which is to stick strictly to React.JS for development of the game.",
     "So, the game only employs a front-end and attempts to only use React.JS.",
     "\nThe tech stack is React.JS with Typescript alongside Pixi.JS.",
-    "\nA more detailed list can be seen below.",
   ].join(" "),
   techStackList: [
     {
@@ -94,6 +93,11 @@ export const reactJam23_24WinterProjectTemplate: ProjectTemplateInterface = {
     },
     { id: "reactJam23_24Winter-tech-8", tech: "Jest for testing" },
     { id: "reactJam23_24Winter-tech-9", tech: "Webpack, build tool" },
+    { id: "reactJam23_24Winter-tech-10", tech: "GitHub, version control" },
+    {
+      id: "reactJam23_24Winter-tech-11",
+      tech: "Visual Studio Code",
+    },
   ],
   architecture: [
     "Pixi allows for optimized visual content, especially important due to the nature of a video game.",

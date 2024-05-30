@@ -1,8 +1,5 @@
 import { ProjectTemplateInterface } from "@/interface/projectTemplateInterface";
-// TODO: Look to swap the techstack and architecture sections of text as their content doesn't match their heading
-// TODO: Add "Below is list of tech used" to end of every techstack section
 // TODO: Go through another revise to see if the contents of templates could be improved
-// TODO: Consider adding external links section to template
 
 export const rollbackNetcodeProjectTemplate: ProjectTemplateInterface = {
   id: "rollbackNetcode",
@@ -63,7 +60,6 @@ export const rollbackNetcodeProjectTemplate: ProjectTemplateInterface = {
   techStack: [
     "C++ introduces OOP and types for consistency and modularity with classes.",
     "By utilizing OOP, the project is able to separate concerns and avoid spaghetti code.",
-    "\n\nA list of tech used can be seen below.",
   ].join(" "),
   techStackList: [
     {
