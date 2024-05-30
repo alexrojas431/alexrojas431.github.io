@@ -4,21 +4,20 @@ import ProjectTemplate from "@/components/projectTemplate";
 import { rollbackNetcodeLogoData } from "@/data/logoData/rollbackNetcodeLogoData";
 import { rollbackNetcodeProjectTemplate } from "@/data/projectTemplateData/rollbackNetcodeProjectTemplate";
 import styles from "@/scss/projects.module.scss";
-import rollback from "@/scss/pages/rollbackNetcode.module.scss";
-//TODO: standardize css imports from projects css to "unique"
+import unique from "@/scss/pages/rollbackNetcode.module.scss";
 
 export default function RollbackNetcode() {
   return (
-    <main className={styles.main} id={rollback.rollbackMain}>
+    <main className={styles.main} id={unique.rollbackMain}>
       <Link href="/">
-        <h3 className={styles.arrow} id={rollback.rollbackArrow}>
+        <h3 className={styles.arrow} id={unique.rollbackArrow}>
           <span>&lt;-</span> Go Back to home page
         </h3>
       </Link>
-      <article className={styles.card} id={rollback.rollbackCard}>
+      <article className={styles.card} id={unique.rollbackCard}>
         <header>
           <h1>Rollback Netcode (WIP)</h1>
-          <div className={styles.grid} id={rollback.rollbackGrid}>
+          <div className={styles.grid} id={unique.rollbackGrid}>
             <LogoRow logoData={rollbackNetcodeLogoData} />
           </div>
         </header>
