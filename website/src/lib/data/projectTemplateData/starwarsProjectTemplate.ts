@@ -1,4 +1,5 @@
 import { ProjectTemplateInterface } from "@/interface/projectTemplateInterface";
+//TODO: Add clarity to tech list through ':', also may add text modifier in template component.
 
 export const starWarsProjectTemplate: ProjectTemplateInterface = {
   id: "starwarsapi",
