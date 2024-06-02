@@ -20,7 +20,7 @@ $jam-card-rgb: rgb(112, 71, 60);
 
     #jam23WinterGrid {
       background: $jam-paper-rgb;
-      grid-template-columns: repeat(2, minmax(50%, auto));
+      grid-template-columns: repeat(3, minmax(33%, auto));
       box-shadow: globals.$project-default-inset-shadow;
     }
     p {

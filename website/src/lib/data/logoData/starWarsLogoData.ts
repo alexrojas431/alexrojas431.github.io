@@ -1,8 +1,8 @@
 import { LogoInterface } from "@/interface/logoInterface";
 import GitHubIcon from "@/public/github-mark-white.svg";
 import APIArch from "@/public/StarWars/StarWarsCompAPI-Architecture.png";
-import LinkedInIcon from "@/public/In-White-128@2x.png";
 import wikiIcon from "@/public/wiki icon.png";
+import LinkedInIcon from "@/public/In-White-128@2x.png";
 
 export const starLogoData: LogoInterface[] = [
   {
