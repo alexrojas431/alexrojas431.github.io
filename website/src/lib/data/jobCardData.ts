@@ -13,12 +13,12 @@ export const jobCardData: JobCardInterface[] = [
     location: "Remote",
     images: [
       {
-        id: "jobCard3-image-01",
+        id: "jobCard-3-img-01",
         src: TCSLogo,
         alt: "A picture of the TCS logo.",
       },
       {
-        id: "jobCard3-image-02",
+        id: "jobCard-3-img-02",
         src: WalgreensLogo,
         alt: "A picture of the Walgreens logo.",
       },
@@ -47,11 +47,13 @@ export const jobCardData: JobCardInterface[] = [
     location: "Dekalb, IL, USA",
     images: [
       {
-        id: "jobCard2-image-01",
+        id: "jobCard-2-img-01",
         src: CodeOrange,
         alt: "A picture of the code_orange space when you enter the office.",
-        credits: "Picture taken by NIU on NIU campus from the code_orange front door",
-        creditLink: "https://calendar.niu.edu/event/discover_financial_services_code_orange_program_open_house_6049",
+        credits:
+          "Picture taken by NIU on NIU campus from the code_orange front door",
+        creditLink:
+          "https://calendar.niu.edu/event/discover_financial_services_code_orange_program_open_house_6049",
         creditTitle: "NIU code_orange open house",
       },
     ],
@@ -75,7 +77,7 @@ export const jobCardData: JobCardInterface[] = [
     location: "Remote",
     images: [
       {
-        id: "jobCard1-image-01",
+        id: "jobCard-1-img-01",
         src: mthreeLogo,
         alt: "A picture of the mthree logo",
       },
