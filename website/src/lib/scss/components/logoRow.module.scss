@@ -1,5 +1,9 @@
 @use "@/scss/globals.scss";
 
-.credits{
-    @include globals.credits;
+.container {
+  margin: 0.5rem;
+}
+
+.credits {
+  @include globals.credits;
 }

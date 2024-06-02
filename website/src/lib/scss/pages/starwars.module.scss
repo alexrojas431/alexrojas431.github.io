@@ -14,7 +14,7 @@ $star-shadow-right: 2.9px 1.5px 1.9px rgba(157, 157, 157, 0.119),
   #starGrid {
     background-color: $star-background-rgb;
     box-shadow: globals.$project-default-inset-shadow;
-    grid-template-columns: repeat(3, minmax(33%, auto));
+    grid-template-columns: repeat(2, minmax(50%, auto));
   }
   p {
     opacity: 0.9;

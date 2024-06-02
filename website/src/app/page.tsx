@@ -7,6 +7,8 @@ import { projectCardData } from "@/data/projectCardData";
 import { jobCardData } from "@/data/jobCardData";
 import ProfilePic from "@/public/AlexRProfilePic.jpg";
 import styles from "@/scss/pages/home.module.scss";
+//TODO: Revise contents in this page
+//TODO: Go through visual aspect of the website with other people to see if it looks good
 
 export default function Home() {
   return (

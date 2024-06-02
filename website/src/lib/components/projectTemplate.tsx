@@ -69,7 +69,7 @@ function ProjectTemplate(p: Props) {
     <Fragment key={project.id}>
       <section>
         <header>
-          <h2>Summary of my work on the project</h2>
+          <h2>Highlights of my work on the project</h2>
         </header>
         <ul className={styles.gridList}>
           {project.summaryList.map((point: ListPoint, index: number) => (
@@ -91,7 +91,11 @@ function ProjectTemplate(p: Props) {
         <header>
           <h2>Tech Stack</h2>
         </header>
-        <p>{splitContent(project.id + "-techStack", project.techStack)}</p>
+        <p>
+          {splitContent(project.id + "-techStack", project.techStack)}
+          <br />
+          <br />A list of tech used in this project can be seen below:
+        </p>
         <section>
           <b>Tech Used</b>
           <ul>

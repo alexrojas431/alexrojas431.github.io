@@ -18,7 +18,7 @@ import { Fragment } from "react";
  * @returns React Fragment with added br tag.
  * The final result result should be the content with br tags where the newline characters were.
  */
-
+//TODO: Fix this function, it actually adds two break lines
 export function splitContent(id: string, content: string) {
   if (content === "" || content.indexOf("\n") == -1) {
     return content;

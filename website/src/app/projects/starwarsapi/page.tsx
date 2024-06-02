@@ -6,22 +6,22 @@ import { starWarsCarousel } from "@/data/imageCarouselData/starWarsCarouselData"
 import { starWarsProjectTemplate } from "@/data/projectTemplateData/starwarsProjectTemplate";
 import { starLogoData } from "@/data/logoData/starWarsLogoData";
 import styles from "@/scss/projects.module.scss";
-import star from "@/scss/pages/starwars.module.scss";
+import unique from "@/scss/pages/starwars.module.scss";
 
 export default function StarWarsAPI() {
   return (
     <main className={styles.main}>
-      <span id={star.stars}></span>
-      <span id={star.twinkle}></span>
+      <span id={unique.stars}></span>
+      <span id={unique.twinkle}></span>
       <Link href="/">
-        <h3 className={styles.arrow} id={star.starArrow}>
+        <h3 className={styles.arrow} id={unique.starArrow}>
           <span>&lt;-</span> Go Back to home page
         </h3>
       </Link>
-      <article className={styles.card} id={star.starCard}>
+      <article className={styles.card} id={unique.starCard}>
         <header>
           <h1>Star Wars API</h1>
-          <div className={styles.grid} id={star.starGrid}>
+          <div className={styles.grid} id={unique.starGrid}>
             <LogoRow logoData={starLogoData} />
           </div>
         </header>

@@ -1,6 +1,7 @@
 import { LogoInterface } from "@/interface/logoInterface";
 import GitHubIcon from "@/public/github-mark-white.svg";
 import ReactLogo from "@/public/ReactJam23_24Winter/ReactIcon.svg";
+import LinkedInIcon from "@/public/In-White-128@2x.png";
 
 export const reactJam23_24WinterLogoData: LogoInterface[] = [
   {
@@ -22,5 +23,16 @@ export const reactJam23_24WinterLogoData: LogoInterface[] = [
       alt: "ReactJam Icon, click to go to the playable project",
     },
     description: "The project* is playable on the ReactJam website",
+  },
+  {
+    id: "reactJam23_24Winter-Logo-3",
+    link: "https://www.linkedin.com/in/ryan-llamas-05459414a/",
+    image: {
+      id: "reactJam23_24Winter-Logo-3-img",
+      src: LinkedInIcon,
+      alt: "LinkedIn icon, click to go to the LinkedIn profile",
+    },
+    description:
+      "Ryan Llamas helped with the project, check out his other work.",
   },
 ];

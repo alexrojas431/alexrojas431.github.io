@@ -111,7 +111,7 @@ describe("ProjectTemplate component", (): void => {
       <ProjectTemplate projectTemplateData={mockProjectTemplateData} />
     );
 
-    expect(getByText(mockProjectTemplateData.techStack)).toBeInTheDocument();
+    expect(getByText(/techStack of project/)).toBeInTheDocument();
     expect(getByText(mockProjectTemplateData.architecture)).toBeInTheDocument();
     expect(getByText(mockProjectTemplateData.description)).toBeInTheDocument();
 
