@@ -68,11 +68,11 @@ export const rollbackNetcodeProjectTemplate: ProjectTemplateInterface = {
     },
     {
       id: "rollbackNetcode-tech-2",
-      tech: "CMake, build tool",
+      tech: "CMake: Build tool",
     },
     { id: "rollbackNetcode-tech-3", tech: "Google test" },
     { id: "rollbackNetcode-tech-4", tech: "GCC: C++ compiler" },
-    { id: "rollbackNetcode-tech-5", tech: "GitHub: version control" },
+    { id: "rollbackNetcode-tech-5", tech: "GitHub: Version control" },
     {
       id: "rollbackNetcode-tech-6",
       tech: "Visual Studio: Integrated Development Environment (IDE)",
