@@ -4,7 +4,6 @@ import {
   ProjectTemplateInterface,
   TechStack,
 } from "@/interface/projectTemplateInterface";
-import { splitContent } from "@/util/splitContent";
 import styles from "@/scss/projects.module.scss";
 import { EMPTY_OBJECT_KEYS_ERROR_MESSAGE } from "@/util/globalConstants";
 
@@ -92,7 +91,7 @@ function ProjectTemplate(p: Props) {
           <h2>Tech Stack</h2>
         </header>
         <p>
-          {splitContent(project.id + "-techStack", project.techStack)}
+          {project.techStack}
           <br />
           <br />A list of tech used in this project can be seen below:
         </p>
@@ -109,13 +108,13 @@ function ProjectTemplate(p: Props) {
         <header>
           <h2>Architecture</h2>
         </header>
-        <p>{splitContent(project.id + "-arch", project.architecture)}</p>
+        <p>{project.architecture}</p>
       </section>
       <section>
         <header>
           <h2>Overall Description</h2>
         </header>
-        <p>{splitContent(project.id + "-desc", project.description)}</p>
+        <p>{project.description}</p>
       </section>
     </Fragment>
   );

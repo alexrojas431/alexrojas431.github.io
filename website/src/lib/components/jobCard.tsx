@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { JobCardInterface } from "@/interface/jobCardInterface";
 import { ImageSetInterface } from "@/interface/imageSetInterfaces";
-import { splitContent } from "@/util/splitContent";
 import styles from "@/scss/components/jobCard.module.scss";
 import {
   EMPTY_OBJECT_KEYS_ERROR_MESSAGE,
@@ -109,7 +108,7 @@ function JobCard(p: Props) {
               </span>
             ))}
           </span>
-          <p>{splitContent(job.id + "-desc", job.description)}</p>
+          <p>{job.description}</p>
         </section>
       ))}
     </Fragment>

@@ -244,16 +244,3 @@ describe("JobCard component", (): void => {
     });
   });
 });
-
-describe("JobCard Integration", (): void => {
-  // Check that splitContent made br tags in description
-  test("SplitContent's behavior and make sure there are newlines in the description", (): void => {
-    const { getByText } = render(
-      <JobCard jobCardData={mockDataWithoutImages} />
-    );
-
-    const desc = getByText(/desc_2/);
-
-    expect(desc.innerHTML).toContain("br");
-  });
-});

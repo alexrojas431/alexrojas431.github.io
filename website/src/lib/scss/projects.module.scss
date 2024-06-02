@@ -1,6 +1,7 @@
 @use "@/scss/globals.scss";
 
 // CSS for individual project pages must be made. At minimum, to create the grid template area in .grid tag
+// This CSS is also used in projectTemplate
 
 .main {
   display: flex;
@@ -71,6 +72,7 @@
         padding: 2rem;
         border-radius: globals.$border-radius;
         border: 1px solid globals.$card-border-rgb;
+        white-space: pre-line;
       }
     }
   }
