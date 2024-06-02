@@ -9,6 +9,7 @@ import ProfilePic from "@/public/AlexRProfilePic.jpg";
 import styles from "@/scss/pages/home.module.scss";
 //TODO: Revise contents in this page
 //TODO: Go through visual aspect of the website with other people to see if it looks good
+//TODO: Add project page for my research project on VR
 
 export default function Home() {
   return (
