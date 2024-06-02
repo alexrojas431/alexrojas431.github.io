@@ -10,9 +10,8 @@ export const reactJam23_24WinterProjectTemplate: ProjectTemplateInterface = {
         "I designed the website with modularity in mind.",
         "This meant that the codebase would be able to handle components being slotted in or have sections of code able to be turned into components.",
         "These components allow for a more concise codebase, by sectioning out redundant code found in several pages, the files are then easier to read.",
-        "This extends past React elements and also applies to the SCSS for the website.",
-        "Much like the React elements, the components would be used by a parent element.",
-        "There's a common foundation of SCSS that other pages employes its own SCSS in order to build its unique visual flare.",
+        "This extends past React elements and even applies to the SCSS for the website.",
+        "There's a common foundation of SCSS that other pages can build on to create the pages unique visual flare.",
       ].join(" "),
     },
     {
@@ -68,7 +67,7 @@ export const reactJam23_24WinterProjectTemplate: ProjectTemplateInterface = {
   techStackList: [
     {
       id: "reactJam23_24Winter-tech-1",
-      tech: "Pixi.JS, renderer that uses WebGL to optimize 2d visuals",
+      tech: "Pixi.JS: renderer that uses WebGL to optimize 2d visuals",
     },
     {
       id: "reactJam23_24Winter-tech-2",
@@ -85,18 +84,18 @@ export const reactJam23_24WinterProjectTemplate: ProjectTemplateInterface = {
     },
     {
       id: "reactJam23_24Winter-tech-6",
-      tech: "Typescript, used for its addition of types as well as more traditional forms of interfaces",
+      tech: "Typescript: used for its addition of types as well as more traditional forms of interfaces",
     },
     {
       id: "reactJam23_24Winter-tech-7",
-      tech: "Jotai, minimal global state management",
+      tech: "Jotai: minimal global state management",
     },
-    { id: "reactJam23_24Winter-tech-8", tech: "Jest for testing" },
-    { id: "reactJam23_24Winter-tech-9", tech: "Webpack, build tool" },
-    { id: "reactJam23_24Winter-tech-10", tech: "GitHub, version control" },
+    { id: "reactJam23_24Winter-tech-8", tech: "Jest: For testing" },
+    { id: "reactJam23_24Winter-tech-9", tech: "Webpack: Build tool" },
+    { id: "reactJam23_24Winter-tech-10", tech: "GitHub: Version control" },
     {
       id: "reactJam23_24Winter-tech-11",
-      tech: "Visual Studio Code",
+      tech: "Visual Studio Code: Developer environment",
     },
   ],
   architecture: [

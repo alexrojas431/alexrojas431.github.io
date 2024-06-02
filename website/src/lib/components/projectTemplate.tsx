@@ -69,7 +69,7 @@ function ProjectTemplate(p: Props) {
     <Fragment key={project.id}>
       <section>
         <header>
-          <h2>Summary of my work on the project</h2>
+          <h2>Highlights of my work on the project</h2>
         </header>
         <ul className={styles.gridList}>
           {project.summaryList.map((point: ListPoint, index: number) => (
