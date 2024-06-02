@@ -1,5 +1,4 @@
 import { ProjectTemplateInterface } from "@/interface/projectTemplateInterface";
-//TODO: mention explicitly that I worked with Ryan on this project. Maybe on a link to his github or linkedIn.
 
 export const reactJam23_24WinterProjectTemplate: ProjectTemplateInterface = {
   id: "reactJam23_24Winter",
@@ -111,8 +110,9 @@ export const reactJam23_24WinterProjectTemplate: ProjectTemplateInterface = {
     "On top of this the project uses global state management in order to keep track of the games overall status as well as system mechanics found within the game.",
   ].join(" "),
   description: [
-    "Alongside a friend, we used React.JS to make a game within 12 days in the event called ReactJam 23/24.",
+    "Alongside a friend, Ryan Llamas, we used React.JS to make a game within 12 days in the event called ReactJam 23/24.",
     "While I worked together with Ryan I was essentially the lead of the project so many of the creative decisions were up to me.",
+    "\nRyan was a great help during this so if you wanna see the great amount of effort he puts toward his career, check out his LinkedIn profile linked at the top.",
     "\nThe game is heavily inspired by tycoon type games where the point is to maintain a business and to go broke is to lose the game.",
     "Often times this genre of games pushes this rule into absurd heights.",
     "If the business is a hotel, then you can build the hotel into its thousandth floor.",

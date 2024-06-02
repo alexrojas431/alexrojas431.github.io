@@ -86,10 +86,11 @@ export const starWarsProjectTemplate: ProjectTemplateInterface = {
     "\nThis is only a brief overview of the architecture, there is a detailed description of the architecture linked at the top.",
   ].join(" "),
   description: [
-    "My friend is an avid board game player and wanted to experiment with translating a Star Wars themed board game into a virtual medium.",
+    "My friend, Ryan Llamas, is an avid board game player and wanted to experiment with translating a Star Wars themed board game into a virtual medium.",
     "To achieve this, he decided to make an API to provide users with the games information such as special properities for a specific character.",
     "This was a big project, so he asked for my help along with a couple of others.",
-    "To make sure our codebase was clear and efficient we made sure to organize it accordingly, using REST, MVC, and DAO as the set of guidelines.",
+    "\nIf you wanna see the great amount of effort Ryan puts toward his other projects, check out his LinkedIn profile linked at the top.",
+    "\nTo make sure our codebase was clear and efficient we made sure to organize it accordingly, using REST, MVC, and DAO as the set of guidelines.",
     "\nI'll go over how our entities were integrated through the ActionCard as an example.",
     "\n\nActionCard - This entity class declares what would be inside an ActionCard.",
     "In the board game, an ActionCard typically comprises of descriptive text outlining its function, along with designated factions such as 'Empire' or 'Rebel'.",
