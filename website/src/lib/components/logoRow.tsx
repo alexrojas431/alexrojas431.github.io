@@ -60,7 +60,7 @@ function LogoRow(p: Props) {
   return (
     <Fragment>
       {p.logoData.map((logo: LogoInterface) => (
-        <span key={logo.id}>
+        <span key={logo.id} className={styles.container}>
           <Link href={logo.link}>
             <Image
               src={logo.image.src}
