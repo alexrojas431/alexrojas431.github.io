@@ -1,5 +1,4 @@
 import { ProjectTemplateInterface } from "@/interface/projectTemplateInterface";
-// TODO: Go through another revise to see if the contents of templates could be improved
 
 export const rollbackNetcodeProjectTemplate: ProjectTemplateInterface = {
   id: "rollbackNetcode",
