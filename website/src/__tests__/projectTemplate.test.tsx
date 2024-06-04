@@ -29,6 +29,7 @@ const mockProjectTemplateData: ProjectTemplateInterface = {
     {
       id: "project-tech_2",
       name: "tech of tech_2",
+      note: "note of tech_2",
     },
   ],
   architecture: "architecture of project",
@@ -122,6 +123,9 @@ describe("ProjectTemplate component", (): void => {
 
     mockProjectTemplateData.techStackList.every((tech): void => {
       expect(getByText(tech.name)).toBeInTheDocument();
+      if (tech.note === typeof String) {
+        expect(getByText(tech.note)).toBeInTheDocument();
+      }
     });
   });
 });
