@@ -99,7 +99,10 @@ function ProjectTemplate(p: Props) {
           <b>Tech Used</b>
           <ul>
             {project.techStackList.map((tech: TechStack) => (
-              <li key={tech.id}>{tech.tech}</li>
+              <li key={tech.id}>
+                <b>{tech.name}</b>
+                {tech.note && <Fragment>: {tech.note}</Fragment>}
+              </li>
             ))}
           </ul>
         </section>
