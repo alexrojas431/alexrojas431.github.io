@@ -71,13 +71,17 @@ export const reactJam23_24WinterProjectTemplate: ProjectTemplateInterface = {
   techStackList: [
     {
       id: "reactJam23_24Winter-tech-1",
-      name: "Pixi.JS: Optimize 2D visuals through WebGL",
+      name: "Pixi.JS",
+      note: "Optimize 2D visuals through WebGL",
     },
     {
       id: "reactJam23_24Winter-tech-2",
       name: "React.JS",
     },
-    { id: "reactJam23_24Winter-tech-3", name: "CSS" },
+    {
+      id: "reactJam23_24Winter-tech-3",
+      name: "CSS",
+    },
     {
       id: "reactJam23_24Winter-tech-4",
       name: "Javascript ES6",
@@ -88,18 +92,33 @@ export const reactJam23_24WinterProjectTemplate: ProjectTemplateInterface = {
     },
     {
       id: "reactJam23_24Winter-tech-6",
-      name: "Typescript: Used for its addition of types as well as more traditional forms of interfaces",
+      name: "Typescript",
+      note: "Used for its addition of types as well as more traditional forms of interfaces",
     },
     {
       id: "reactJam23_24Winter-tech-7",
-      name: "Jotai: Minimal global state management",
+      name: "Jotai",
+      note: "Minimal global state management",
     },
-    { id: "reactJam23_24Winter-tech-8", name: "Jest: For testing" },
-    { id: "reactJam23_24Winter-tech-9", name: "Webpack: Build tool" },
-    { id: "reactJam23_24Winter-tech-10", name: "GitHub: Version control" },
+    {
+      id: "reactJam23_24Winter-tech-8",
+      name: "Jest",
+      note: "For testing",
+    },
+    {
+      id: "reactJam23_24Winter-tech-9",
+      name: "Webpack",
+      note: "Build tool",
+    },
+    {
+      id: "reactJam23_24Winter-tech-10",
+      name: "GitHub",
+      note: "Version control",
+    },
     {
       id: "reactJam23_24Winter-tech-11",
-      name: "Visual Studio Code: Developer environment",
+      name: "Visual Studio Code",
+      note: "Developer environment",
     },
   ],
   architecture: [

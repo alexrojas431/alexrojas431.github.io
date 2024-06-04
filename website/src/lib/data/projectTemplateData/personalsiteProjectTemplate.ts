@@ -65,9 +65,14 @@ export const personalsiteProjectTemplate: ProjectTemplateInterface = {
   techStackList: [
     {
       id: "personalWebsite-tech-1",
-      name: "Next.JS: A framework of React.JS",
+      name: "Next.JS",
+      note: "A framework of React.JS",
     },
-    { id: "personalWebsite-tech-2", name: "SCSS: A superset of CSS" },
+    {
+      id: "personalWebsite-tech-2",
+      name: "SCSS",
+      note: "A superset of CSS",
+    },
     {
       id: "personalWebsite-tech-3",
       name: "Javascript ES6",
@@ -78,14 +83,28 @@ export const personalsiteProjectTemplate: ProjectTemplateInterface = {
     },
     {
       id: "personalWebsite-tech-5",
-      name: "Typescript: Used for its addition of types as well as more traditional forms of interfaces",
+      name: "Typescript",
+      note: "Used for its addition of types as well as more traditional forms of interfaces",
     },
-    { id: "personalWebsite-tech-6", name: "Jest: For testing" },
-    { id: "personalWebsite-tech-7", name: "Webpack: Build tool" },
-    { id: "personalWebsite-tech-8", name: "GitHub: Version control" },
+    {
+      id: "personalWebsite-tech-6",
+      name: "Jest",
+      note: "For testing",
+    },
+    {
+      id: "personalWebsite-tech-7",
+      name: "Webpack",
+      note: "Build tool",
+    },
+    {
+      id: "personalWebsite-tech-8",
+      name: "GitHub",
+      note: "Version control",
+    },
     {
       id: "personalWebsite-tech-9",
       name: "Visual Studio Code",
+      note: "Developer environment",
     },
   ],
   architecture: [
