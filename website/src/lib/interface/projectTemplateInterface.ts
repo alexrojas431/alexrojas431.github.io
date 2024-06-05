@@ -15,5 +15,6 @@ export interface ListPoint {
 
 export interface TechStack {
   id: string;
-  tech: string;
+  name: string;
+  note?: string;
 }

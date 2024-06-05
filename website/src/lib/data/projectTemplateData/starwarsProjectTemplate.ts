@@ -1,5 +1,4 @@
 import { ProjectTemplateInterface } from "@/interface/projectTemplateInterface";
-//TODO: Add clarity to tech list through ':', also may add text modifier in template component.
 
 export const starWarsProjectTemplate: ProjectTemplateInterface = {
   id: "starwarsapi",
@@ -57,27 +56,32 @@ export const starWarsProjectTemplate: ProjectTemplateInterface = {
   techStackList: [
     {
       id: "starwarsapi-tech-1",
-      tech: "Java Spring boot: Core programming language",
+      name: "Java Spring boot",
+      note: "Core programming language",
     },
     {
       id: "starwarsapi-tech-2",
-      tech: "JPA: For dynamic database queries",
+      name: "JPA",
+      note: "For dynamic database queries",
     },
     {
       id: "starwarsapi-tech-3",
-      tech: "JUnit: For unit testing",
+      name: "JUnit",
+      note: "For unit testing",
     },
     {
       id: "starwarsapi-tech-4",
-      tech: "Internal H2 Database",
+      name: "Internal H2 Database",
     },
     {
       id: "starwarsapi-tech-5",
-      tech: "GitHub: Version control",
+      name: "GitHub",
+      note: "Version control",
     },
     {
       id: "starwarsapi-tech-6",
-      tech: "IntelliJ IDEA: Integrated Development Environment (IDE)",
+      name: "IntelliJ IDEA",
+      note: "Integrated Development Environment (IDE)",
     },
   ],
   architecture: [

@@ -24,11 +24,12 @@ const mockProjectTemplateData: ProjectTemplateInterface = {
   techStackList: [
     {
       id: "project-tech_1",
-      tech: "tech of tech_1",
+      name: "tech of tech_1",
     },
     {
       id: "project-tech_2",
-      tech: "tech of tech_2",
+      name: "tech of tech_2",
+      note: "note of tech_2",
     },
   ],
   architecture: "architecture of project",
@@ -58,7 +59,7 @@ const mockDataFocusOnSummaryList: ProjectTemplateInterface = {
   techStackList: [
     {
       id: "project-tech_1",
-      tech: "tech of tech_1",
+      name: "tech of tech_1",
     },
   ],
   architecture: "architecture of project",
@@ -121,7 +122,10 @@ describe("ProjectTemplate component", (): void => {
     });
 
     mockProjectTemplateData.techStackList.every((tech): void => {
-      expect(getByText(tech.tech)).toBeInTheDocument();
+      expect(getByText(tech.name)).toBeInTheDocument();
+      if (tech.note === typeof String) {
+        expect(getByText(tech.note)).toBeInTheDocument();
+      }
     });
   });
 });
