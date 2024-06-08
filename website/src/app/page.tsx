@@ -7,7 +7,7 @@ import { projectCardData } from "@/data/projectCardData";
 import { jobCardData } from "@/data/jobCardData";
 import ProfilePic from "@/public/AlexRProfilePic.jpg";
 import styles from "@/scss/pages/home.module.scss";
-//TODO 1 : Go through visual aspect of the website with other people to see if it looks good, Go through the written down notes
+//TODO 1 : Go through visual aspect of the website with other people to see if it looks good, Go through the written down notes. Change header font and general layout of project pages
 //TODO 2 : Add project page for my research project on VR
 
 export default function Home() {
