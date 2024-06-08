@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/scss/layout/root.scss";
-//TODO: Add error boundary to handle custom errors made
-//TODO: Look into adding CDN, Content Delivery Network to store images. or find a way to decrease image size for sake of 1GB limit on GitHub
-//TODO: Optimize the site through composition like child props or comp props. Also React.memo if needed.
-//TODO: Like the TODO above, make layout of projects use child props
+//TODO 3 : Add error boundary to handle custom errors made
+//TODO 4 : Look into adding CDN, Content Delivery Network to store images. or find a way to decrease image size for sake of 1GB limit on GitHub
+//TODO 5 : Optimize the site through composition like child props or comp props. Also React.memo if needed.
+//TODO 6 : Like the TODO above, make layout of projects use child props. Test this by effecting the footer outside of this file
 
 const inter = Inter({ subsets: ["latin"] });
 
