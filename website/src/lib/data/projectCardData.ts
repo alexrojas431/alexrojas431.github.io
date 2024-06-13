@@ -2,7 +2,17 @@ import { ProjectCardInterface } from "@/interface/projectCardInterface";
 
 export const projectCardData: ProjectCardInterface[] = [
   {
-    id: "projectCard-1",
+    id: "projectCard-4",
+    link: "/projects/personalWebsite",
+    title: "My Personal Website",
+    description: [
+      "I created a portfolio website using my full-stack dev skills.",
+      "To add to the task I've also decided to introduce new tech I haven't worked with before.",
+      "This project taught me a lot about Next.JS as well as expanded my knowledge about Typescript.",
+    ].join(" "),
+  },
+  {
+    id: "projectCard-3",
     link: "/projects/starwarsapi",
     title: "Star Wars API",
     description: [
@@ -22,23 +32,13 @@ export const projectCardData: ProjectCardInterface[] = [
     ].join(" "),
   },
   {
-    id: "projectCard-3",
+    id: "projectCard-1",
     link: "/projects/rollbackNetcode",
     title: "Rollback Netcode Implementation",
     description: [
       "My passion leads me to interesting places.",
       "Implementing rollback netcode is a combination of my love of video games and my interest in programming.",
       "This project I'll focus on online connectivity between other people.",
-    ].join(" "),
-  },
-  {
-    id: "projectCard-4",
-    link: "/projects/personalWebsite",
-    title: "My Personal Website",
-    description: [
-      "I created a portfolio website using my full-stack dev skills.",
-      "To add to the task I've also decided to introduce new tech I haven't worked with before.",
-      "This project taught me a lot about Next.JS as well as expanded my knowledge about Typescript.",
     ].join(" "),
   },
 ];
