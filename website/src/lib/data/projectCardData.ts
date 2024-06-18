@@ -2,7 +2,7 @@ import { ProjectCardInterface } from "@/interface/projectCardInterface";
 
 export const projectCardData: ProjectCardInterface[] = [
   {
-    id: "projectCard-4",
+    id: "projectCard-5",
     link: "/projects/personalWebsite",
     title: "My Personal Website",
     description: [
@@ -12,12 +12,22 @@ export const projectCardData: ProjectCardInterface[] = [
     ].join(" "),
   },
   {
-    id: "projectCard-3",
+    id: "projectCard-4",
     link: "/projects/starwarsapi",
     title: "Star Wars API",
     description: [
       "This API provides data from a StarWars themed board game.",
       "This was a 4 month project with 100+ commits with cross collaboration with a small network of developers.",
+    ].join(" "),
+  },
+  {
+    id: "projectCard-3",
+    link: "/projects/vrresearchproject",
+    title: "VR Research Project",
+    description: [
+      "This project saught out the potential of VR in an educational setting.",
+      "My part in the research project took around 8 months.",
+      "This project involved getting familiar with VR, the unreal engine, as well as writing a research paper for the NCUR (National Conference on Undergraduate Research).",
     ].join(" "),
   },
   {
