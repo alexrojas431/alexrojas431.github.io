@@ -5,6 +5,7 @@ import { vrResearchProjectTemplate } from "@/data/projectTemplateData/vrResearch
 import { vrResearchProjectLogoData } from "@/data/logoData/vrResearchProjectLogoData";
 import styles from "@/scss/projects.module.scss";
 import unique from "@/scss/pages/vrResearchProj.module.scss";
+//TODO 7: Decide on Intro being part of overview section or make a new intro section at top of the page
 
 export default function VRresearchProject() {
   return (
