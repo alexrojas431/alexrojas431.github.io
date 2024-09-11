@@ -23,7 +23,7 @@ export const projectCardData: ProjectCardInterface[] = [
   {
     id: "projectCard-3",
     link: "/projects/vrresearchproject",
-    title: "VR Research Project",
+    title: "Virtual Reality Research",
     description: [
       "This project saught out the potential of VR in an educational setting.",
       "My part in the research project took around 8 months.",
