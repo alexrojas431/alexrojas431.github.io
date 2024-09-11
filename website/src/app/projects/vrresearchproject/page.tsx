@@ -5,7 +5,6 @@ import { vrResearchProjectTemplate } from "@/data/projectTemplateData/vrResearch
 import { vrResearchProjectLogoData } from "@/data/logoData/vrResearchProjectLogoData";
 import styles from "@/scss/projects.module.scss";
 import unique from "@/scss/pages/vrResearchProj.module.scss";
-//TODO 7: Decide on Intro being part of overview section or make a new intro section at top of the page
 
 export default function VRresearchProject() {
   return (
@@ -17,7 +16,7 @@ export default function VRresearchProject() {
       </Link>
       <article className={styles.card}>
         <header>
-          <h1>VR Research Project</h1>
+          <h1>Virtual Reality Research Project</h1>
           <div className={styles.grid} id={unique.vrGrid}>
             <LogoRow logoData={vrResearchProjectLogoData} />
           </div>
