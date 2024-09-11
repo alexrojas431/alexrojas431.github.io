@@ -2,12 +2,32 @@ import { ProjectCardInterface } from "@/interface/projectCardInterface";
 
 export const projectCardData: ProjectCardInterface[] = [
   {
-    id: "projectCard-1",
+    id: "projectCard-5",
+    link: "/projects/personalWebsite",
+    title: "My Personal Website",
+    description: [
+      "I created a portfolio website using my full-stack dev skills.",
+      "To add to the task I've also decided to introduce new tech I haven't worked with before.",
+      "This project taught me a lot about Next.JS as well as expanded my knowledge about Typescript.",
+    ].join(" "),
+  },
+  {
+    id: "projectCard-4",
     link: "/projects/starwarsapi",
     title: "Star Wars API",
     description: [
       "This API provides data from a StarWars themed board game.",
       "This was a 4 month project with 100+ commits with cross collaboration with a small network of developers.",
+    ].join(" "),
+  },
+  {
+    id: "projectCard-3",
+    link: "/projects/vrresearchproject",
+    title: "Virtual Reality Research",
+    description: [
+      "This project saught out the potential of VR in an educational setting.",
+      "My part in the research project took around 8 months.",
+      "This project involved getting familiar with VR, the unreal engine, as well as writing a research paper for the NCUR (National Conference on Undergraduate Research).",
     ].join(" "),
   },
   {
@@ -22,23 +42,13 @@ export const projectCardData: ProjectCardInterface[] = [
     ].join(" "),
   },
   {
-    id: "projectCard-3",
+    id: "projectCard-1",
     link: "/projects/rollbackNetcode",
     title: "Rollback Netcode Implementation",
     description: [
       "My passion leads me to interesting places.",
       "Implementing rollback netcode is a combination of my love of video games and my interest in programming.",
       "This project I'll focus on online connectivity between other people.",
-    ].join(" "),
-  },
-  {
-    id: "projectCard-4",
-    link: "/projects/personalWebsite",
-    title: "My Personal Website",
-    description: [
-      "I created a portfolio website using my full-stack dev skills.",
-      "To add to the task I've also decided to introduce new tech I haven't worked with before.",
-      "This project taught me a lot about Next.JS as well as expanded my knowledge about Typescript.",
     ].join(" "),
   },
 ];
