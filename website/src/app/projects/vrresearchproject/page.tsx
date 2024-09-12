@@ -10,13 +10,13 @@ export default function VRresearchProject() {
   return (
     <main className={styles.main}>
       <Link href="/">
-        <h3 className={styles.arrow}>
+        <h3 className={styles.arrow} id={unique.vrArrow}>
           <span>&lt;-</span> Go Back to home page
         </h3>
       </Link>
-      <article className={styles.card}>
+      <article className={styles.card} id={unique.vrCard}>
         <header>
-          <h1>Virtual Reality Research Project</h1>
+          <h1>Virtual Reality Research</h1>
           <div className={styles.grid} id={unique.vrGrid}>
             <LogoRow logoData={vrResearchProjectLogoData} />
           </div>
@@ -45,7 +45,9 @@ export default function VRresearchProject() {
             people I previously mentioned contributed a lot, I have links to
             their LinkedIn page above. This project is largely unrelated to my
             software engineering skills so undertaking it was very new to me but
-            even still it allowed me to improve my skills in other areas.
+            even still it allowed me to improve my skills in other areas. The
+            paper even got published by NCUR in their proceedings in 2020
+            (National Conference on Undergraduate Research).
           </p>
         </section>
         <ProjectTemplate projectTemplateData={vrResearchProjectTemplate} />

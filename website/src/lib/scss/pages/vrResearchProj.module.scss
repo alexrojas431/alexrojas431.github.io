@@ -1,3 +1,57 @@
-#vrGrid {
-  grid-template-columns: repeat(auto-fit, minmax(50%, auto));
+@use "@/scss/globals.scss";
+
+$vr-shadow-right: 2.9px 1.5px 1.9px rgba(1, 6, 26, 0.119),
+  6.4px 3.2px 4.4px rgba(1, 6, 26, 0.165),
+  11.2px 5.7px 7.8px rgba(1, 6, 26, 0.203),
+  18.4px 9.4px 13.3px rgba(1, 6, 26, 0.246),
+  25px 16px 23.4px rgba(1, 6, 26, 0.311);
+$vr-card-rgb: rgb(18, 51, 143);
+$vr-content-rgb: rgb(9, 28, 82);
+
+#vrCard {
+  background-color: $vr-card-rgb;
+  #vrGrid {
+    background-color: $vr-content-rgb;
+    box-shadow: globals.$project-default-inset-shadow;
+    grid-template-columns: repeat(auto-fit, minmax(50%, auto));
+  }
+  p {
+    background-color: $vr-content-rgb;
+    box-shadow: globals.$project-default-inset-shadow;
+  }
+  ul {
+    background-color: $vr-content-rgb;
+    box-shadow: globals.$project-default-inset-shadow;
+  }
+}
+
+@mixin VRHoverLeft {
+  &:hover {
+    background-color: $vr-card-rgb;
+    border: 2px solid rgba(white, 0.6);
+    transform: translateX(-4px);
+    box-shadow: $vr-shadow-right;
+    span {
+      transform: translateX(-8px);
+    }
+  }
+}
+
+#vrArrow {
+  background: rgba(globals.$background-start-rgb, 1);
+  box-shadow: 2px 2px 2px 2px black;
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  #vrArrow {
+    @include VRHoverLeft;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  #vrCard {
+    -webkit-animation: none;
+    animation: none;
+  }
 }
