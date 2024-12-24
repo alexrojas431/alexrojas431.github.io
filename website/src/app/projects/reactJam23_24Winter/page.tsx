@@ -18,7 +18,7 @@ export default function ReactJam23_24Winter() {
       </Link>
       <article className={styles.card} id={unique.jam23WinterCard}>
         <header>
-          <h1>Cyberpunk Tycoon</h1>
+          <h1>ReactJam Winter 2023/24: Cyberpunk Tycoon</h1>
           <div className={styles.grid} id={unique.jam23WinterGrid}>
             <LogoRow logoData={reactJam23_24WinterLogoData} />
           </div>
@@ -27,11 +27,6 @@ export default function ReactJam23_24Winter() {
         <ProjectTemplate
           projectTemplateData={reactJam23_24WinterProjectTemplate}
         />
-        snowflake image credits:
-        <br />
-        <a href="https://www.freepik.com/free-vector/realistic-falling-white-snow-overlay-transparent-background-snowflakes-storm-layer_19393340.htm#fromView=search&page=1&position=0&uuid=4bb644e0-4459-4563-a159-391cc377b1be">
-          Image by svstudioart on Freepik
-        </a>
       </article>
     </main>
   );

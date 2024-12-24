@@ -1,34 +1,39 @@
 @use "@/scss/globals.scss";
 
-$snowURL: url("../../../../public/ReactJam23_24Winter/fallingSnow-modified.png");
-$jam-shadow-right: 2.9px 1.5px 1.9px rgba(1, 6, 26, 0.119),
-  6.4px 3.2px 4.4px rgba(1, 6, 26, 0.165),
-  11.2px 5.7px 7.8px rgba(1, 6, 26, 0.203),
-  18.4px 9.4px 13.3px rgba(1, 6, 26, 0.246),
-  25px 16px 23.4px rgba(1, 6, 26, 0.311);
-$jam-background-start-rgb: rgb(18, 45, 143);
+$jam-background-start-rgb: rgb(7, 58, 35);
 $jam-background-end-rgb: rgb(2, 14, 52);
-$jam-paper-rgb: rgb(123, 132, 97);
-$jam-card-rgb: rgb(112, 71, 60);
+$jam-card-start-rgb: rgb(112, 43, 43);
+$jam-card-end-rgb: rgb(82, 19, 19);
+$jam-content-rgb: rgb(133, 63, 63);
+$jam-shadow-right: 2.9px 1.5px 1.9px rgba(1, 26, 11, 0.119),
+  6.4px 3.2px 4.4px rgba(1, 26, 15, 0.165),
+  11.2px 5.7px 7.8px rgba(1, 26, 18, 0.203),
+  18.4px 9.4px 13.3px rgba(1, 26, 19, 0.246),
+  25px 16px 23.4px rgba(1, 26, 16, 0.311);
 
 #jam23WinterMain {
-  background-image: $snowURL;
+  background: linear-gradient(
+      to bottom right,
+      transparent,
+      $jam-background-end-rgb
+    )
+    $jam-background-start-rgb;
 
   #jam23WinterCard {
     z-index: 1;
-    background-color: $jam-card-rgb;
-
+    background: linear-gradient(to bottom, transparent, $jam-card-end-rgb)
+      $jam-card-start-rgb;
     #jam23WinterGrid {
-      background: $jam-paper-rgb;
+      background: $jam-content-rgb;
       grid-template-columns: repeat(3, minmax(33%, auto));
       box-shadow: globals.$project-default-inset-shadow;
     }
     p {
-      background: $jam-paper-rgb;
+      background: $jam-content-rgb;
       box-shadow: globals.$project-default-inset-shadow;
     }
     ul {
-      background: $jam-paper-rgb;
+      background: $jam-content-rgb;
       box-shadow: globals.$project-default-inset-shadow;
     }
   }
@@ -47,7 +52,7 @@ $jam-card-rgb: rgb(112, 71, 60);
 }
 
 #jam23WinterArrow {
-  background: rgba(globals.$background-start-rgb, 1);
+  background: rgba($jam-background-start-rgb, 1);
   box-shadow: 2px 2px 2px 2px black;
 }
 
