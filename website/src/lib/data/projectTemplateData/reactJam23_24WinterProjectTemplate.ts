@@ -97,7 +97,7 @@ export const reactJam23_24WinterProjectTemplate: ProjectTemplateInterface = {
     },
     {
       id: "reactJam23_24Winter-tech-6",
-      name: "Typescript",
+      name: "TypeScript",
       note: "Used for its addition of types as well as more traditional forms of interfaces",
     },
     {
