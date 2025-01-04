@@ -26,7 +26,7 @@ export default function VRresearchProject() {
             <h2>Introduction</h2>
           </header>
           <p>
-            I was invited into the research project by my then classmate Ivan
+            I was invited to the research project by my then classmate Ivan
             Sanchez, the project was supervised and supported by Dr. Papka and
             Dr. Zachary Wahl-Alexander. By the time I joined the project, a
             pilot of the experiment had been conducted and a 3D model partially
@@ -43,11 +43,14 @@ export default function VRresearchProject() {
             also primarily talk about my contributions to the project,
             that&apos;s not to say that I was the only one doing the work. The
             people I previously mentioned contributed a lot, I have links to
-            their LinkedIn page above. This project is largely unrelated to my
-            software engineering skills so undertaking it was very new to me but
-            even still it allowed me to improve my skills in other areas. The
-            paper even got published by NCUR in their proceedings in 2020
-            (National Conference on Undergraduate Research).
+            their LinkedIn page above.
+            <br />
+            <br />
+            This project is largely unrelated to my software engineering skills
+            so undertaking it was very new to me but even still it allowed me to
+            improve my skills in other areas. The paper even got published by
+            NCUR in their proceedings in 2020 (National Conference on
+            Undergraduate Research).
           </p>
         </section>
         <ProjectTemplate projectTemplateData={vrResearchProjectTemplate} />

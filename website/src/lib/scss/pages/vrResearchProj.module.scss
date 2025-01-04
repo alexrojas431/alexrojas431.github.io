@@ -27,7 +27,6 @@ $vr-content-rgb: rgb(9, 28, 82);
 
 @mixin VRHoverLeft {
   &:hover {
-    background-color: $vr-card-rgb;
     border: 2px solid rgba(white, 0.6);
     transform: translateX(-4px);
     box-shadow: $vr-shadow-right;
