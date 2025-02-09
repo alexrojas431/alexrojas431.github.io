@@ -18,6 +18,8 @@ import { EMPTY_OBJECT_KEYS_ERROR_MESSAGE } from "@/util/globalConstants";
  * @relatedFiles projectTemplateData folder, projectTemplateInterface.ts
  */
 
+//TODO 7: Think about separating validation functions and isFinalItem functions into util functions. This also means changing test files.
+
 interface Props {
   readonly projectTemplateData: ProjectTemplateInterface;
 }

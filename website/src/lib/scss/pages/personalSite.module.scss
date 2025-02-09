@@ -35,17 +35,30 @@ $big-web-shadow-right: 4.4px 3.4px 5.1px rgba(1, 6, 26, 0.165),
 }
 
 #webMain {
-  background-image: $web-image-url;
-  background-repeat: repeat;
+  z-index: -2;
   position: fixed;
   top: -1000px;
   left: 0;
   overflow: hidden;
   height: 500%;
   width: 500%;
-  z-index: -2;
+  background-image: $web-image-url;
+  background-repeat: repeat;
   -webkit-animation: move-background-diagonal-left 100s linear infinite;
   animation: move-background-diagonal-left 100s linear infinite;
+}
+
+#webGlass {
+  z-index: -1;
+  position: absolute;
+  top: 0%;
+  left: 0.5%;
+  width: 98%;
+  min-height: 100%;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(3px);
+  border-radius: globals.$border-radius;
 }
 
 @-webkit-keyframes move-background-diagonal-left {

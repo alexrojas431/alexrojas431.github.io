@@ -9,6 +9,7 @@ import {
 } from "@/util/globalConstants";
 
 //* Mock data
+//TODO 8: Think about using dynamic mock data like faker. Separate mock data into its own file if able.
 
 const mockCarouselData: ImageSetCaptions[] = [
   {

@@ -10,6 +10,7 @@ export default function PersonalWebsite() {
   return (
     <main className={styles.main}>
       <span id={unique.webMain}></span>
+      <span id={unique.webGlass}></span>
       <Link href="/">
         <h3 className={styles.arrow} id={unique.webArrow}>
           <span>&lt;-</span> Go Back to home page
