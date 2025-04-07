@@ -10,6 +10,9 @@ import {
   EMPTY_OBJECT_KEYS_ERROR_MESSAGE,
 } from "@/util/globalConstants";
 
+// TODO 9/10: According to CLS, make sure the carousel doesn't shift the layout of the page
+// TODO 10/10: Look into changing this client component to statically generated component. (Build logs shows that this already is but just in case)
+
 /**
  ** ImageCarousel
  *
